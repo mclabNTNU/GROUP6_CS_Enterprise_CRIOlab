@@ -187,119 +187,119 @@
 				</Properties>
 				<Errors />
 			</Section>
-			<Section Name="CSE1.nivssdf" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
+			<Section Name="CSE1.nivssdf (1)" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
 				<Description />
 				<Properties>
 					<Property Name="Path">
-						<String>C:\Users\MCLab\Documents\GitHub\CS_EnterpriseI_cRIOlab\CSE1.nivssdf</String>
+						<String>C:\Users\MCLab\Documents\GitHub\GROUP6_CS_Enterprise_CRIOlab\CSE1.nivssdf</String>
 					</Property>
 				</Properties>
 				<Errors />
 			</Section>
-			<Section Name="CSE1.nivsscreen" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
+			<Section Name="CSE1.nivsscreen (1)" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
 				<Description />
 				<Properties>
 					<Property Name="Path">
-						<String>C:\Users\MCLab\Documents\GitHub\CS_EnterpriseI_cRIOlab\CSE1.nivsscreen</String>
+						<String>C:\Users\MCLab\Documents\GitHub\GROUP6_CS_Enterprise_CRIOlab\CSE1.nivsscreen</String>
 					</Property>
 				</Properties>
 				<Errors />
 			</Section>
-			<Section Name="CSE1.nivscf" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
+			<Section Name="CSE1.nivscf (1)" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
 				<Description />
 				<Properties>
 					<Property Name="Path">
-						<String>C:\Users\MCLab\Documents\GitHub\CS_EnterpriseI_cRIOlab\CSE1.nivscf</String>
+						<String>C:\Users\MCLab\Documents\GitHub\GROUP6_CS_Enterprise_CRIOlab\CSE1.nivscf</String>
 					</Property>
 				</Properties>
 				<Errors />
 			</Section>
-			<Section Name="cRIO-9113 Custom Personality.fpgaconfig" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
+			<Section Name="cRIO-9113 Custom Personality.fpgaconfig (1)" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
 				<Description />
 				<Properties>
 					<Property Name="Path">
-						<String>C:\Users\MCLab\Documents\GitHub\CS_EnterpriseI_cRIOlab\FPGA IO\cRIO-9113 Custom Personality.fpgaconfig</String>
+						<String>C:\Users\MCLab\Documents\GitHub\GROUP6_CS_Enterprise_CRIOlab\FPGA IO\cRIO-9113 Custom Personality.fpgaconfig</String>
 					</Property>
 				</Properties>
 				<Errors />
 			</Section>
-			<Section Name="QTM2SI.out" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
+			<Section Name="QTM2SI.out (1)" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
 				<Description />
 				<Properties>
 					<Property Name="Path">
-						<String>C:\Users\MCLab\Documents\GitHub\CS_EnterpriseI_cRIOlab\simulink source\QTM2SI_niVeriStand_VxWorks_rtw\QTM2SI.out</String>
+						<String>C:\Users\MCLab\Documents\GitHub\GROUP6_CS_Enterprise_CRIOlab\simulink source\QTM2SI_niVeriStand_VxWorks_rtw\QTM2SI.out</String>
 					</Property>
 				</Properties>
 				<Errors />
 			</Section>
-			<Section Name="ctrl_sixaxis2thruster.out" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
+			<Section Name="ctrl_sixaxis2thruster.out (1)" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
 				<Description />
 				<Properties>
 					<Property Name="Path">
-						<String>C:\Users\MCLab\Documents\GitHub\CS_EnterpriseI_cRIOlab\simulink source\ctrl_sixaxis2thruster_niVeriStand_VxWorks_rtw\ctrl_sixaxis2thruster.out</String>
+						<String>C:\Users\MCLab\Documents\GitHub\GROUP6_CS_Enterprise_CRIOlab\simulink source\ctrl_sixaxis2thruster_niVeriStand_VxWorks_rtw\ctrl_sixaxis2thruster.out</String>
 					</Property>
 				</Properties>
 				<Errors />
 			</Section>
-			<Section Name="ctrl_sixaxis2force.out" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
+			<Section Name="ctrl_sixaxis2force.out (1)" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
 				<Description />
 				<Properties>
 					<Property Name="Path">
-						<String>C:\Users\MCLab\Documents\GitHub\CS_EnterpriseI_cRIOlab\simulink source\ctrl_sixaxis2force_niVeriStand_VxWorks_rtw\ctrl_sixaxis2force.out</String>
+						<String>C:\Users\MCLab\Documents\GitHub\GROUP6_CS_Enterprise_CRIOlab\simulink source\ctrl_sixaxis2force_niVeriStand_VxWorks_rtw\ctrl_sixaxis2force.out</String>
 					</Property>
 				</Properties>
 				<Errors />
 			</Section>
-			<Section Name="ctrl_DP_basic.out" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
+			<Section Name="ctrl_DP_basic.out (1)" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
 				<Description />
 				<Properties>
 					<Property Name="Path">
-						<String>C:\Users\MCLab\Documents\GitHub\CS_EnterpriseI_cRIOlab\simulink source\ctrl_DP_basic_niVeriStand_VxWorks_rtw\ctrl_DP_basic.out</String>
+						<String>C:\Users\MCLab\Documents\GitHub\GROUP6_CS_Enterprise_CRIOlab\simulink source\ctrl_DP_basic_niVeriStand_VxWorks_rtw\ctrl_DP_basic.out</String>
 					</Property>
 				</Properties>
 				<Errors />
 			</Section>
-			<Section Name="ctrl_switch.out" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
+			<Section Name="ctrl_switch.out (1)" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
 				<Description />
 				<Properties>
 					<Property Name="Path">
-						<String>C:\Users\MCLab\Documents\GitHub\CS_EnterpriseI_cRIOlab\simulink source\ctrl_switch_niVeriStand_VxWorks_rtw\ctrl_switch.out</String>
+						<String>C:\Users\MCLab\Documents\GitHub\GROUP6_CS_Enterprise_CRIOlab\simulink source\ctrl_switch_niVeriStand_VxWorks_rtw\ctrl_switch.out</String>
 					</Property>
 				</Properties>
 				<Errors />
 			</Section>
-			<Section Name="u2pwm.out" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
+			<Section Name="u2pwm.out (1)" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
 				<Description />
 				<Properties>
 					<Property Name="Path">
-						<String>C:\Users\MCLab\Documents\GitHub\CS_EnterpriseI_cRIOlab\simulink source\u2pwm_niVeriStand_VxWorks_rtw\u2pwm.out</String>
+						<String>C:\Users\MCLab\Documents\GitHub\GROUP6_CS_Enterprise_CRIOlab\simulink source\u2pwm_niVeriStand_VxWorks_rtw\u2pwm.out</String>
 					</Property>
 				</Properties>
 				<Errors />
 			</Section>
-			<Section Name="mech_elec.out" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
+			<Section Name="mech_elec.out (1)" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
 				<Description />
 				<Properties>
 					<Property Name="Path">
-						<String>C:\Users\MCLab\Documents\GitHub\CS_EnterpriseI_cRIOlab\simulink source\mech_elec_niVeriStand_VxWorks_rtw\mech_elec.out</String>
+						<String>C:\Users\MCLab\Documents\GitHub\GROUP6_CS_Enterprise_CRIOlab\simulink source\mech_elec_niVeriStand_VxWorks_rtw\mech_elec.out</String>
 					</Property>
 				</Properties>
 				<Errors />
 			</Section>
-			<Section Name="CSE1_HIL_tau.out" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
+			<Section Name="CSE1_HIL_tau.out (1)" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
 				<Description />
 				<Properties>
 					<Property Name="Path">
-						<String>C:\Users\MCLab\Documents\GitHub\CS_EnterpriseI_cRIOlab\simulink source\CSE1_HIL_tau.out</String>
+						<String>C:\Users\MCLab\Documents\GitHub\GROUP6_CS_Enterprise_CRIOlab\simulink source\CSE1_HIL_tau.out</String>
 					</Property>
 				</Properties>
 				<Errors />
 			</Section>
-			<Section Name="ctrl_student_HIL.out" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
+			<Section Name="ctrl_student_HIL.out (1)" TypeGUID="369b9797-43bd-4cdf-8352-81032feed666">
 				<Description />
 				<Properties>
 					<Property Name="Path">
-						<String>C:\Users\MCLab\Documents\GitHub\CS_EnterpriseI_cRIOlab\simulink source\ctrl_student_HIL_niVeriStand_VxWorks_rtw\ctrl_student_HIL.out</String>
+						<String>C:\Users\MCLab\Documents\GitHub\GROUP6_CS_Enterprise_CRIOlab\simulink source\ctrl_student_HIL_niVeriStand_VxWorks_rtw\ctrl_student_HIL.out</String>
 					</Property>
 				</Properties>
 				<Errors />
