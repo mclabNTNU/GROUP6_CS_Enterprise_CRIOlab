@@ -56,7 +56,7 @@ BUILD_SUCCESS	= ... Created
 CPU             = PPC603
 
 MODEL           		:= ctrl_student_HIL
-MODULES         		:= NIVeriStand_main.c ctrl_student_HIL_data.c rtGetInf.c rtGetNaN.c rt_logging.c rt_nonfinite.c 
+MODULES         		:= NIVeriStand_main.c ctrl_student_HIL_data.c rtGetInf.c rtGetNaN.c rt_logging.c rt_nonfinite.c rt_zcfcn.c 
 MAKEFILE        		:= ctrl_student_HIL.mk
 MATLAB_ROOT     		:= C:\Program Files\MATLAB\R2015a
 ALT_MATLAB_ROOT 		:= C:\PROGRA~1\MATLAB\R2015a
@@ -67,7 +67,7 @@ S_FUNCTIONS_LIB 		:=
 SOLVER          		:= 
 NUMST           		:= 2
 TID01EQ         		:= 1
-NCSTATES        		:= 1
+NCSTATES        		:= 2
 BUILDARGS       		:=  NIDEBUG=0 NIOPT="Default" OPTS="" ISPROTECTINGMODEL=NOTPROTECTING
 MULTITASKING    		:= 0
 EXT_MODE        		:= 0
