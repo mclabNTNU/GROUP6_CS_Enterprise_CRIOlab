@@ -10,7 +10,7 @@
 				<String>CaseBGroup620022017</String>
 			</Property>
 			<Property Name="Version">
-				<String>1.0.0.8</String>
+				<String>1.0.0.16</String>
 			</Property>
 			<Property Name="Creator">
 				<String />
@@ -31,7 +31,7 @@
 						<String>VxWorks</String>
 					</Property>
 					<Property Name="IP Address">
-						<String>192.168.0.71</String>
+						<String>192.168.0.76</String>
 					</Property>
 					<Property Name="Control Loop Processor">
 						<I32>-2</I32>
@@ -406,10 +406,10 @@
 									<Double>200000</Double>
 								</Property>
 								<Property Name="DLL Size">
-									<I32>211997</I32>
+									<I32>212541</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3570427661.7001</Double>
+									<Double>3570682597.3704119</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -453,7 +453,7 @@
 										<ForceDownload>false</ForceDownload>
 										<RTDestination>c:\ni-rt\system\ctrl_student_HIL.out</RTDestination>
 										<SupportedTarget>VxWorks</SupportedTarget>
-										<MD5>261a600070ea867ae4b953fdb4bf3d6a</MD5>
+										<MD5>f49000683673155e26674401cdc02bc8</MD5>
 									</DependentFile>
 								</Property>
 								<Property Name="GlobalParameterScopes">
@@ -545,6 +545,9 @@
 											</Property>
 											<Property Name="Index">
 												<I32>11</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/Select" />
 											</Property>
 										</Properties>
 										<Errors />
@@ -1250,7 +1253,7 @@
 									<I32>144783</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3568794627.9525132</Double>
+									<Double>3570679951.5983672</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -1619,7 +1622,7 @@
 									<I32>250810</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3568794628.089232</Double>
+									<Double>3570679951.79075</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -2651,7 +2654,7 @@
 									<I32>124629</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3568794628.1780992</Double>
+									<Double>3570679951.8962188</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -2961,7 +2964,7 @@
 									<I32>136560</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3568794628.2103252</Double>
+									<Double>3570679951.9333277</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -3361,7 +3364,7 @@
 									<I32>173009</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3568794628.3050523</Double>
+									<Double>3570679952.1276636</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -4264,7 +4267,7 @@
 									<I32>140015</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3568794628.3646221</Double>
+									<Double>3570679952.2721949</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -4312,6 +4315,9 @@
 									</DependentFile>
 								</Property>
 								<Property Name="GlobalParameterScopes">
+									<I32>0</I32>
+								</Property>
+								<Property Name="Group">
 									<I32>0</I32>
 								</Property>
 							</Properties>
@@ -4650,7 +4656,7 @@
 									<I32>125060</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3568794628.0550523</Double>
+									<Double>3570679951.7341094</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -4698,6 +4704,9 @@
 									</DependentFile>
 								</Property>
 								<Property Name="GlobalParameterScopes">
+									<I32>0</I32>
+								</Property>
+								<Property Name="Group">
 									<I32>0</I32>
 								</Property>
 							</Properties>
@@ -4960,7 +4969,7 @@
 									<I32>149185</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3568794628.4456768</Double>
+									<Double>3570679952.743875</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -5008,6 +5017,9 @@
 									</DependentFile>
 								</Property>
 								<Property Name="GlobalParameterScopes">
+									<I32>0</I32>
+								</Property>
+								<Property Name="Group">
 									<I32>0</I32>
 								</Property>
 							</Properties>

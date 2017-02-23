@@ -15,9 +15,9 @@
  *
  * Code generation for model "ctrl_student_HIL".
  *
- * Model version              : 1.145
+ * Model version              : 1.155
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Mon Feb 20 10:27:32 2017
+ * C source code generated on : Thu Feb 23 09:16:19 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -42,16 +42,16 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
                                         *   '<S27>/Step'
                                         */
   0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S6>/Memory'
+                                        * Referenced by: '<S2>/Memory'
                                         */
   0.0,                                 /* Expression: 0
                                         * Referenced by: '<Root>/Constant5'
                                         */
   0.01,                                /* Expression: 0.01
-                                        * Referenced by: '<S3>/Step size'
+                                        * Referenced by: '<S4>/Step size'
                                         */
   0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S13>/counter'
+                                        * Referenced by: '<S14>/counter'
                                         */
   100.0,                               /* Expression: 100
                                         * Referenced by: '<Root>/Constant'
@@ -75,22 +75,22 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
                                         * Referenced by: '<Root>/NoisePowPos'
                                         */
   0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S19>/White Noise'
+                                        * Referenced by: '<S20>/White Noise'
                                         */
   1.0,                                 /* Computed Parameter: WhiteNoise_StdDev
-                                        * Referenced by: '<S19>/White Noise'
+                                        * Referenced by: '<S20>/White Noise'
                                         */
   9024.0,                              /* Expression: 9024
-                                        * Referenced by: '<S19>/White Noise'
+                                        * Referenced by: '<S20>/White Noise'
                                         */
   0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S20>/White Noise'
+                                        * Referenced by: '<S21>/White Noise'
                                         */
   1.0,                                 /* Computed Parameter: WhiteNoise_StdDev_d
-                                        * Referenced by: '<S20>/White Noise'
+                                        * Referenced by: '<S21>/White Noise'
                                         */
   123.0,                               /* Expression: 123
-                                        * Referenced by: '<S20>/White Noise'
+                                        * Referenced by: '<S21>/White Noise'
                                         */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/NoisePowHead'
@@ -111,13 +111,13 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
                                         * Referenced by: '<Root>/NoisePowHead'
                                         */
   0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S18>/White Noise'
+                                        * Referenced by: '<S19>/White Noise'
                                         */
   1.0,                                 /* Computed Parameter: WhiteNoise_StdDev_g
-                                        * Referenced by: '<S18>/White Noise'
+                                        * Referenced by: '<S19>/White Noise'
                                         */
   9025.0,                              /* Expression: 9025
-                                        * Referenced by: '<S18>/White Noise'
+                                        * Referenced by: '<S19>/White Noise'
                                         */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/y_in'
@@ -174,7 +174,7 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
                                         * Referenced by: '<Root>/psi_in'
                                         */
   0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S14>/Hold'
+                                        * Referenced by: '<S15>/Hold'
                                         */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/NoiseEnable'
@@ -195,13 +195,13 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
                                         * Referenced by: '<Root>/NoiseEnable'
                                         */
   0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S2>/Memory2'
+                                        * Referenced by: '<S3>/Memory2'
                                         */
   0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S2>/Memory1'
+                                        * Referenced by: '<S3>/Memory1'
                                         */
   0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S2>/Memory'
+                                        * Referenced by: '<S3>/Memory'
                                         */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/Dropout_signaINl'
@@ -258,10 +258,10 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
                                         * Referenced by: '<Root>/ResetIntegra_Select'
                                         */
   0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S4>/Integrator'
+                                        * Referenced by: '<S5>/Integrator'
                                         */
   0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S6>/Integrator'
+                                        * Referenced by: '<S2>/Integrator'
                                         */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/u_hat'
@@ -963,8 +963,8 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
   0.1,                                 /* Expression: 0.1
                                         * Referenced by: '<Root>/Gain'
                                         */
-  0.0676132521974307,                  /* Expression: 1/14.79
-                                        * Referenced by: '<S4>/Gain'
+  0.059559261465157838,                /* Expression: 1/16.79
+                                        * Referenced by: '<S5>/Gain'
                                         */
   1.0                                  /* Expression: 1
                                         * Referenced by: '<Root>/NIVeriStandSignalProbe'

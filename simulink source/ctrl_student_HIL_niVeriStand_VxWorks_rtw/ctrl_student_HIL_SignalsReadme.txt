@@ -1,5 +1,5 @@
 	<signallist>
-<signal> id = "1" name = "ctrl_student_hil/Subsystem/Memory" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "1" name = "ctrl_student_hil/DropoutAction/Memory" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
 <signal> id = "2" name = "ctrl_student_hil/NoisePowPos" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
 <signal> id = "3" name = "ctrl_student_hil/Noise generator/noise generator/Band-limited white noise x/White Noise" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
 <signal> id = "4" name = "ctrl_student_hil/Noise generator/noise generator/Band-limited white noise y/White Noise" SignalName ="" PortNum ="1" width = "1" datatype = "real_T"</signal>
@@ -43,14 +43,14 @@
 <signal> id = "42" name = "ctrl_student_hil/joystick/Contoller_Map" SignalName ="tau_x" PortNum ="1" width = "1" datatype = "real_T"</signal>
 <signal> id = "43" name = "ctrl_student_hil/joystick/Contoller_Map" SignalName ="tau_y" PortNum ="2" width = "1" datatype = "real_T"</signal>
 <signal> id = "44" name = "ctrl_student_hil/joystick/Contoller_Map" SignalName ="tau_yaw" PortNum ="3" width = "1" datatype = "real_T"</signal>
-<signal> id = "45" name = "ctrl_student_hil/Subsystem/accInjection" SignalName ="u_hat" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "46" name = "ctrl_student_hil/Noise generator/Sample & hold/MATLAB Function1" SignalName ="output(1,1)" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "47" name = "ctrl_student_hil/Noise generator/Sample & hold/MATLAB Function1" SignalName ="output(1,2)" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "48" name = "ctrl_student_hil/Noise generator/Sample & hold/MATLAB Function1" SignalName ="output(1,3)" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "49" name = "ctrl_student_hil/Noise generator/Downsamplesignal/MATLAB Function" SignalName ="count" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "50" name = "ctrl_student_hil/Dropout_simulator/MATLAB Function" SignalName ="X_out" PortNum ="1" width = "1" datatype = "real_T"</signal>
-<signal> id = "51" name = "ctrl_student_hil/Dropout_simulator/MATLAB Function" SignalName ="Y_out" PortNum ="2" width = "1" datatype = "real_T"</signal>
-<signal> id = "52" name = "ctrl_student_hil/Dropout_simulator/MATLAB Function" SignalName ="Yaw_out" PortNum ="3" width = "1" datatype = "real_T"</signal>
+<signal> id = "45" name = "ctrl_student_hil/Noise generator/Sample & hold/MATLAB Function1" SignalName ="output(1,1)" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "46" name = "ctrl_student_hil/Noise generator/Sample & hold/MATLAB Function1" SignalName ="output(1,2)" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "47" name = "ctrl_student_hil/Noise generator/Sample & hold/MATLAB Function1" SignalName ="output(1,3)" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "48" name = "ctrl_student_hil/Noise generator/Downsamplesignal/MATLAB Function" SignalName ="count" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "49" name = "ctrl_student_hil/Dropout_simulator/MATLAB Function" SignalName ="X_out" PortNum ="1" width = "1" datatype = "real_T"</signal>
+<signal> id = "50" name = "ctrl_student_hil/Dropout_simulator/MATLAB Function" SignalName ="Y_out" PortNum ="2" width = "1" datatype = "real_T"</signal>
+<signal> id = "51" name = "ctrl_student_hil/Dropout_simulator/MATLAB Function" SignalName ="Yaw_out" PortNum ="3" width = "1" datatype = "real_T"</signal>
+<signal> id = "52" name = "ctrl_student_hil/DropoutAction/accInjection" SignalName ="u_hat" PortNum ="1" width = "1" datatype = "real_T"</signal>
 <signal> id = "53" name = "ctrl_student_hil/joystick/Logical Operator" SignalName ="" PortNum ="1" width = "1" datatype = "boolean_T"</signal>
 <signal> id = "54" name = "ctrl_student_hil/joystick/Sat_Chk_VSP" SignalName ="u_out" PortNum ="1" width = "1" datatype = "real_T"</signal>
 <signal> id = "55" name = "ctrl_student_hil/joystick/Sat_Chk_VSP" SignalName ="error" PortNum ="2" width = "1" datatype = "boolean_T"</signal>

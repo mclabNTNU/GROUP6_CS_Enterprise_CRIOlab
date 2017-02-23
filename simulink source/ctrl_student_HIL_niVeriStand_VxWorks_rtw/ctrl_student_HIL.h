@@ -7,9 +7,9 @@
  *
  * Code generation for model "ctrl_student_HIL".
  *
- * Model version              : 1.145
+ * Model version              : 1.155
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Mon Feb 20 10:27:32 2017
+ * C source code generated on : Thu Feb 23 09:16:19 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -818,20 +818,20 @@ typedef struct {
 
 /* Block signals (auto storage) */
 typedef struct {
-  real_T Memory;                       /* '<S6>/Memory' */
+  real_T Memory;                       /* '<S2>/Memory' */
   real_T NoisePowPos;                  /* '<Root>/NoisePowPos' */
-  real_T WhiteNoise;                   /* '<S19>/White Noise' */
-  real_T WhiteNoise_e;                 /* '<S20>/White Noise' */
+  real_T WhiteNoise;                   /* '<S20>/White Noise' */
+  real_T WhiteNoise_e;                 /* '<S21>/White Noise' */
   real_T NoisePowHead;                 /* '<Root>/NoisePowHead' */
-  real_T WhiteNoise_m;                 /* '<S18>/White Noise' */
+  real_T WhiteNoise_m;                 /* '<S19>/White Noise' */
   real_T y_in;                         /* '<Root>/y_in' */
   real_T x_in;                         /* '<Root>/x_in' */
   real_T psi_in;                       /* '<Root>/psi_in' */
-  real_T Hold[3];                      /* '<S14>/Hold' */
+  real_T Hold[3];                      /* '<S15>/Hold' */
   real_T NoiseEnable;                  /* '<Root>/NoiseEnable' */
-  real_T Memory2;                      /* '<S2>/Memory2' */
-  real_T Memory1;                      /* '<S2>/Memory1' */
-  real_T Memory_n;                     /* '<S2>/Memory' */
+  real_T Memory2;                      /* '<S3>/Memory2' */
+  real_T Memory1;                      /* '<S3>/Memory1' */
+  real_T Memory_n;                     /* '<S3>/Memory' */
   real_T Dropout_signaINl;             /* '<Root>/Dropout_signaINl' */
   real_T K_phi;                        /* '<Root>/K_phi' */
   real_T ResetIntegra_Select;          /* '<Root>/ResetIntegra_Select' */
@@ -848,7 +848,7 @@ typedef struct {
   real_T Switch[3];                    /* '<S9>/Switch' */
   real_T imu_in;                       /* '<Root>/imu_in' */
   real_T Gain;                         /* '<Root>/Gain' */
-  real_T Sum2;                         /* '<S4>/Sum2' */
+  real_T Sum2;                         /* '<S5>/Sum2' */
   real_T switch_sig;                   /* '<S9>/Safety Act' */
   real_T current_mode;                 /* '<S7>/Sel_Control_Mode' */
   real_T alpha;                        /* '<S7>/Force2Control' */
@@ -858,12 +858,12 @@ typedef struct {
   real_T tau_x;                        /* '<S7>/Contoller_Map' */
   real_T tau_y;                        /* '<S7>/Contoller_Map' */
   real_T tau_yaw;                      /* '<S7>/Contoller_Map' */
-  real_T u_hat;                        /* '<S6>/accInjection' */
-  real_T output[3];                    /* '<S14>/MATLAB Function1' */
-  real_T count;                        /* '<S13>/MATLAB Function' */
-  real_T X_out;                        /* '<S2>/MATLAB Function' */
-  real_T Y_out;                        /* '<S2>/MATLAB Function' */
-  real_T Yaw_out;                      /* '<S2>/MATLAB Function' */
+  real_T output[3];                    /* '<S15>/MATLAB Function1' */
+  real_T count;                        /* '<S14>/MATLAB Function' */
+  real_T X_out;                        /* '<S3>/MATLAB Function' */
+  real_T Y_out;                        /* '<S3>/MATLAB Function' */
+  real_T Yaw_out;                      /* '<S3>/MATLAB Function' */
+  real_T u_hat;                        /* '<S2>/accInjection' */
   boolean_T LogicalOperator;           /* '<S7>/Logical Operator' */
   B_Sat_Chk_BT_ctrl_student_HIL_T sf_Sat_Chk_VSP;/* '<S7>/Sat_Chk_VSP' */
   B_Sat_Chk_BT_ctrl_student_HIL_T sf_Sat_Chk_BT;/* '<S7>/Sat_Chk_BT' */
@@ -871,21 +871,21 @@ typedef struct {
 
 /* Block states (auto storage) for system '<Root>' */
 typedef struct {
-  real_T Memory_PreviousInput;         /* '<S6>/Memory' */
-  real_T counter_PreviousInput;        /* '<S13>/counter' */
+  real_T Memory_PreviousInput;         /* '<S2>/Memory' */
+  real_T counter_PreviousInput;        /* '<S14>/counter' */
   real_T NoisePowPos_DWORK1;           /* '<Root>/NoisePowPos' */
-  real_T NextOutput;                   /* '<S19>/White Noise' */
-  real_T NextOutput_c;                 /* '<S20>/White Noise' */
+  real_T NextOutput;                   /* '<S20>/White Noise' */
+  real_T NextOutput_c;                 /* '<S21>/White Noise' */
   real_T NoisePowHead_DWORK1;          /* '<Root>/NoisePowHead' */
-  real_T NextOutput_p;                 /* '<S18>/White Noise' */
+  real_T NextOutput_p;                 /* '<S19>/White Noise' */
   real_T y_in_DWORK1;                  /* '<Root>/y_in' */
   real_T x_in_DWORK1;                  /* '<Root>/x_in' */
   real_T psi_in_DWORK1;                /* '<Root>/psi_in' */
-  real_T Hold_PreviousInput[3];        /* '<S14>/Hold' */
+  real_T Hold_PreviousInput[3];        /* '<S15>/Hold' */
   real_T NoiseEnable_DWORK1;           /* '<Root>/NoiseEnable' */
-  real_T Memory2_PreviousInput;        /* '<S2>/Memory2' */
-  real_T Memory1_PreviousInput;        /* '<S2>/Memory1' */
-  real_T Memory_PreviousInput_m;       /* '<S2>/Memory' */
+  real_T Memory2_PreviousInput;        /* '<S3>/Memory2' */
+  real_T Memory1_PreviousInput;        /* '<S3>/Memory1' */
+  real_T Memory_PreviousInput_m;       /* '<S3>/Memory' */
   real_T Dropout_signaINl_DWORK1;      /* '<Root>/Dropout_signaINl' */
   real_T K_phi_DWORK1;                 /* '<Root>/K_phi' */
   real_T ResetIntegra_Select_DWORK1;   /* '<Root>/ResetIntegra_Select' */
@@ -926,9 +926,9 @@ typedef struct {
   real_T integratorresetmodel_DWORK1;  /* '<S10>/integrator reset model' */
   real_T imu_in_DWORK1;                /* '<Root>/imu_in' */
   int32_T NIVeriStandSignalProbe_DWORK2;/* '<Root>/NIVeriStandSignalProbe' */
-  uint32_T RandSeed;                   /* '<S19>/White Noise' */
-  uint32_T RandSeed_j;                 /* '<S20>/White Noise' */
-  uint32_T RandSeed_c;                 /* '<S18>/White Noise' */
+  uint32_T RandSeed;                   /* '<S20>/White Noise' */
+  uint32_T RandSeed_j;                 /* '<S21>/White Noise' */
+  uint32_T RandSeed_c;                 /* '<S19>/White Noise' */
   uint8_T NoisePowPos_DWORK2[17];      /* '<Root>/NoisePowPos' */
   uint8_T NoisePowHead_DWORK2[17];     /* '<Root>/NoisePowHead' */
   uint8_T y_in_DWORK2[17];             /* '<Root>/y_in' */
@@ -979,25 +979,25 @@ typedef struct {
 
 /* Continuous states (auto storage) */
 typedef struct {
-  real_T Integrator_CSTATE;            /* '<S4>/Integrator' */
-  real_T Integrator_CSTATE_g;          /* '<S6>/Integrator' */
+  real_T Integrator_CSTATE;            /* '<S5>/Integrator' */
+  real_T Integrator_CSTATE_g;          /* '<S2>/Integrator' */
 } X_ctrl_student_HIL_T;
 
 /* State derivatives (auto storage) */
 typedef struct {
-  real_T Integrator_CSTATE;            /* '<S4>/Integrator' */
-  real_T Integrator_CSTATE_g;          /* '<S6>/Integrator' */
+  real_T Integrator_CSTATE;            /* '<S5>/Integrator' */
+  real_T Integrator_CSTATE_g;          /* '<S2>/Integrator' */
 } XDot_ctrl_student_HIL_T;
 
 /* State disabled  */
 typedef struct {
-  boolean_T Integrator_CSTATE;         /* '<S4>/Integrator' */
-  boolean_T Integrator_CSTATE_g;       /* '<S6>/Integrator' */
+  boolean_T Integrator_CSTATE;         /* '<S5>/Integrator' */
+  boolean_T Integrator_CSTATE_g;       /* '<S2>/Integrator' */
 } XDis_ctrl_student_HIL_T;
 
 /* Zero-crossing (trigger) state */
 typedef struct {
-  ZCSigState Integrator_Reset_ZCE;     /* '<S4>/Integrator' */
+  ZCSigState Integrator_Reset_ZCE;     /* '<S5>/Integrator' */
 } PrevZCX_ctrl_student_HIL_T;
 
 #ifndef ODE3_INTG
@@ -1041,16 +1041,16 @@ struct P_ctrl_student_HIL_T_ {
                                         *   '<S27>/Step'
                                         */
   real_T Memory_X0;                    /* Expression: 0
-                                        * Referenced by: '<S6>/Memory'
+                                        * Referenced by: '<S2>/Memory'
                                         */
   real_T Constant5_Value;              /* Expression: 0
                                         * Referenced by: '<Root>/Constant5'
                                         */
   real_T Stepsize_Value;               /* Expression: 0.01
-                                        * Referenced by: '<S3>/Step size'
+                                        * Referenced by: '<S4>/Step size'
                                         */
   real_T counter_X0;                   /* Expression: 0
-                                        * Referenced by: '<S13>/counter'
+                                        * Referenced by: '<S14>/counter'
                                         */
   real_T Constant_Value;               /* Expression: 100
                                         * Referenced by: '<Root>/Constant'
@@ -1074,22 +1074,22 @@ struct P_ctrl_student_HIL_T_ {
                                         * Referenced by: '<Root>/NoisePowPos'
                                         */
   real_T WhiteNoise_Mean;              /* Expression: 0
-                                        * Referenced by: '<S19>/White Noise'
+                                        * Referenced by: '<S20>/White Noise'
                                         */
   real_T WhiteNoise_StdDev;            /* Computed Parameter: WhiteNoise_StdDev
-                                        * Referenced by: '<S19>/White Noise'
+                                        * Referenced by: '<S20>/White Noise'
                                         */
   real_T WhiteNoise_Seed;              /* Expression: 9024
-                                        * Referenced by: '<S19>/White Noise'
+                                        * Referenced by: '<S20>/White Noise'
                                         */
   real_T WhiteNoise_Mean_h;            /* Expression: 0
-                                        * Referenced by: '<S20>/White Noise'
+                                        * Referenced by: '<S21>/White Noise'
                                         */
   real_T WhiteNoise_StdDev_d;          /* Computed Parameter: WhiteNoise_StdDev_d
-                                        * Referenced by: '<S20>/White Noise'
+                                        * Referenced by: '<S21>/White Noise'
                                         */
   real_T WhiteNoise_Seed_b;            /* Expression: 123
-                                        * Referenced by: '<S20>/White Noise'
+                                        * Referenced by: '<S21>/White Noise'
                                         */
   real_T NoisePowHead_P1;              /* Expression: width
                                         * Referenced by: '<Root>/NoisePowHead'
@@ -1110,13 +1110,13 @@ struct P_ctrl_student_HIL_T_ {
                                         * Referenced by: '<Root>/NoisePowHead'
                                         */
   real_T WhiteNoise_Mean_f;            /* Expression: 0
-                                        * Referenced by: '<S18>/White Noise'
+                                        * Referenced by: '<S19>/White Noise'
                                         */
   real_T WhiteNoise_StdDev_g;          /* Computed Parameter: WhiteNoise_StdDev_g
-                                        * Referenced by: '<S18>/White Noise'
+                                        * Referenced by: '<S19>/White Noise'
                                         */
   real_T WhiteNoise_Seed_l;            /* Expression: 9025
-                                        * Referenced by: '<S18>/White Noise'
+                                        * Referenced by: '<S19>/White Noise'
                                         */
   real_T y_in_P1;                      /* Expression: width
                                         * Referenced by: '<Root>/y_in'
@@ -1173,7 +1173,7 @@ struct P_ctrl_student_HIL_T_ {
                                         * Referenced by: '<Root>/psi_in'
                                         */
   real_T Hold_X0;                      /* Expression: 0
-                                        * Referenced by: '<S14>/Hold'
+                                        * Referenced by: '<S15>/Hold'
                                         */
   real_T NoiseEnable_P1;               /* Expression: width
                                         * Referenced by: '<Root>/NoiseEnable'
@@ -1194,13 +1194,13 @@ struct P_ctrl_student_HIL_T_ {
                                         * Referenced by: '<Root>/NoiseEnable'
                                         */
   real_T Memory2_X0;                   /* Expression: 0
-                                        * Referenced by: '<S2>/Memory2'
+                                        * Referenced by: '<S3>/Memory2'
                                         */
   real_T Memory1_X0;                   /* Expression: 0
-                                        * Referenced by: '<S2>/Memory1'
+                                        * Referenced by: '<S3>/Memory1'
                                         */
   real_T Memory_X0_d;                  /* Expression: 0
-                                        * Referenced by: '<S2>/Memory'
+                                        * Referenced by: '<S3>/Memory'
                                         */
   real_T Dropout_signaINl_P1;          /* Expression: width
                                         * Referenced by: '<Root>/Dropout_signaINl'
@@ -1257,10 +1257,10 @@ struct P_ctrl_student_HIL_T_ {
                                         * Referenced by: '<Root>/ResetIntegra_Select'
                                         */
   real_T Integrator_IC;                /* Expression: 0
-                                        * Referenced by: '<S4>/Integrator'
+                                        * Referenced by: '<S5>/Integrator'
                                         */
   real_T Integrator_IC_f;              /* Expression: 0
-                                        * Referenced by: '<S6>/Integrator'
+                                        * Referenced by: '<S2>/Integrator'
                                         */
   real_T u_hat_P1;                     /* Expression: width
                                         * Referenced by: '<Root>/u_hat'
@@ -1958,8 +1958,8 @@ struct P_ctrl_student_HIL_T_ {
   real_T Gain_Gain_e;                  /* Expression: 0.1
                                         * Referenced by: '<Root>/Gain'
                                         */
-  real_T Gain_Gain_a;                  /* Expression: 1/14.79
-                                        * Referenced by: '<S4>/Gain'
+  real_T Gain_Gain_a;                  /* Expression: 1/16.79
+                                        * Referenced by: '<S5>/Gain'
                                         */
   real_T NIVeriStandSignalProbe_P1;    /* Expression: 1
                                         * Referenced by: '<Root>/NIVeriStandSignalProbe'
@@ -2130,28 +2130,28 @@ extern RT_MODEL_ctrl_student_HIL_T *const ctrl_student_HIL_M;
  *
  * '<Root>' : 'ctrl_student_HIL'
  * '<S1>'   : 'ctrl_student_HIL/DropOut_detector'
- * '<S2>'   : 'ctrl_student_HIL/Dropout_simulator'
- * '<S3>'   : 'ctrl_student_HIL/Noise generator'
- * '<S4>'   : 'ctrl_student_HIL/Observer'
- * '<S5>'   : 'ctrl_student_HIL/Real Velocity'
- * '<S6>'   : 'ctrl_student_HIL/Subsystem'
+ * '<S2>'   : 'ctrl_student_HIL/DropoutAction'
+ * '<S3>'   : 'ctrl_student_HIL/Dropout_simulator'
+ * '<S4>'   : 'ctrl_student_HIL/Noise generator'
+ * '<S5>'   : 'ctrl_student_HIL/Observer'
+ * '<S6>'   : 'ctrl_student_HIL/Real Velocity'
  * '<S7>'   : 'ctrl_student_HIL/joystick'
  * '<S8>'   : 'ctrl_student_HIL/k_psiSign'
  * '<S9>'   : 'ctrl_student_HIL/safety zone '
  * '<S10>'  : 'ctrl_student_HIL/tau to CSE mocell (only use for HIL testing)'
  * '<S11>'  : 'ctrl_student_HIL/DropOut_detector/dropoutDetect'
- * '<S12>'  : 'ctrl_student_HIL/Dropout_simulator/MATLAB Function'
- * '<S13>'  : 'ctrl_student_HIL/Noise generator/Downsample	signal'
- * '<S14>'  : 'ctrl_student_HIL/Noise generator/Sample & hold'
- * '<S15>'  : 'ctrl_student_HIL/Noise generator/noise generator'
- * '<S16>'  : 'ctrl_student_HIL/Noise generator/Downsample	signal/MATLAB Function'
- * '<S17>'  : 'ctrl_student_HIL/Noise generator/Sample & hold/MATLAB Function1'
- * '<S18>'  : 'ctrl_student_HIL/Noise generator/noise generator/Band-limited white noise psi'
- * '<S19>'  : 'ctrl_student_HIL/Noise generator/noise generator/Band-limited white noise x'
- * '<S20>'  : 'ctrl_student_HIL/Noise generator/noise generator/Band-limited white noise y'
- * '<S21>'  : 'ctrl_student_HIL/Observer/D_11(u)//M'
- * '<S22>'  : 'ctrl_student_HIL/Observer/Term3'
- * '<S23>'  : 'ctrl_student_HIL/Subsystem/accInjection'
+ * '<S12>'  : 'ctrl_student_HIL/DropoutAction/accInjection'
+ * '<S13>'  : 'ctrl_student_HIL/Dropout_simulator/MATLAB Function'
+ * '<S14>'  : 'ctrl_student_HIL/Noise generator/Downsample	signal'
+ * '<S15>'  : 'ctrl_student_HIL/Noise generator/Sample & hold'
+ * '<S16>'  : 'ctrl_student_HIL/Noise generator/noise generator'
+ * '<S17>'  : 'ctrl_student_HIL/Noise generator/Downsample	signal/MATLAB Function'
+ * '<S18>'  : 'ctrl_student_HIL/Noise generator/Sample & hold/MATLAB Function1'
+ * '<S19>'  : 'ctrl_student_HIL/Noise generator/noise generator/Band-limited white noise psi'
+ * '<S20>'  : 'ctrl_student_HIL/Noise generator/noise generator/Band-limited white noise x'
+ * '<S21>'  : 'ctrl_student_HIL/Noise generator/noise generator/Band-limited white noise y'
+ * '<S22>'  : 'ctrl_student_HIL/Observer/D_11(u)//M'
+ * '<S23>'  : 'ctrl_student_HIL/Observer/Term3'
  * '<S24>'  : 'ctrl_student_HIL/joystick/Contoller_Map'
  * '<S25>'  : 'ctrl_student_HIL/joystick/Force Allocation'
  * '<S26>'  : 'ctrl_student_HIL/joystick/Force2Control'
