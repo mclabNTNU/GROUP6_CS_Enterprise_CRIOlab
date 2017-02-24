@@ -16,9 +16,9 @@
 <outport> id = "-1" name = "nu/r" width = "1" datatype = "17"</outport>
 <outport> id = "-1" name = "nu/u" width = "1" datatype = "17"</outport>
 <outport> id = "-1" name = "nu/v" width = "1" datatype = "17"</outport>
-<outport> id = "-1" name = "nu_dot/r_dot" width = "1" datatype = "17"</outport>
-<outport> id = "-1" name = "nu_dot/u_dot" width = "1" datatype = "17"</outport>
-<outport> id = "-1" name = "nu_dot/v_dot" width = "1" datatype = "17"</outport>
+<outport> id = "-1" name = "nu_dot/r_dot" width = "1" datatype = "19"</outport>
+<outport> id = "-1" name = "nu_dot/u_dot" width = "1" datatype = "19"</outport>
+<outport> id = "-1" name = "nu_dot/v_dot" width = "1" datatype = "19"</outport>
 <outport> id = "-1" name = "tau/X" width = "1" datatype = "0"</outport>
 <outport> id = "-1" name = "tau/Y" width = "1" datatype = "0"</outport>
 <outport> id = "-1" name = "tau/N" width = "1" datatype = "0"</outport>

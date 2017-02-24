@@ -1,11 +1,15 @@
 /*
  * rt_nonfinite.c
  *
+ * Academic License - for use in teaching, academic research, and meeting
+ * course requirements at degree granting institutions only.  Not for
+ * government, commercial, or other organizational use.
+ *
  * Code generation for model "CSEI_tau".
  *
- * Model version              : 1.154
- * Simulink Coder version : 8.6 (R2014a) 27-Dec-2013
- * C source code generated on : Tue Mar 08 19:35:06 2016
+ * Model version              : 1.158
+ * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
+ * C source code generated on : Fri Feb 24 09:47:14 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -13,12 +17,12 @@
  * Code generation objectives: Unspecified
  * Validation result: Not run
  */
+
 /*
  * Abstract:
  *      Function to intialize non-finites,
  *      (Inf, NaN and -Inf).
  */
-
 #include "rt_nonfinite.h"
 #include "rtGetNaN.h"
 #include "rtGetInf.h"

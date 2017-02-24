@@ -590,7 +590,7 @@ DLL_EXPORT long NIRT_ModelUpdate()
 #else
 
     rt_SimUpdateDiscreteTaskSampleHits(rtmGetNumSampleTimes(S), rtmGetTimingData
-                                       (S), rtmGetSampleHitPtr(S), rtmGetTPtr(S));
+      (S), rtmGetSampleHitPtr(S), rtmGetTPtr(S));
     if (rtmGetSampleTime(S,0) == CONTINUOUS_SAMPLE_TIME)
       rt_UpdateContinuousStates(S);
 

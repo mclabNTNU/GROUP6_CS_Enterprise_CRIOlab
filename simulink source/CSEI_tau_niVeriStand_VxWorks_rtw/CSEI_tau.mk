@@ -58,20 +58,20 @@ CPU             = PPC603
 MODEL           		:= CSEI_tau
 MODULES         		:= CSEI_tau_data.c NIVeriStand_main.c rtGetInf.c rtGetNaN.c rt_logging.c rt_nonfinite.c rt_zcfcn.c 
 MAKEFILE        		:= CSEI_tau.mk
-MATLAB_ROOT     		:= C:\Program Files\MATLAB\R2014a
-ALT_MATLAB_ROOT 		:= C:\PROGRA~1\MATLAB\R2014a
-MATLAB_BIN      		:= C:\Program Files\MATLAB\R2014a\bin
-ALT_MATLAB_BIN  		:= C:\PROGRA~1\MATLAB\R2014a\bin
+MATLAB_ROOT     		:= C:\Program Files\MATLAB\R2015a
+ALT_MATLAB_ROOT 		:= C:\PROGRA~1\MATLAB\R2015a
+MATLAB_BIN      		:= C:\Program Files\MATLAB\R2015a\bin
+ALT_MATLAB_BIN  		:= C:\PROGRA~1\MATLAB\R2015a\bin
 S_FUNCTIONS     		:= 
 S_FUNCTIONS_LIB 		:= 
 SOLVER          		:= 
 NUMST           		:= 2
 TID01EQ         		:= 1
 NCSTATES        		:= 6
-BUILDARGS       		:=  NIDEBUG=0 NIOPT="Default" OPTS=""
+BUILDARGS       		:=  NIDEBUG=0 NIOPT="Default" OPTS="" ISPROTECTINGMODEL=NOTPROTECTING
 MULTITASKING    		:= 0
 EXT_MODE        		:= 0
-MATLAB_VERSION			:= R2014a
+MATLAB_VERSION			:= R2015a
 STR_MATLAB_VERSION 		:= "$(MATLAB_VERSION)"
 NIVERISTAND_ROOT		:= C:\VeriStand\2014
 VXWORKS_VERSION			:= $(shell ccppc --version)
@@ -152,8 +152,8 @@ MATLAB_INCLUDES := $(MATLAB_INCLUDES) -I$(MATLAB_ROOT)\rtw\c\src\ext_mode\common
 # Additional file include paths
 
 
-MATLAB_INCLUDES := $(MATLAB_INCLUDES) -IC:\Users\mclab\DOCUME~1\GitHub\CS_ENT~2\SIMULI~1\CSEI_tau_niVeriStand_VxWorks_rtw
-MATLAB_INCLUDES := $(MATLAB_INCLUDES) -IC:\Users\mclab\DOCUME~1\GitHub\CS_ENT~2\SIMULI~1
+MATLAB_INCLUDES := $(MATLAB_INCLUDES) -IC:\Users\MCLab\DOCUME~1\GitHub\GROUP6~1\SIMULI~1\CSEI_tau_niVeriStand_VxWorks_rtw
+MATLAB_INCLUDES := $(MATLAB_INCLUDES) -IC:\Users\MCLab\DOCUME~1\GitHub\GROUP6~1\SIMULI~1
 
 INCLUDE := -I$(RELATIVE_PATH_TO_ANCHOR) $(MATLAB_INCLUDES) $(MODELREF_INC_PATH) -I$(NIVERISTAND_ROOT)/ModelInterface/ $(COMPILER_INCLUDES) -I.
 ifneq "$(SHARED_SRC_DIR)" ""

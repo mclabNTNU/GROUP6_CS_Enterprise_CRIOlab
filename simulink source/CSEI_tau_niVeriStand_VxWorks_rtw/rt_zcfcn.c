@@ -1,11 +1,15 @@
 /*
  * rt_zcfcn.c
  *
+ * Academic License - for use in teaching, academic research, and meeting
+ * course requirements at degree granting institutions only.  Not for
+ * government, commercial, or other organizational use.
+ *
  * Code generation for model "CSEI_tau".
  *
- * Model version              : 1.154
- * Simulink Coder version : 8.6 (R2014a) 27-Dec-2013
- * C source code generated on : Tue Mar 08 19:35:06 2016
+ * Model version              : 1.158
+ * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
+ * C source code generated on : Fri Feb 24 09:47:14 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -37,7 +41,8 @@ ZCEventType rt_ZCFcn(ZCDirection zcDir, ZCSigState* prevZc, real_T currValue)
 
   /* get prevZcEvent and prevZcSign from prevZc */
   slZcEventType prevEv = (slZcEventType)(((uint8_T)(*prevZc)) >> 2);
-  slZcSignalSignType prevSign = (slZcSignalSignType)(((uint8_T)(*prevZc)) & 0x03);
+  slZcSignalSignType prevSign = (slZcSignalSignType)(((uint8_T)(*prevZc)) &
+    (uint8_T)0x03);
 
   /* get current zcSignal sign from current zcSignal value */
   slZcSignalSignType currSign = (slZcSignalSignType)((currValue) > 0.0 ?
@@ -76,9 +81,9 @@ ZCEventType rt_ZCFcn(ZCDirection zcDir, ZCSigState* prevZc, real_T currValue)
   /* Update prevZc */
   tempEv = (slZcEventType)(currEv << 2);/* shift left by 2 bits */
   *prevZc = (ZCSigState)((currSign) | (tempEv));
-  if (currEv & SL_ZCS_EVENT_ALL_DN) {
+  if ((currEv & SL_ZCS_EVENT_ALL_DN) != 0) {
     zcEvent = FALLING_ZCEVENT;
-  } else if (currEv & SL_ZCS_EVENT_ALL_UP) {
+  } else if ((currEv & SL_ZCS_EVENT_ALL_UP) != 0) {
     zcEvent = RISING_ZCEVENT;
   } else {
     zcEvent = NO_ZCEVENT;

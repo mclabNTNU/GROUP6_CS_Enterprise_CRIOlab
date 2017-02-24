@@ -1,11 +1,15 @@
 /*
  * CSEI_u.c
  *
+ * Academic License - for use in teaching, academic research, and meeting
+ * course requirements at degree granting institutions only.  Not for
+ * government, commercial, or other organizational use.
+ *
  * Code generation for model "CSEI_u".
  *
- * Model version              : 1.26
- * Simulink Coder version : 8.6 (R2014a) 27-Dec-2013
- * C source code generated on : Tue Mar 08 19:36:06 2016
+ * Model version              : 1.28
+ * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
+ * C source code generated on : Fri Feb 24 09:46:47 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -13,6 +17,7 @@
  * Code generation objectives: Unspecified
  * Validation result: Not run
  */
+
 #include "CSEI_u.h"
 #include "CSEI_u_private.h"
 
@@ -31,6 +36,10 @@ PrevZCX_CSEI_u_T CSEI_u_PrevZCX;
 /* Real-time model */
 RT_MODEL_CSEI_u_T CSEI_u_M_;
 RT_MODEL_CSEI_u_T *const CSEI_u_M = &CSEI_u_M_;
+
+/* Forward declaration for local functions */
+static real_T CSEI_u_eml_xnrm2(const real_T x[3]);
+static void CSEI_u_mldivide(const real_T A[3], const real_T B[9], real_T Y[3]);
 
 /*
  * This function updates continuous states using the ODE4 fixed-step
@@ -102,6 +111,172 @@ static void rt_ertODEUpdateContinuousStates(RTWSolverInfo *si )
   rtsiSetSimTimeStep(si,MAJOR_TIME_STEP);
 }
 
+/* Function for MATLAB Function: '<Root>/kinetics' */
+static real_T CSEI_u_eml_xnrm2(const real_T x[3])
+{
+  real_T y;
+  real_T scale;
+  real_T absxk;
+  real_T t;
+  scale = 2.2250738585072014E-308;
+  absxk = fabs(x[1]);
+  if (absxk > 2.2250738585072014E-308) {
+    y = 1.0;
+    scale = absxk;
+  } else {
+    t = absxk / 2.2250738585072014E-308;
+    y = t * t;
+  }
+
+  absxk = fabs(x[2]);
+  if (absxk > scale) {
+    t = scale / absxk;
+    y = y * t * t + 1.0;
+    scale = absxk;
+  } else {
+    t = absxk / scale;
+    y += t * t;
+  }
+
+  return scale * sqrt(y);
+}
+
+real_T rt_hypotd_snf(real_T u0, real_T u1)
+{
+  real_T y;
+  real_T a;
+  a = fabs(u0);
+  y = fabs(u1);
+  if (a < y) {
+    a /= y;
+    y *= sqrt(a * a + 1.0);
+  } else if (a > y) {
+    y /= a;
+    y = sqrt(y * y + 1.0) * a;
+  } else {
+    if (!rtIsNaN(y)) {
+      y = a * 1.4142135623730951;
+    }
+  }
+
+  return y;
+}
+
+/* Function for MATLAB Function: '<Root>/kinetics' */
+static void CSEI_u_mldivide(const real_T A[3], const real_T B[9], real_T Y[3])
+{
+  int32_T rankR;
+  real_T atmp;
+  real_T b_A[3];
+  real_T tau;
+  real_T xnorm;
+  int32_T knt;
+  int32_T b_k;
+  real_T b_B[9];
+  b_A[0] = A[0];
+  b_A[1] = A[1];
+  b_A[2] = A[2];
+  atmp = A[0];
+  tau = 0.0;
+  xnorm = CSEI_u_eml_xnrm2(A);
+  if (xnorm != 0.0) {
+    xnorm = rt_hypotd_snf(A[0], xnorm);
+    if (A[0] >= 0.0) {
+      xnorm = -xnorm;
+    }
+
+    if (fabs(xnorm) < 1.0020841800044864E-292) {
+      knt = 0;
+      do {
+        knt++;
+        b_A[1] *= 9.9792015476736E+291;
+        b_A[2] *= 9.9792015476736E+291;
+        xnorm *= 9.9792015476736E+291;
+        atmp *= 9.9792015476736E+291;
+      } while (!(fabs(xnorm) >= 1.0020841800044864E-292));
+
+      xnorm = rt_hypotd_snf(atmp, CSEI_u_eml_xnrm2(b_A));
+      if (atmp >= 0.0) {
+        xnorm = -xnorm;
+      }
+
+      tau = (xnorm - atmp) / xnorm;
+      atmp = 1.0 / (atmp - xnorm);
+      b_A[1] *= atmp;
+      b_A[2] *= atmp;
+      for (b_k = 1; b_k <= knt; b_k++) {
+        xnorm *= 1.0020841800044864E-292;
+      }
+
+      atmp = xnorm;
+    } else {
+      tau = (xnorm - A[0]) / xnorm;
+      atmp = 1.0 / (A[0] - xnorm);
+      b_A[1] = atmp * A[1];
+      b_A[2] = atmp * A[2];
+      atmp = xnorm;
+    }
+  }
+
+  rankR = 0;
+  xnorm = 3.0 * fabs(atmp) * 2.2204460492503131E-16;
+  while ((rankR < 1) && (fabs(atmp) >= xnorm)) {
+    rankR = 1;
+  }
+
+  memcpy(&b_B[0], &B[0], 9U * sizeof(real_T));
+  Y[0] = 0.0;
+  Y[1] = 0.0;
+  Y[2] = 0.0;
+  if (tau != 0.0) {
+    for (knt = 0; knt < 3; knt++) {
+      xnorm = ((b_B[3 * knt + 1] * b_A[1] + b_B[3 * knt]) + b_B[3 * knt + 2] *
+               b_A[2]) * tau;
+      if (xnorm != 0.0) {
+        b_B[3 * knt] -= xnorm;
+        b_B[1 + 3 * knt] -= b_A[1] * xnorm;
+        b_B[2 + 3 * knt] -= b_A[2] * xnorm;
+      }
+    }
+  }
+
+  b_k = 1;
+  while (b_k <= rankR) {
+    Y[0] = b_B[0];
+    b_k = 2;
+  }
+
+  b_k = rankR;
+  while (b_k > 0) {
+    Y[0] /= atmp;
+    b_k = 0;
+  }
+
+  b_k = 1;
+  while (b_k <= rankR) {
+    Y[1] = b_B[3];
+    b_k = 2;
+  }
+
+  b_k = rankR;
+  while (b_k > 0) {
+    Y[1] /= atmp;
+    b_k = 0;
+  }
+
+  b_k = 1;
+  while (b_k <= rankR) {
+    Y[2] = b_B[6];
+    b_k = 2;
+  }
+
+  b_k = rankR;
+  while (b_k > 0) {
+    Y[2] /= atmp;
+    b_k = 0;
+  }
+}
+
 /* Model output function */
 void CSEI_u_output(void)
 {
@@ -111,13 +286,17 @@ void CSEI_u_output(void)
     0.3875 };
 
   real_T c_23;
+  static const real_T b[9] = { 16.79, 0.0, 0.0, 0.0, 15.79, 0.55462499999999992,
+    0.0, 0.55462499999999992, 2.76 };
+
+  real_T tau_0[3];
   int32_T i;
   real_T tmp[9];
   real_T tmp_0[9];
   real_T tmp_1[9];
   real_T tmp_2[9];
-  real_T unnamed_idx_0;
-  real_T unnamed_idx_1;
+  real_T tmp_3;
+  real_T tmp_4;
   if (rtmIsMajorTimeStep(CSEI_u_M)) {
     /* set solver stop time */
     if (!(CSEI_u_M->Timing.clockTick0+1)) {
@@ -235,23 +414,20 @@ void CSEI_u_output(void)
   /* MATLAB Function 'T Thruster configuration matrix': '<S2>:1' */
   /* '<S2>:1:7' */
   /* '<S2>:1:15' */
-  unnamed_idx_0 = (((((sin(1.001 * CSEI_u_B.alpha_VSP1 + 1.564) * 1.107 + sin
-                       (0.1397 * CSEI_u_B.alpha_VSP1 + -1.599) * 0.3471) + sin
-                      (1.993 * CSEI_u_B.alpha_VSP1 + 1.886) * 0.1558) + sin
-                     (0.218 * CSEI_u_B.alpha_VSP1 + 1.513) * 0.1599) + sin(2.986
-    * CSEI_u_B.alpha_VSP1 + -1.601) * 0.08237) + sin(3.964 * CSEI_u_B.alpha_VSP1
-    + 1.738) * 0.04641) * CSEI_u_B.u_VSP1;
-  unnamed_idx_1 = (((((sin(1.001 * CSEI_u_B.alpha_VSP1 + 0.01605) * 0.7936 + sin
-                       (1.997 * CSEI_u_B.alpha_VSP1 + 0.03229) * 0.2112) + sin
-                      (2.991 * CSEI_u_B.alpha_VSP1 + 2.986) * 0.07608) + sin
-                     (3.999 * CSEI_u_B.alpha_VSP1 + -0.8668) * 0.04817) + sin
-                    (4.904 * CSEI_u_B.alpha_VSP1 + -2.622) * 0.01757) + sin
-                   (5.068 * CSEI_u_B.alpha_VSP1 + 0.2548) * -0.02089) *
-    CSEI_u_B.u_VSP1;
+  tmp_3 = (((((sin(1.001 * CSEI_u_B.alpha_VSP1 + 1.564) * 1.107 + sin(0.1397 *
+    CSEI_u_B.alpha_VSP1 + -1.599) * 0.3471) + sin(1.993 * CSEI_u_B.alpha_VSP1 +
+    1.886) * 0.1558) + sin(0.218 * CSEI_u_B.alpha_VSP1 + 1.513) * 0.1599) + sin
+            (2.986 * CSEI_u_B.alpha_VSP1 + -1.601) * 0.08237) + sin(3.964 *
+            CSEI_u_B.alpha_VSP1 + 1.738) * 0.04641) * CSEI_u_B.u_VSP1;
+  tmp_4 = (((((sin(1.001 * CSEI_u_B.alpha_VSP1 + 0.01605) * 0.7936 + sin(1.997 *
+    CSEI_u_B.alpha_VSP1 + 0.03229) * 0.2112) + sin(2.991 * CSEI_u_B.alpha_VSP1 +
+    2.986) * 0.07608) + sin(3.999 * CSEI_u_B.alpha_VSP1 + -0.8668) * 0.04817) +
+            sin(4.904 * CSEI_u_B.alpha_VSP1 + -2.622) * 0.01757) + sin(5.068 *
+            CSEI_u_B.alpha_VSP1 + 0.2548) * -0.02089) * CSEI_u_B.u_VSP1;
   c_23 = (atan(-10.22 * CSEI_u_B.Velocity[0] + 2.947) * 0.3075 + 0.7561) * b_y0 /
     1.1385;
   for (i = 0; i < 3; i++) {
-    tau[i] = a[i + 6] * c_23 + (a[i + 3] * unnamed_idx_1 + a[i] * unnamed_idx_0);
+    tau[i] = a[i + 6] * c_23 + (a[i + 3] * tmp_4 + a[i] * tmp_3);
   }
 
   /* '<S2>:1:17' */
@@ -276,6 +452,8 @@ void CSEI_u_output(void)
   /* % MATRICES */
   /*  x_g  =  0.0460; % Table B.1 */
   /* % Added mass */
+  /*  Table B.1 */
+  /*  Table B.1 guestimate */
   /*  Table B.1 */
   /* % Total mass matrix */
   /* % Damping coefficients */
@@ -305,12 +483,9 @@ void CSEI_u_output(void)
   /*  using abs(r) */
   /* '<S6>:1:60' */
   /* '<S6>:1:61' */
-  /* D    = [d_11 d_12 0      vet ikke hvorfor d_12 er her */
-  /*         0    d_22 d_23 */
-  /*         0    d_32 d_33]; */
-  /* '<S6>:1:66' */
+  /* '<S6>:1:63' */
   /* % CALCULATION */
-  /* '<S6>:1:72' */
+  /* '<S6>:1:70' */
   tmp[0] = 0.0;
   tmp[3] = 0.0;
   tmp[6] = b_y0;
@@ -320,8 +495,8 @@ void CSEI_u_output(void)
   tmp[2] = -b_y0;
   tmp[5] = -c_23;
   tmp[8] = 0.0;
-  tmp_0[0] = (0.6555 - 0.3545 * CSEI_u_B.Velocity[0]) - CSEI_u_B.Velocity[0] *
-    CSEI_u_B.Velocity[0] * -3.787;
+  tmp_0[0] = (0.6555 - 0.3545 * fabs(CSEI_u_B.Velocity[0])) - CSEI_u_B.Velocity
+    [0] * CSEI_u_B.Velocity[0] * -3.787;
   tmp_0[3] = 0.0;
   tmp_0[6] = 0.0;
   tmp_0[1] = 0.0;
@@ -345,16 +520,10 @@ void CSEI_u_output(void)
       CSEI_u_B.Velocity[1] + tmp_1[i] * CSEI_u_B.Velocity[0]);
   }
 
-  CSEI_u_B.nu_dot[0] = CSEI_u_B.X - tau[0];
-  CSEI_u_B.nu_dot[1] = (CSEI_u_B.Y - tau[1]) - CSEI_u_B.nu_dot[0] * 0.0;
-  CSEI_u_B.nu_dot[2] = ((CSEI_u_B.N - tau[2]) - CSEI_u_B.nu_dot[0] * 0.0) -
-    CSEI_u_B.nu_dot[1] * 0.035125079164027864;
-  CSEI_u_B.nu_dot[2] /= 2.7405187529686508;
-  CSEI_u_B.nu_dot[0] -= CSEI_u_B.nu_dot[2] * 0.0;
-  CSEI_u_B.nu_dot[1] -= CSEI_u_B.nu_dot[2] * 0.55462499999999992;
-  CSEI_u_B.nu_dot[1] /= 15.79;
-  CSEI_u_B.nu_dot[0] -= CSEI_u_B.nu_dot[1] * 0.0;
-  CSEI_u_B.nu_dot[0] /= 16.79;
+  tau_0[0] = CSEI_u_B.X - tau[0];
+  tau_0[1] = CSEI_u_B.Y - tau[1];
+  tau_0[2] = CSEI_u_B.N - tau[2];
+  CSEI_u_mldivide(tau_0, b, CSEI_u_B.nu_dot);
 
   /* End of MATLAB Function: '<Root>/kinetics' */
   if (rtmIsMajorTimeStep(CSEI_u_M)) {
@@ -683,6 +852,7 @@ RT_MODEL_CSEI_u_T *CSEI_u(void)
 
   /* Initialize Sizes */
   CSEI_u_M->Sizes.numContStates = (6); /* Number of continuous states */
+  CSEI_u_M->Sizes.numPeriodicContStates = (0);/* Number of periodic continuous states */
   CSEI_u_M->Sizes.numY = (0);          /* Number of model outputs */
   CSEI_u_M->Sizes.numU = (0);          /* Number of model inputs */
   CSEI_u_M->Sizes.sysDirFeedThru = (0);/* The model is not direct feedthrough */
@@ -763,15 +933,21 @@ double NIRT_GetValueByDataType(void* ptr,int subindex, int type, int Complex)
     return NIRT_GetValueByDataType(ptr,subindex,3,Complex);
 
    case 19:
+    return NIRT_GetValueByDataType(ptr,subindex,0,Complex);
+
+   case 20:
+    return NIRT_GetValueByDataType(ptr,subindex,0,Complex);
+
+   case 21:
     return NIRT_GetValueByDataType(ptr,subindex,8,Complex);
 
-   case 27:
+   case 22:
     return NIRT_GetValueByDataType(ptr,subindex,0,Complex);
 
-   case 28:
+   case 30:
     return NIRT_GetValueByDataType(ptr,subindex,0,Complex);
 
-   case 29:
+   case 31:
     return NIRT_GetValueByDataType(ptr,subindex,0,Complex);
   }
 
@@ -826,7 +1002,7 @@ long NIRT_SetValueByDataType(void* ptr,int subindex, double value, int type, int
     return NIRT_SetValueByDataType(ptr,subindex,value,6,Complex);
 
    case 13:
-    //Type is array. Call SetValueByDataType on its contained type
+    //Type is matrix. Call SetValueByDataType on its contained type
     return NIRT_SetValueByDataType(ptr,subindex,value,7,Complex);
 
    case 15:
@@ -847,17 +1023,25 @@ long NIRT_SetValueByDataType(void* ptr,int subindex, double value, int type, int
 
    case 19:
     //Type is matrix. Call SetValueByDataType on its contained type
+    return NIRT_SetValueByDataType(ptr,subindex,value,0,Complex);
+
+   case 20:
+    //Type is matrix. Call SetValueByDataType on its contained type
+    return NIRT_SetValueByDataType(ptr,subindex,value,0,Complex);
+
+   case 21:
+    //Type is matrix. Call SetValueByDataType on its contained type
     return NIRT_SetValueByDataType(ptr,subindex,value,8,Complex);
 
-   case 27:
+   case 22:
     //Type is matrix. Call SetValueByDataType on its contained type
     return NIRT_SetValueByDataType(ptr,subindex,value,0,Complex);
 
-   case 28:
+   case 30:
     //Type is matrix. Call SetValueByDataType on its contained type
     return NIRT_SetValueByDataType(ptr,subindex,value,0,Complex);
 
-   case 29:
+   case 31:
     //Type is matrix. Call SetValueByDataType on its contained type
     return NIRT_SetValueByDataType(ptr,subindex,value,0,Complex);
   }
@@ -1004,21 +1188,21 @@ void SetExternalOutputs(double* data, int* TaskSampleHit)
 
   // nu_dot/r_dot: Virtual Signal # 0
   if (TaskSampleHit[0]) {              // sample and hold
-    ni_extout[index++] = NIRT_GetValueByDataType(&CSEI_u_B.nu_dot,2,17,0);
+    ni_extout[index++] = NIRT_GetValueByDataType(&CSEI_u_B.nu_dot,2,19,0);
   } else {
     index += 1;
   }
 
   // nu_dot/u_dot: Virtual Signal # 0
   if (TaskSampleHit[0]) {              // sample and hold
-    ni_extout[index++] = NIRT_GetValueByDataType(&CSEI_u_B.nu_dot,0,17,0);
+    ni_extout[index++] = NIRT_GetValueByDataType(&CSEI_u_B.nu_dot,0,19,0);
   } else {
     index += 1;
   }
 
   // nu_dot/v_dot: Virtual Signal # 0
   if (TaskSampleHit[0]) {              // sample and hold
-    ni_extout[index++] = NIRT_GetValueByDataType(&CSEI_u_B.nu_dot,1,17,0);
+    ni_extout[index++] = NIRT_GetValueByDataType(&CSEI_u_B.nu_dot,1,19,0);
   } else {
     index += 1;
   }
@@ -1076,13 +1260,13 @@ int NI_InitExternalOutputs()
   ni_extout[index++] = NIRT_GetValueByDataType(&CSEI_u_B.Velocity,1,17,0);
 
   // nu_dot/r_dot: Virtual Signal # 0
-  ni_extout[index++] = NIRT_GetValueByDataType(&CSEI_u_B.nu_dot,2,17,0);
+  ni_extout[index++] = NIRT_GetValueByDataType(&CSEI_u_B.nu_dot,2,19,0);
 
   // nu_dot/u_dot: Virtual Signal # 0
-  ni_extout[index++] = NIRT_GetValueByDataType(&CSEI_u_B.nu_dot,0,17,0);
+  ni_extout[index++] = NIRT_GetValueByDataType(&CSEI_u_B.nu_dot,0,19,0);
 
   // nu_dot/v_dot: Virtual Signal # 0
-  ni_extout[index++] = NIRT_GetValueByDataType(&CSEI_u_B.nu_dot,1,17,0);
+  ni_extout[index++] = NIRT_GetValueByDataType(&CSEI_u_B.nu_dot,1,19,0);
 
   // tau/X: Virtual Signal # 0
   ni_extout[index++] = NIRT_GetValueByDataType(&CSEI_u_B.X,0,0,0);
@@ -1098,16 +1282,16 @@ int NI_InitExternalOutputs()
 // by default, all elements (inclulding	scalars) have 2 dimensions [1,1]
 static NI_Parameter NI_ParamList[] DataSection(".NIVS.paramlist") =
 {
-  { 0, "csei_u/eta_0/Memory3/X0", offsetof(P_CSEI_u_T, Memory3_X0), 27, 1, 2, 0,
+  { 0, "csei_u/eta_0/Memory3/X0", offsetof(P_CSEI_u_T, Memory3_X0), 30, 1, 2, 0,
     0 },
 
-  { 1, "csei_u/eta_0/Memory4/X0", offsetof(P_CSEI_u_T, Memory4_X0), 27, 1, 2, 2,
+  { 1, "csei_u/eta_0/Memory4/X0", offsetof(P_CSEI_u_T, Memory4_X0), 30, 1, 2, 2,
     0 },
 
-  { 2, "csei_u/eta_0/Memory5/X0", offsetof(P_CSEI_u_T, Memory5_X0), 27, 1, 2, 4,
+  { 2, "csei_u/eta_0/Memory5/X0", offsetof(P_CSEI_u_T, Memory5_X0), 30, 1, 2, 4,
     0 },
 
-  { 3, "csei_u/Velocity/InitialCondition", offsetof(P_CSEI_u_T, Velocity_IC), 28,
+  { 3, "csei_u/Velocity/InitialCondition", offsetof(P_CSEI_u_T, Velocity_IC), 20,
     3, 2, 6, 0 },
 };
 
@@ -1183,13 +1367,13 @@ static NI_Signal NI_SigList[] DataSection(".NIVS.siglist") =
     BLOCKIO_SIG, 0, 1, 2, 38, 0 },
 
   { 20, "csei_u/kinetics", 0, "nu_dot(1,1)", offsetof(B_CSEI_u_T, nu_dot)+0*
-    sizeof(real_T), BLOCKIO_SIG, 17, 1, 2, 40, 0 },
+    sizeof(real_T), BLOCKIO_SIG, 19, 1, 2, 40, 0 },
 
   { 21, "csei_u/kinetics", 0, "nu_dot(1,2)", offsetof(B_CSEI_u_T, nu_dot)+1*
-    sizeof(real_T), BLOCKIO_SIG, 17, 1, 2, 42, 0 },
+    sizeof(real_T), BLOCKIO_SIG, 19, 1, 2, 42, 0 },
 
   { 22, "csei_u/kinetics", 0, "nu_dot(1,3)", offsetof(B_CSEI_u_T, nu_dot)+2*
-    sizeof(real_T), BLOCKIO_SIG, 17, 1, 2, 44, 0 },
+    sizeof(real_T), BLOCKIO_SIG, 19, 1, 2, 44, 0 },
 
   { 23, "csei_u/kinematics", 0, "eta_dot(1,1)", offsetof(B_CSEI_u_T, eta_dot)+0*
     sizeof(real_T), BLOCKIO_SIG, 17, 1, 2, 46, 0 },
@@ -1287,8 +1471,8 @@ NI_Task NI_TaskList[] DataSection(".NIVS.tasklist") =
 int NI_NumTasks DataSection(".NIVS.numtasks") = 1;
 static char* NI_CompiledModelName DataSection(".NIVS.compiledmodelname") =
   "csei_u";
-static char* NI_CompiledModelVersion = "1.26";
-static char* NI_CompiledModelDateTime = "Tue Mar 08 19:36:06 2016";
+static char* NI_CompiledModelVersion = "1.28";
+static char* NI_CompiledModelDateTime = "Fri Feb 24 09:46:46 2017";
 static char* NI_builder DataSection(".NIVS.builder") =
   "NI VeriStand 2014.0.0.82 (2014) RTW Build";
 static char* NI_BuilderVersion DataSection(".NIVS.builderversion") =
