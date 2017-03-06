@@ -10,7 +10,7 @@
 				<String>CaseBGroup620022017</String>
 			</Property>
 			<Property Name="Version">
-				<String>1.0.0.53</String>
+				<String>1.0.0.56</String>
 			</Property>
 			<Property Name="Creator">
 				<String />
@@ -2505,10 +2505,10 @@
 									<Double>200000</Double>
 								</Property>
 								<Property Name="DLL Size">
-									<I32>208859</I32>
+									<I32>219139</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3571650606.783783</Double>
+									<Double>3571651412.0786066</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -2552,7 +2552,7 @@
 										<ForceDownload>false</ForceDownload>
 										<RTDestination>c:\ni-rt\system\ctrl_student_HIL.out</RTDestination>
 										<SupportedTarget>VxWorks</SupportedTarget>
-										<MD5>8bce6d7fdb97ba27e5dc9e2c1f5abdd5</MD5>
+										<MD5>98e4bde051d23d87341dfe20e263f5f5</MD5>
 									</DependentFile>
 								</Property>
 								<Property Name="GlobalParameterScopes">
@@ -2695,6 +2695,150 @@
 											</Property>
 											<Property Name="DataSource">
 												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/R2_cont" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="PosXLeft" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/PosXLeft</String>
+											</Property>
+											<Property Name="Index">
+												<I32>16</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/PosXLeft" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="PosYLeft" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/PosYLeft</String>
+											</Property>
+											<Property Name="Index">
+												<I32>17</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/PosYLeft" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="L1" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/L1</String>
+											</Property>
+											<Property Name="Index">
+												<I32>18</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/L1" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="R1" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/R1</String>
+											</Property>
+											<Property Name="Index">
+												<I32>19</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/R1" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="ArrowDown" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/ArrowDown</String>
+											</Property>
+											<Property Name="Index">
+												<I32>20</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/ArrowDown" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="ArrowUp" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/ArrowUp</String>
+											</Property>
+											<Property Name="Index">
+												<I32>21</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/ArrowUP" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="ArrowLeft" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/ArrowLeft</String>
+											</Property>
+											<Property Name="Index">
+												<I32>22</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/ArrowLeft" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="ArrowRight" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/ArrowRight</String>
+											</Property>
+											<Property Name="Index">
+												<I32>23</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/ArrowRight" />
 											</Property>
 										</Properties>
 										<Errors />
@@ -2902,7 +3046,7 @@
 												<String>joystick/u_BT</String>
 											</Property>
 											<Property Name="Index">
-												<I32>19</I32>
+												<I32>27</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -2917,7 +3061,7 @@
 												<String>joystick/u_VSP1</String>
 											</Property>
 											<Property Name="Index">
-												<I32>20</I32>
+												<I32>28</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -2932,7 +3076,7 @@
 												<String>joystick/u_VSP2</String>
 											</Property>
 											<Property Name="Index">
-												<I32>21</I32>
+												<I32>29</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -2947,7 +3091,7 @@
 												<String>joystick/alpha_VSP1</String>
 											</Property>
 											<Property Name="Index">
-												<I32>22</I32>
+												<I32>30</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -2962,7 +3106,7 @@
 												<String>joystick/alpha_VSP2</String>
 											</Property>
 											<Property Name="Index">
-												<I32>23</I32>
+												<I32>31</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -2977,7 +3121,7 @@
 												<String>joystick/omega_VSP1</String>
 											</Property>
 											<Property Name="Index">
-												<I32>24</I32>
+												<I32>32</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -2992,7 +3136,7 @@
 												<String>joystick/omega_VSP2</String>
 											</Property>
 											<Property Name="Index">
-												<I32>25</I32>
+												<I32>33</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -3007,7 +3151,7 @@
 												<String>joystick/Current Mode </String>
 											</Property>
 											<Property Name="Index">
-												<I32>26</I32>
+												<I32>34</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -3022,7 +3166,7 @@
 												<String>joystick/Error State Flag</String>
 											</Property>
 											<Property Name="Index">
-												<I32>27</I32>
+												<I32>35</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -3037,7 +3181,7 @@
 												<String>joystick/f_vspx</String>
 											</Property>
 											<Property Name="Index">
-												<I32>28</I32>
+												<I32>36</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -3052,7 +3196,7 @@
 												<String>joystick/f_vspy</String>
 											</Property>
 											<Property Name="Index">
-												<I32>29</I32>
+												<I32>37</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -3067,7 +3211,7 @@
 												<String>joystick/f_bt</String>
 											</Property>
 											<Property Name="Index">
-												<I32>30</I32>
+												<I32>38</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -3082,7 +3226,7 @@
 												<String>joystick/tau_yaw</String>
 											</Property>
 											<Property Name="Index">
-												<I32>31</I32>
+												<I32>39</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -3097,7 +3241,7 @@
 												<String>joystick/tau_x</String>
 											</Property>
 											<Property Name="Index">
-												<I32>32</I32>
+												<I32>40</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -3112,7 +3256,7 @@
 												<String>joystick/tau_y</String>
 											</Property>
 											<Property Name="Index">
-												<I32>33</I32>
+												<I32>41</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -3132,7 +3276,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/X_d</String>
 											</Property>
 											<Property Name="Index">
-												<I32>34</I32>
+												<I32>42</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -3147,7 +3291,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/N_d</String>
 											</Property>
 											<Property Name="Index">
-												<I32>35</I32>
+												<I32>43</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -3162,7 +3306,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/Y_d</String>
 											</Property>
 											<Property Name="Index">
-												<I32>36</I32>
+												<I32>44</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -3177,7 +3321,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/psi_0 </String>
 											</Property>
 											<Property Name="Index">
-												<I32>37</I32>
+												<I32>45</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -3192,7 +3336,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/x_0</String>
 											</Property>
 											<Property Name="Index">
-												<I32>38</I32>
+												<I32>46</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -3207,7 +3351,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/y_0</String>
 											</Property>
 											<Property Name="Index">
-												<I32>39</I32>
+												<I32>47</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -3222,7 +3366,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/integrator reset model</String>
 											</Property>
 											<Property Name="Index">
-												<I32>40</I32>
+												<I32>48</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -3238,7 +3382,7 @@
 											<String>u_hat</String>
 										</Property>
 										<Property Name="Index">
-											<I32>16</I32>
+											<I32>24</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -3253,7 +3397,7 @@
 											<String>u_real  </String>
 										</Property>
 										<Property Name="Index">
-											<I32>17</I32>
+											<I32>25</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -3268,7 +3412,7 @@
 											<String>Dropout_signaOUT</String>
 										</Property>
 										<Property Name="Index">
-											<I32>18</I32>
+											<I32>26</I32>
 										</Property>
 									</Properties>
 									<Errors />
