@@ -15,9 +15,9 @@
  *
  * Code generation for model "ctrl_student_HIL".
  *
- * Model version              : 1.181
+ * Model version              : 1.193
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Mon Mar 06 14:23:11 2017
+ * C source code generated on : Tue Mar 07 13:37:35 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -41,17 +41,14 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
                                         *   '<S27>/Constant'
                                         *   '<S27>/Step'
                                         */
-  0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S2>/Memory'
-                                        */
-  100.0,                               /* Expression: 100
-                                        * Referenced by: '<Root>/Constant'
-                                        */
   0.01,                                /* Expression: 0.01
                                         * Referenced by: '<S4>/Step size'
                                         */
   0.0,                                 /* Expression: 0
                                         * Referenced by: '<S14>/counter'
+                                        */
+  100.0,                               /* Expression: 100
+                                        * Referenced by: '<Root>/Constant'
                                         */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/NoisePowPos'
@@ -242,9 +239,6 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
   0.0,                                 /* Expression: 0
                                         * Referenced by: '<S5>/Integrator1'
                                         */
-  0.0,                                 /* Expression: 0
-                                        * Referenced by: '<S2>/Integrator'
-                                        */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/u_hat'
                                         */
@@ -317,49 +311,6 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
   0.0,                                 /* Expression: btype
                                         * Referenced by: '<Root>/Dropout_signaOUT'
                                         */
-  -1.0,                                /* Expression: width
-                                        * Referenced by: '<Root>/r_in'
-                                        */
-  1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<Root>/r_in'
-                                        */
-  4.0,                                 /* Expression: portnum
-                                        * Referenced by: '<Root>/r_in'
-                                        */
-  -1.0,                                /* Expression: stime
-                                        * Referenced by: '<Root>/r_in'
-                                        */
-  1.0,                                 /* Expression: stype
-                                        * Referenced by: '<Root>/r_in'
-                                        */
-  1.0,                                 /* Expression: btype
-                                        * Referenced by: '<Root>/r_in'
-                                        */
-  -1.0,                                /* Expression: width
-                                        * Referenced by: '<Root>/v_in'
-                                        */
-  1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<Root>/v_in'
-                                        */
-  9.0,                                 /* Expression: portnum
-                                        * Referenced by: '<Root>/v_in'
-                                        */
-  -1.0,                                /* Expression: stime
-                                        * Referenced by: '<Root>/v_in'
-                                        */
-  1.0,                                 /* Expression: stype
-                                        * Referenced by: '<Root>/v_in'
-                                        */
-  1.0,                                 /* Expression: btype
-                                        * Referenced by: '<Root>/v_in'
-                                        */
-
-  /*  Expression: [0 1 2 3 4 5 6 7 8 9; 0 1 2 3 4 5 6 7 8 9; 0 1 2 3 4 5 6 7 8 9; 0 0 0 0 0 0 0 0 0 0]
-   * Referenced by: '<S1>/etaHist Memory'
-   */
-  { 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 2.0, 2.0, 2.0, 0.0, 3.0, 3.0, 3.0,
-    0.0, 4.0, 4.0, 4.0, 0.0, 5.0, 5.0, 5.0, 0.0, 6.0, 6.0, 6.0, 0.0, 7.0, 7.0,
-    7.0, 0.0, 8.0, 8.0, 8.0, 0.0, 9.0, 9.0, 9.0, 0.0 },
   2.0,                                 /* Expression: 2
                                         * Referenced by: '<S7>/Memory1'
                                         */
@@ -907,6 +858,81 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
   0.0,                                 /* Expression: btype
                                         * Referenced by: '<S7>/tau_y'
                                         */
+  1.0,                                 /* Expression: 1
+                                        * Referenced by: '<Root>/Constant1'
+                                        */
+  -2.0,                                /* Expression: -2
+                                        * Referenced by: '<Root>/Constant2'
+                                        */
+  3.0,                                 /* Expression: 3
+                                        * Referenced by: '<Root>/Constant3'
+                                        */
+  -3.0,                                /* Expression: -3
+                                        * Referenced by: '<Root>/Constant4'
+                                        */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<Root>/r_in'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<Root>/r_in'
+                                        */
+  4.0,                                 /* Expression: portnum
+                                        * Referenced by: '<Root>/r_in'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<Root>/r_in'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<Root>/r_in'
+                                        */
+  1.0,                                 /* Expression: btype
+                                        * Referenced by: '<Root>/r_in'
+                                        */
+  0.0,                                 /* Expression: 0
+                                        * Referenced by: '<Root>/Constant6'
+                                        */
+  0.0,                                 /* Expression: 0
+                                        * Referenced by: '<Root>/Constant7'
+                                        */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<Root>/v_in'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<Root>/v_in'
+                                        */
+  9.0,                                 /* Expression: portnum
+                                        * Referenced by: '<Root>/v_in'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<Root>/v_in'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<Root>/v_in'
+                                        */
+  1.0,                                 /* Expression: btype
+                                        * Referenced by: '<Root>/v_in'
+                                        */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<Root>/Safety_zonee_signal'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<Root>/Safety_zonee_signal'
+                                        */
+  4.0,                                 /* Expression: portnum
+                                        * Referenced by: '<Root>/Safety_zonee_signal'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<Root>/Safety_zonee_signal'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<Root>/Safety_zonee_signal'
+                                        */
+  0.0,                                 /* Expression: btype
+                                        * Referenced by: '<Root>/Safety_zonee_signal'
+                                        */
+  0.0,                                 /* Expression: 0
+                                        * Referenced by: '<S9>/Switch'
+                                        */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<S10>/X_d'
                                         */
@@ -925,9 +951,6 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
   0.0,                                 /* Expression: btype
                                         * Referenced by: '<S10>/X_d'
                                         */
-  0.0,                                 /* Expression: 0
-                                        * Referenced by: '<Root>/Constant7'
-                                        */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<S10>/N_d'
                                         */
@@ -945,9 +968,6 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
                                         */
   0.0,                                 /* Expression: btype
                                         * Referenced by: '<S10>/N_d'
-                                        */
-  0.0,                                 /* Expression: 0
-                                        * Referenced by: '<Root>/Constant6'
                                         */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<S10>/Y_d'
@@ -1047,12 +1067,6 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
                                         */
   0.0,                                 /* Expression: btype
                                         * Referenced by: '<S10>/integrator reset model'
-                                        */
-  0.0,                                 /* Expression: 0
-                                        * Referenced by: '<Root>/Constant5'
-                                        */
-  0.1,                                 /* Expression: 0.1
-                                        * Referenced by: '<Root>/Gain'
                                         */
   0.059559261465157838,                /* Expression: 1/16.79
                                         * Referenced by: '<S5>/Gain'
@@ -1288,36 +1302,6 @@ NI_ParamSizeWidth P_ctrl_student_HIL_T_sizes[] DataSection(
 
   { sizeof(real_T), 1, 0 },
 
-  { sizeof(real_T), 40, 0 },
-
-  { sizeof(real_T), 1, 0 },
-
-  { sizeof(real_T), 1, 0 },
-
-  { sizeof(real_T), 1, 0 },
-
-  { sizeof(real_T), 1, 0 },
-
-  { sizeof(real_T), 1, 0 },
-
-  { sizeof(real_T), 1, 0 },
-
-  { sizeof(real_T), 1, 0 },
-
-  { sizeof(real_T), 1, 0 },
-
-  { sizeof(real_T), 1, 0 },
-
-  { sizeof(real_T), 1, 0 },
-
-  { sizeof(real_T), 1, 0 },
-
-  { sizeof(real_T), 1, 0 },
-
-  { sizeof(real_T), 1, 0 },
-
-  { sizeof(real_T), 1, 0 },
-
   { sizeof(real_T), 1, 0 },
 
   { sizeof(real_T), 1, 0 },
@@ -1369,6 +1353,48 @@ NI_ParamSizeWidth P_ctrl_student_HIL_T_sizes[] DataSection(
   { sizeof(real_T), 3, 0 },
 
   { sizeof(real_T), 2, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
 
   { sizeof(real_T), 1, 0 },
 
