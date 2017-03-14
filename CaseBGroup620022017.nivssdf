@@ -10,7 +10,7 @@
 				<String>CaseBGroup620022017</String>
 			</Property>
 			<Property Name="Version">
-				<String>1.0.0.72</String>
+				<String>1.0.0.81</String>
 			</Property>
 			<Property Name="Creator">
 				<String />
@@ -31,7 +31,7 @@
 						<String>VxWorks</String>
 					</Property>
 					<Property Name="IP Address">
-						<String>192.168.0.76</String>
+						<String>192.168.0.71</String>
 					</Property>
 					<Property Name="Control Loop Processor">
 						<I32>-2</I32>
@@ -409,7 +409,7 @@
 									<I32>144783</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3571644168.6858373</Double>
+									<Double>3572339449.3047948</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -775,7 +775,7 @@
 									<I32>250810</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3571644168.8779268</Double>
+									<Double>3572339449.4639745</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -1804,7 +1804,7 @@
 									<I32>124629</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3571644169.0497975</Double>
+									<Double>3572339449.5850682</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -2111,7 +2111,7 @@
 									<I32>136560</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3571644169.100347</Double>
+									<Double>3572339449.6553807</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -2508,7 +2508,7 @@
 									<I32>173009</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3571644169.270195</Double>
+									<Double>3572339449.8428807</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -3408,7 +3408,7 @@
 									<I32>140015</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3571644169.3884821</Double>
+									<Double>3572339449.9756932</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -3794,7 +3794,7 @@
 									<I32>125060</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3571644168.8223224</Double>
+									<Double>3572339449.4102635</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -4104,7 +4104,7 @@
 									<I32>149185</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3571644170.2164912</Double>
+									<Double>3572339450.69249</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -4594,13 +4594,13 @@
 							<Description />
 							<Properties>
 								<Property Name="Base Rate">
-									<Double>10000</Double>
+									<Double>200000</Double>
 								</Property>
 								<Property Name="DLL Size">
-									<I32>218234</I32>
+									<I32>240262</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3571735077.0209093</Double>
+									<Double>3572353979.2760959</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -4621,7 +4621,7 @@
 									<Boolean>false</Boolean>
 								</Property>
 								<Property Name="User Rate">
-									<Double>10000</Double>
+									<Double>200000</Double>
 								</Property>
 								<Property Name="visible">
 									<U32>0</U32>
@@ -4644,7 +4644,7 @@
 										<ForceDownload>false</ForceDownload>
 										<RTDestination>c:\ni-rt\system\ctrl_student_HIL.out</RTDestination>
 										<SupportedTarget>VxWorks</SupportedTarget>
-										<MD5>bd9ff9f7bcf9085315a4f6fd4126255c</MD5>
+										<MD5>e65ed161c4206fb4f8c07deca7d350df</MD5>
 									</DependentFile>
 								</Property>
 								<Property Name="GlobalParameterScopes">
@@ -4714,7 +4714,7 @@
 												<String>joystick/L2_continuous</String>
 											</Property>
 											<Property Name="Index">
-												<I32>9</I32>
+												<I32>14</I32>
 											</Property>
 											<Property Name="DataSource">
 												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/L2_cont" />
@@ -4732,7 +4732,7 @@
 												<String>joystick/Select</String>
 											</Property>
 											<Property Name="Index">
-												<I32>10</I32>
+												<I32>15</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -4747,7 +4747,7 @@
 												<String>joystick/PosXRight</String>
 											</Property>
 											<Property Name="Index">
-												<I32>11</I32>
+												<I32>16</I32>
 											</Property>
 											<Property Name="DataSource">
 												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/PosXRight" />
@@ -4765,7 +4765,7 @@
 												<String>joystick/PosYRight</String>
 											</Property>
 											<Property Name="Index">
-												<I32>12</I32>
+												<I32>17</I32>
 											</Property>
 											<Property Name="DataSource">
 												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/PosYRight" />
@@ -4783,7 +4783,7 @@
 												<String>joystick/R2_continuous</String>
 											</Property>
 											<Property Name="Index">
-												<I32>13</I32>
+												<I32>18</I32>
 											</Property>
 											<Property Name="DataSource">
 												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/R2_cont" />
@@ -4801,7 +4801,7 @@
 												<String>joystick/PosXLeft</String>
 											</Property>
 											<Property Name="Index">
-												<I32>14</I32>
+												<I32>19</I32>
 											</Property>
 											<Property Name="DataSource">
 												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/PosXLeft" />
@@ -4819,7 +4819,7 @@
 												<String>joystick/PosYLeft</String>
 											</Property>
 											<Property Name="Index">
-												<I32>15</I32>
+												<I32>20</I32>
 											</Property>
 											<Property Name="DataSource">
 												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/PosYLeft" />
@@ -4837,7 +4837,7 @@
 												<String>joystick/L1</String>
 											</Property>
 											<Property Name="Index">
-												<I32>16</I32>
+												<I32>21</I32>
 											</Property>
 											<Property Name="DataSource">
 												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/L1" />
@@ -4855,7 +4855,7 @@
 												<String>joystick/R1</String>
 											</Property>
 											<Property Name="Index">
-												<I32>17</I32>
+												<I32>22</I32>
 											</Property>
 											<Property Name="DataSource">
 												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/R1" />
@@ -4873,7 +4873,7 @@
 												<String>joystick/ArrowDown</String>
 											</Property>
 											<Property Name="Index">
-												<I32>18</I32>
+												<I32>23</I32>
 											</Property>
 											<Property Name="DataSource">
 												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/ArrowDown" />
@@ -4891,7 +4891,7 @@
 												<String>joystick/ArrowUp</String>
 											</Property>
 											<Property Name="Index">
-												<I32>19</I32>
+												<I32>24</I32>
 											</Property>
 											<Property Name="DataSource">
 												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/ArrowUP" />
@@ -4909,7 +4909,7 @@
 												<String>joystick/ArrowLeft</String>
 											</Property>
 											<Property Name="Index">
-												<I32>20</I32>
+												<I32>25</I32>
 											</Property>
 											<Property Name="DataSource">
 												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/ArrowLeft" />
@@ -4927,7 +4927,7 @@
 												<String>joystick/ArrowRight</String>
 											</Property>
 											<Property Name="Index">
-												<I32>21</I32>
+												<I32>26</I32>
 											</Property>
 											<Property Name="DataSource">
 												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/ArrowRight" />
@@ -4946,7 +4946,7 @@
 											<String>NoisePowPos</String>
 										</Property>
 										<Property Name="Index">
-											<I32>0</I32>
+											<I32>4</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -4961,7 +4961,7 @@
 											<String>NoisePowHead</String>
 										</Property>
 										<Property Name="Index">
-											<I32>1</I32>
+											<I32>5</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -4976,7 +4976,7 @@
 											<String>y_in</String>
 										</Property>
 										<Property Name="Index">
-											<I32>2</I32>
+											<I32>0</I32>
 										</Property>
 										<Property Name="DataSource">
 											<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Outports/eta/y" />
@@ -5012,7 +5012,7 @@
 											<String>psi_in</String>
 										</Property>
 										<Property Name="Index">
-											<I32>4</I32>
+											<I32>1</I32>
 										</Property>
 										<Property Name="DataSource">
 											<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Outports/eta/psi" />
@@ -5030,37 +5030,7 @@
 											<String>NoiseEnable</String>
 										</Property>
 										<Property Name="Index">
-											<I32>5</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="Dropout_signaINl" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>Dropout_signaINl</String>
-										</Property>
-										<Property Name="Index">
 											<I32>6</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="K_phi" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>K_phi</String>
-										</Property>
-										<Property Name="Index">
-											<I32>7</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -5075,7 +5045,7 @@
 											<String>u_in</String>
 										</Property>
 										<Property Name="Index">
-											<I32>8</I32>
+											<I32>2</I32>
 										</Property>
 										<Property Name="DataSource">
 											<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Outports/nu/u" />
@@ -5093,7 +5063,7 @@
 											<String>r_in</String>
 										</Property>
 										<Property Name="Index">
-											<I32>22</I32>
+											<I32>8</I32>
 										</Property>
 										<Property Name="DataSource">
 											<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Outports/nu/r" />
@@ -5111,10 +5081,106 @@
 											<String>v_in</String>
 										</Property>
 										<Property Name="Index">
-											<I32>23</I32>
+											<I32>10</I32>
 										</Property>
 										<Property Name="DataSource">
 											<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Outports/nu/v" />
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="sf1" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>sf1</String>
+										</Property>
+										<Property Name="Index">
+											<I32>9</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="sf2" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>sf2</String>
+										</Property>
+										<Property Name="Index">
+											<I32>11</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="sf3" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>sf3</String>
+										</Property>
+										<Property Name="Index">
+											<I32>12</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="biasOffset" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>biasOffset</String>
+										</Property>
+										<Property Name="Index">
+											<I32>13</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="reset" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>reset</String>
+										</Property>
+										<Property Name="Index">
+											<I32>27</I32>
+										</Property>
+										<Property Name="DataSource">
+											<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/Triangle" />
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="Dropout_signaINl" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>Dropout_signaINl</String>
+										</Property>
+										<Property Name="Index">
+											<I32>7</I32>
+										</Property>
+										<Property Name="DataSource">
+											<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/L1" />
 										</Property>
 									</Properties>
 									<Errors />
@@ -5138,7 +5204,7 @@
 												<String>joystick/u_BT</String>
 											</Property>
 											<Property Name="Index">
-												<I32>27</I32>
+												<I32>33</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5153,7 +5219,7 @@
 												<String>joystick/u_VSP1</String>
 											</Property>
 											<Property Name="Index">
-												<I32>28</I32>
+												<I32>34</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5168,7 +5234,7 @@
 												<String>joystick/u_VSP2</String>
 											</Property>
 											<Property Name="Index">
-												<I32>29</I32>
+												<I32>35</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5183,7 +5249,7 @@
 												<String>joystick/alpha_VSP1</String>
 											</Property>
 											<Property Name="Index">
-												<I32>30</I32>
+												<I32>36</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5198,7 +5264,7 @@
 												<String>joystick/alpha_VSP2</String>
 											</Property>
 											<Property Name="Index">
-												<I32>31</I32>
+												<I32>37</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5213,7 +5279,7 @@
 												<String>joystick/omega_VSP1</String>
 											</Property>
 											<Property Name="Index">
-												<I32>32</I32>
+												<I32>38</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5228,7 +5294,7 @@
 												<String>joystick/omega_VSP2</String>
 											</Property>
 											<Property Name="Index">
-												<I32>33</I32>
+												<I32>39</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5243,7 +5309,7 @@
 												<String>joystick/Current Mode </String>
 											</Property>
 											<Property Name="Index">
-												<I32>34</I32>
+												<I32>40</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5258,7 +5324,7 @@
 												<String>joystick/Error State Flag</String>
 											</Property>
 											<Property Name="Index">
-												<I32>35</I32>
+												<I32>41</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5273,7 +5339,7 @@
 												<String>joystick/f_vspx</String>
 											</Property>
 											<Property Name="Index">
-												<I32>36</I32>
+												<I32>42</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5288,7 +5354,7 @@
 												<String>joystick/f_vspy</String>
 											</Property>
 											<Property Name="Index">
-												<I32>37</I32>
+												<I32>43</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5303,7 +5369,7 @@
 												<String>joystick/f_bt</String>
 											</Property>
 											<Property Name="Index">
-												<I32>38</I32>
+												<I32>44</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5318,7 +5384,7 @@
 												<String>joystick/tau_yaw</String>
 											</Property>
 											<Property Name="Index">
-												<I32>39</I32>
+												<I32>45</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5333,7 +5399,7 @@
 												<String>joystick/tau_x</String>
 											</Property>
 											<Property Name="Index">
-												<I32>40</I32>
+												<I32>46</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5348,7 +5414,7 @@
 												<String>joystick/tau_y</String>
 											</Property>
 											<Property Name="Index">
-												<I32>41</I32>
+												<I32>47</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5368,7 +5434,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/X_d</String>
 											</Property>
 											<Property Name="Index">
-												<I32>43</I32>
+												<I32>48</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5383,7 +5449,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/N_d</String>
 											</Property>
 											<Property Name="Index">
-												<I32>44</I32>
+												<I32>49</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5398,7 +5464,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/Y_d</String>
 											</Property>
 											<Property Name="Index">
-												<I32>45</I32>
+												<I32>50</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5413,7 +5479,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/psi_0 </String>
 											</Property>
 											<Property Name="Index">
-												<I32>46</I32>
+												<I32>51</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5428,7 +5494,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/x_0</String>
 											</Property>
 											<Property Name="Index">
-												<I32>47</I32>
+												<I32>52</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5443,7 +5509,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/y_0</String>
 											</Property>
 											<Property Name="Index">
-												<I32>48</I32>
+												<I32>53</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5458,7 +5524,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/integrator reset model</String>
 											</Property>
 											<Property Name="Index">
-												<I32>49</I32>
+												<I32>54</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5467,21 +5533,156 @@
 										</DefaultValue>
 									</Channel>
 								</Section>
-								<Channel Name="u_hat" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+								<Section Name="eta_hat" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
 									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>u_hat</String>
-										</Property>
-										<Property Name="Index">
-											<I32>24</I32>
-										</Property>
-									</Properties>
+									<Properties />
 									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
+									<Channel Name="eta_hat(1,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>eta_hat</String>
+											</Property>
+											<Property Name="Index">
+												<I32>28</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="eta_hat(2,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>eta_hat</String>
+											</Property>
+											<Property Name="Index">
+												<I32>28</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="eta_hat(3,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>eta_hat</String>
+											</Property>
+											<Property Name="Index">
+												<I32>28</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+								</Section>
+								<Section Name="eta_tilde" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+									<Description />
+									<Properties />
+									<Errors />
+									<Channel Name="eta_tilde(1,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>eta_tilde</String>
+											</Property>
+											<Property Name="Index">
+												<I32>30</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="eta_tilde(2,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>eta_tilde</String>
+											</Property>
+											<Property Name="Index">
+												<I32>30</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="eta_tilde(3,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>eta_tilde</String>
+											</Property>
+											<Property Name="Index">
+												<I32>30</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+								</Section>
+								<Section Name="eta_noise" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+									<Description />
+									<Properties />
+									<Errors />
+									<Channel Name="eta_noise(1,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>eta_noise</String>
+											</Property>
+											<Property Name="Index">
+												<I32>31</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="eta_noise(2,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>eta_noise</String>
+											</Property>
+											<Property Name="Index">
+												<I32>31</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="eta_noise(3,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>eta_noise</String>
+											</Property>
+											<Property Name="Index">
+												<I32>31</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+								</Section>
 								<Channel Name="u_real  " TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
 									<Description />
 									<Properties>
@@ -5489,7 +5690,7 @@
 											<String>u_real  </String>
 										</Property>
 										<Property Name="Index">
-											<I32>25</I32>
+											<I32>29</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -5504,22 +5705,7 @@
 											<String>Dropout_signaOUT</String>
 										</Property>
 										<Property Name="Index">
-											<I32>26</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="Safety_zonee_signal" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>Safety_zonee_signal</String>
-										</Property>
-										<Property Name="Index">
-											<I32>42</I32>
+											<I32>32</I32>
 										</Property>
 									</Properties>
 									<Errors />
