@@ -1,0 +1,47 @@
+%implements s15_b0_e7vde_0_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+/* MATLAB Function 'joystick/Sat_Chk_BT': '<S45>:1' */
+if ((rtu_u_inn > 1.0) || (rtu_u_inn < -1.0)) {
+    /* '<S45>:1:3' */
+    /* '<S45>:1:4' */
+    localB->u_out = 0.0;
+    /* '<S45>:1:5' */
+    localB->error = true;
+} else {
+    /* '<S45>:1:7' */
+    localB->u_out = rtu_u_inn;
+    /* '<S45>:1:8' */
+    localB->error = false;
+}
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[0].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Output", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, SLibSystemFcnPeriodicRateGrouping(rtmArgSys, "Output"))
+%<SLibCG_AccessArg(0, 0, 0)>
+%endif
+%if SLibCG_ArgAccessed(0, 0, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Output", rtmArgSys.CurrentTID, SLibSystemFcnPeriodicRateGrouping(rtmArgSys, "Output"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface))
+%<SLibCG_UndoAccessArg(0, 0, 0)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ctrl_student_HIL_Mod_Sat_Chk_BT(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(0, 0, 0)
+%<comma>%<tSimStructType> * const %<tSimStruct>\
+%assign comma = ", "
+%endif
+%<comma>real_T rtu_u_inn\
+%assign comma = ", "
+%<comma>B_Sat_Chk_BT_ctrl_student_HIL_T *localB\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 0, fcnProtoType)>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction

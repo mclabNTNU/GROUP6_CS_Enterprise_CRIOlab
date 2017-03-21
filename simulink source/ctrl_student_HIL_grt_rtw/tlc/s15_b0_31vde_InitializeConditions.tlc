@@ -1,0 +1,119 @@
+%implements s15_b0_31vde_InitializeConditions "C"
+
+%function InitializeConditions(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+uint32_T tseed;
+int32_T r;
+int32_T t;
+real_T tmp;
+%closefile localVarDecl
+%<SLibInsertAsyncTaskInitializeCode(system)>
+%<SLibWriteMachineInitialize()>
+/* InitializeConditions for Integrator: '<S20>/etaHat' */
+ctrl_student_HIL_X.etaHat_CSTATE[0] = ctrl_student_HIL_P.eta_dot_ini[0];
+ctrl_student_HIL_X.etaHat_CSTATE[1] = ctrl_student_HIL_P.eta_dot_ini[1];
+ctrl_student_HIL_X.etaHat_CSTATE[2] = ctrl_student_HIL_P.eta_dot_ini[2];
+/* InitializeConditions for Memory: '<S28>/counter' */
+ctrl_student_HIL_DW.counter_PreviousInput = ctrl_student_HIL_P.counter_X0;
+/* InitializeConditions for RandomNumber: '<S34>/White Noise' */
+tmp = floor(ctrl_student_HIL_P.WhiteNoise_Seed);
+if (rtIsNaN(tmp) || rtIsInf(tmp)) {
+    tmp = 0.0;
+} else {
+    tmp = fmod(tmp, 4.294967296E+9);
+}
+tseed = tmp < 0.0 ? (uint32_T)-(int32_T)(uint32_T)-tmp : (uint32_T)tmp;
+r = (int32_T)(tseed >> 16U);
+t = (int32_T)(tseed & 32768U);
+tseed = ((((tseed - ((uint32_T)r << 16U)) + t) << 16U) + t) + r;
+if (tseed < 1U) {
+    tseed = 1144108930U;
+} else {
+    if (tseed > 2147483646U) {
+        tseed = 2147483646U;
+    }
+}
+ctrl_student_HIL_DW.RandSeed = tseed;
+ctrl_student_HIL_DW.NextOutput = %<(SLibCGCallSubFcn("rt_nrand_Upu32_Yd_f_pw_snf", ["&ctrl_student_HIL_DW.RandSeed"], 1, 4, 0))> * ctrl_student_HIL_P.WhiteNoise_StdDev + ctrl_student_HIL_P.WhiteNoise_Mean;
+/* End of InitializeConditions for RandomNumber: '<S34>/White Noise' */
+
+/* InitializeConditions for RandomNumber: '<S35>/White Noise' */
+tmp = floor(ctrl_student_HIL_P.WhiteNoise_Seed_b);
+if (rtIsNaN(tmp) || rtIsInf(tmp)) {
+    tmp = 0.0;
+} else {
+    tmp = fmod(tmp, 4.294967296E+9);
+}
+tseed = tmp < 0.0 ? (uint32_T)-(int32_T)(uint32_T)-tmp : (uint32_T)tmp;
+r = (int32_T)(tseed >> 16U);
+t = (int32_T)(tseed & 32768U);
+tseed = ((((tseed - ((uint32_T)r << 16U)) + t) << 16U) + t) + r;
+if (tseed < 1U) {
+    tseed = 1144108930U;
+} else {
+    if (tseed > 2147483646U) {
+        tseed = 2147483646U;
+    }
+}
+ctrl_student_HIL_DW.RandSeed_j = tseed;
+ctrl_student_HIL_DW.NextOutput_c = %<(SLibCGCallSubFcn("rt_nrand_Upu32_Yd_f_pw_snf", ["&ctrl_student_HIL_DW.RandSeed_j"], 1, 4, 1))> * ctrl_student_HIL_P.WhiteNoise_StdDev_d + ctrl_student_HIL_P.WhiteNoise_Mean_h;
+/* End of InitializeConditions for RandomNumber: '<S35>/White Noise' */
+
+/* InitializeConditions for RandomNumber: '<S33>/White Noise' */
+tmp = floor(ctrl_student_HIL_P.WhiteNoise_Seed_l);
+if (rtIsNaN(tmp) || rtIsInf(tmp)) {
+    tmp = 0.0;
+} else {
+    tmp = fmod(tmp, 4.294967296E+9);
+}
+tseed = tmp < 0.0 ? (uint32_T)-(int32_T)(uint32_T)-tmp : (uint32_T)tmp;
+r = (int32_T)(tseed >> 16U);
+t = (int32_T)(tseed & 32768U);
+tseed = ((((tseed - ((uint32_T)r << 16U)) + t) << 16U) + t) + r;
+if (tseed < 1U) {
+    tseed = 1144108930U;
+} else {
+    if (tseed > 2147483646U) {
+        tseed = 2147483646U;
+    }
+}
+ctrl_student_HIL_DW.RandSeed_c = tseed;
+ctrl_student_HIL_DW.NextOutput_p = %<(SLibCGCallSubFcn("rt_nrand_Upu32_Yd_f_pw_snf", ["&ctrl_student_HIL_DW.RandSeed_c"], 1, 4, 2))> * ctrl_student_HIL_P.WhiteNoise_StdDev_g + ctrl_student_HIL_P.WhiteNoise_Mean_f;
+/* End of InitializeConditions for RandomNumber: '<S33>/White Noise' */
+
+/* InitializeConditions for Memory: '<S29>/Hold' */
+ctrl_student_HIL_DW.Hold_PreviousInput[0] = ctrl_student_HIL_P.Hold_X0;
+ctrl_student_HIL_DW.Hold_PreviousInput[1] = ctrl_student_HIL_P.Hold_X0;
+ctrl_student_HIL_DW.Hold_PreviousInput[2] = ctrl_student_HIL_P.Hold_X0;
+/* InitializeConditions for Memory: '<S5>/Memory2' */
+ctrl_student_HIL_DW.Memory2_PreviousInput = ctrl_student_HIL_P.Memory2_X0;
+/* InitializeConditions for Memory: '<S5>/Memory1' */
+ctrl_student_HIL_DW.Memory1_PreviousInput = ctrl_student_HIL_P.Memory1_X0;
+/* InitializeConditions for Memory: '<S5>/Memory' */
+ctrl_student_HIL_DW.Memory_PreviousInput = ctrl_student_HIL_P.Memory_X0;
+/* InitializeConditions for Memory: '<S47>/Memory1' */
+ctrl_student_HIL_DW.Memory1_PreviousInput_b = ctrl_student_HIL_P.Memory1_X0_j;
+/* InitializeConditions for Memory: '<S47>/Memory2' */
+ctrl_student_HIL_DW.Memory2_PreviousInput_b = ctrl_student_HIL_P.Memory2_X0_n;
+/* InitializeConditions for Integrator: '<S16>/bHat' */
+ctrl_student_HIL_X.bHat_CSTATE[0] = ctrl_student_HIL_P.bHat_IC;
+ctrl_student_HIL_X.bHat_CSTATE[1] = ctrl_student_HIL_P.bHat_IC;
+ctrl_student_HIL_X.bHat_CSTATE[2] = ctrl_student_HIL_P.bHat_IC;
+/* InitializeConditions for Integrator: '<S18>/nuHat' */
+ctrl_student_HIL_X.nuHat_CSTATE[0] = ctrl_student_HIL_P.nuHat_IC;
+ctrl_student_HIL_X.nuHat_CSTATE[1] = ctrl_student_HIL_P.nuHat_IC;
+ctrl_student_HIL_X.nuHat_CSTATE[2] = ctrl_student_HIL_P.nuHat_IC;
+%<SLibInsertInitPeriodicCStatesFcn(system)>
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void InitializeConditions(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 4, fcnProtoType)>
+%<LibSetSystemField(system, "CachedInitializeLocalVars", localVarDecl)>
+%endfunction

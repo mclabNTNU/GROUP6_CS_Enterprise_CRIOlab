@@ -1,0 +1,39 @@
+%implements s15_b0_31vde_Update "C"
+
+%function Update(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+if (%<(SLibCGIRIsSampleHit(1, 14))>) {
+    /* Update for Memory: '<S28>/counter' */
+    ctrl_student_HIL_DW.counter_PreviousInput = ctrl_student_HIL_B.count;
+    /* Update for RandomNumber: '<S34>/White Noise' */
+    ctrl_student_HIL_DW.NextOutput = %<(SLibCGCallSubFcn("rt_nrand_Upu32_Yd_f_pw_snf", ["&ctrl_student_HIL_DW.RandSeed"], 1, 6, 0))> * ctrl_student_HIL_P.WhiteNoise_StdDev + ctrl_student_HIL_P.WhiteNoise_Mean;
+    /* Update for RandomNumber: '<S35>/White Noise' */
+    ctrl_student_HIL_DW.NextOutput_c = %<(SLibCGCallSubFcn("rt_nrand_Upu32_Yd_f_pw_snf", ["&ctrl_student_HIL_DW.RandSeed_j"], 1, 6, 1))> * ctrl_student_HIL_P.WhiteNoise_StdDev_d + ctrl_student_HIL_P.WhiteNoise_Mean_h;
+    /* Update for RandomNumber: '<S33>/White Noise' */
+    ctrl_student_HIL_DW.NextOutput_p = %<(SLibCGCallSubFcn("rt_nrand_Upu32_Yd_f_pw_snf", ["&ctrl_student_HIL_DW.RandSeed_c"], 1, 6, 2))> * ctrl_student_HIL_P.WhiteNoise_StdDev_g + ctrl_student_HIL_P.WhiteNoise_Mean_f;
+    /* Update for Memory: '<S29>/Hold' */
+    ctrl_student_HIL_DW.Hold_PreviousInput[0] = ctrl_student_HIL_B.output[0];
+    ctrl_student_HIL_DW.Hold_PreviousInput[1] = ctrl_student_HIL_B.output[1];
+    ctrl_student_HIL_DW.Hold_PreviousInput[2] = ctrl_student_HIL_B.output[2];
+    /* Update for Memory: '<S5>/Memory2' */
+    ctrl_student_HIL_DW.Memory2_PreviousInput = ctrl_student_HIL_B.X_out;
+    /* Update for Memory: '<S5>/Memory1' */
+    ctrl_student_HIL_DW.Memory1_PreviousInput = ctrl_student_HIL_B.Y_out;
+    /* Update for Memory: '<S5>/Memory' */
+    ctrl_student_HIL_DW.Memory_PreviousInput = ctrl_student_HIL_B.Yaw_out;
+    /* Update for Memory: '<S47>/Memory1' */
+    ctrl_student_HIL_DW.Memory1_PreviousInput_b = ctrl_student_HIL_B.current_mode;
+    /* Update for Memory: '<S47>/Memory2' */
+    ctrl_student_HIL_DW.Memory2_PreviousInput_b = ctrl_student_HIL_B.new_time;
+}
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Update(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 6, fcnProtoType)>
+%endfunction
