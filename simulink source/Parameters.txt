@@ -1,0 +1,13 @@
+{NoiseEnable} = 0
+{NoisePowHead} = 0
+{NoisePowPos} = 0
+{SZ_Owerwrite} = 0
+{SZ_ResetKill} = 0
+{Models/vtrl_student_HIL/Inports/sf1} = 0.10
+{sf2} = 2.00
+{sf3} = 0.01
+{biasOffset} = 0
+{ControllerGainK1} = 0.1
+{ControllerGainK2} = 0.1
+{JoysticControllerSwitch} = 0
+{reset} = 0

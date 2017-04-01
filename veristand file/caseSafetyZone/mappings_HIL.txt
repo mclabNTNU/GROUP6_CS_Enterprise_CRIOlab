@@ -1,0 +1,87 @@
+Targets/Controller/Simulation Models/Models/u2pwm/Outports/pwm/pwm_BT	Targets/Controller/Hardware/Chassis/FPGA/RIO0/Output/PWM/PWM Out 0
+Targets/Controller/Simulation Models/Models/u2pwm/Outports/pwm/pwm_VSP1	Targets/Controller/Hardware/Chassis/FPGA/RIO0/Output/PWM/PWM Out 1
+Targets/Controller/Simulation Models/Models/u2pwm/Outports/pwm/pwm_VSP2	Targets/Controller/Hardware/Chassis/FPGA/RIO0/Output/PWM/PWM Out 2
+Targets/Controller/Simulation Models/Models/u2pwm/Outports/pwm/pwm_servo1	Targets/Controller/Hardware/Chassis/FPGA/RIO0/Output/PWM/PWM Out 4
+Targets/Controller/Simulation Models/Models/u2pwm/Outports/pwm/pwm_servo2	Targets/Controller/Hardware/Chassis/FPGA/RIO0/Output/PWM/PWM Out 5
+Targets/Controller/Simulation Models/Models/u2pwm/Outports/pwm/pwm_servo3	Targets/Controller/Hardware/Chassis/FPGA/RIO0/Output/PWM/PWM Out 6
+Targets/Controller/Simulation Models/Models/u2pwm/Outports/pwm/pwm_servo4	Targets/Controller/Hardware/Chassis/FPGA/RIO0/Output/PWM/PWM Out 7
+Targets/Controller/Custom Devices/WL_Joystick/PosXLeft	Targets/Controller/Simulation Models/Models/ctrl_sixaxis2thruster/Inports/PosXLeft
+Targets/Controller/Custom Devices/WL_Joystick/PosYLeft	Targets/Controller/Simulation Models/Models/ctrl_sixaxis2thruster/Inports/PosYLeft
+Targets/Controller/Custom Devices/WL_Joystick/PosYRight	Targets/Controller/Simulation Models/Models/ctrl_sixaxis2thruster/Inports/PosYRight
+Targets/Controller/Custom Devices/WL_Joystick/PosXRight	Targets/Controller/Simulation Models/Models/ctrl_sixaxis2thruster/Inports/PosXRight
+Targets/Controller/Custom Devices/WL_Joystick/Start	Targets/Controller/Simulation Models/Models/ctrl_sixaxis2thruster/Inports/Start
+Targets/Controller/Custom Devices/WL_Joystick/ArrowUP	Targets/Controller/Simulation Models/Models/ctrl_sixaxis2thruster/Inports/ArrowUp
+Targets/Controller/Custom Devices/WL_Joystick/L2_cont	Targets/Controller/Simulation Models/Models/ctrl_sixaxis2thruster/Inports/L2_continuous
+Targets/Controller/Custom Devices/WL_Joystick/R2_cont	Targets/Controller/Simulation Models/Models/ctrl_sixaxis2thruster/Inports/R2_continuous
+Targets/Controller/Custom Devices/WL_Joystick/ArrowDown	Targets/Controller/Simulation Models/Models/ctrl_sixaxis2thruster/Inports/ArrowDown
+Targets/Controller/Custom Devices/WL_Joystick/PosXLeft	Targets/Controller/Simulation Models/Models/ctrl_sixaxis2force/Inports/PosXLeft
+Targets/Controller/Custom Devices/WL_Joystick/PosYLeft	Targets/Controller/Simulation Models/Models/ctrl_sixaxis2force/Inports/PosYLeft
+Targets/Controller/Custom Devices/WL_Joystick/L2_cont	Targets/Controller/Simulation Models/Models/ctrl_sixaxis2force/Inports/L2_continuous
+Targets/Controller/Custom Devices/WL_Joystick/R2_cont	Targets/Controller/Simulation Models/Models/ctrl_sixaxis2force/Inports/R2_continuous
+Targets/Controller/Simulation Models/Models/QTM2SI/Outports/x	Targets/Controller/Simulation Models/Models/ctrl_DP_basic/Inports/x
+Targets/Controller/Simulation Models/Models/QTM2SI/Outports/y	Targets/Controller/Simulation Models/Models/ctrl_DP_basic/Inports/y
+Targets/Controller/Simulation Models/Models/QTM2SI/Outports/psi	Targets/Controller/Simulation Models/Models/ctrl_DP_basic/Inports/psi
+Targets/Controller/Custom Devices/WL_Joystick/Triangle	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/sixaxis/Triangle
+Targets/Controller/Custom Devices/WL_Joystick/Circle	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/sixaxis/Circle
+Targets/Controller/Custom Devices/WL_Joystick/Cross	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/sixaxis/Cross
+Targets/Controller/Custom Devices/WL_Joystick/Square	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/sixaxis/Square
+Targets/Controller/Simulation Models/Models/ctrl_sixaxis2force/Outports/u_BT	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/ctrl_sixaxis2force/u_BT
+Targets/Controller/Simulation Models/Models/ctrl_sixaxis2force/Outports/u_VSP2	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/ctrl_sixaxis2force/u_VSP2
+Targets/Controller/Simulation Models/Models/ctrl_sixaxis2force/Outports/omega_VSP1	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/ctrl_sixaxis2force/omega_VSP1
+Targets/Controller/Simulation Models/Models/ctrl_sixaxis2force/Outports/omega_VSP2	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/ctrl_sixaxis2force/omega_VSP2
+Targets/Controller/Simulation Models/Models/ctrl_sixaxis2force/Outports/u_VSP1	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/ctrl_sixaxis2force/u_VSP1
+Targets/Controller/Simulation Models/Models/ctrl_sixaxis2force/Outports/alpha_VSP1	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/ctrl_sixaxis2force/alpha_VSP1
+Targets/Controller/Simulation Models/Models/ctrl_sixaxis2force/Outports/alpha_VSP2	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/ctrl_sixaxis2force/alpha_VSP2
+Targets/Controller/Simulation Models/Models/ctrl_DP_basic/Outports/u_BT	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/ctrl_DP_basic/u_BT
+Targets/Controller/Simulation Models/Models/ctrl_DP_basic/Outports/u_VSP2	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/ctrl_DP_basic/u_VSP2
+Targets/Controller/Simulation Models/Models/ctrl_DP_basic/Outports/omega_VSP1	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/ctrl_DP_basic/omega_VSP1
+Targets/Controller/Simulation Models/Models/ctrl_DP_basic/Outports/omega_VSP2	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/ctrl_DP_basic/omega_VSP2
+Targets/Controller/Simulation Models/Models/ctrl_DP_basic/Outports/u_VSP1	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/ctrl_DP_basic/u_VSP1
+Targets/Controller/Simulation Models/Models/ctrl_DP_basic/Outports/alpha_VSP1	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/ctrl_DP_basic/alpha_VSP1
+Targets/Controller/Simulation Models/Models/ctrl_DP_basic/Outports/alpha_VSP2	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/ctrl_DP_basic/alpha_VSP2
+Targets/Controller/Simulation Models/Models/ctrl_sixaxis2thruster/Outports/u_BT	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/ctrl_sixaxis2thruster/u_BT
+Targets/Controller/Simulation Models/Models/ctrl_sixaxis2thruster/Outports/u_VSP2	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/ctrl_sixaxis2thruster/u_VSP2
+Targets/Controller/Simulation Models/Models/ctrl_sixaxis2thruster/Outports/omega_VSP1	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/ctrl_sixaxis2thruster/omega_VSP1
+Targets/Controller/Simulation Models/Models/ctrl_sixaxis2thruster/Outports/omega_VSP2	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/ctrl_sixaxis2thruster/omega_VSP2
+Targets/Controller/Simulation Models/Models/ctrl_sixaxis2thruster/Outports/u_VSP1	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/ctrl_sixaxis2thruster/u_VSP1
+Targets/Controller/Simulation Models/Models/ctrl_sixaxis2thruster/Outports/alpha_VSP1	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/ctrl_sixaxis2thruster/alpha_VSP1
+Targets/Controller/Simulation Models/Models/ctrl_sixaxis2thruster/Outports/alpha_VSP2	Targets/Controller/Simulation Models/Models/ctrl_switch/Inports/ctrl_sixaxis2thruster/alpha_VSP2
+Targets/Controller/Simulation Models/Models/mech_elec/Outports/u/alpha_VSP1	Targets/Controller/Simulation Models/Models/u2pwm/Inports/u/alpha_VSP1
+Targets/Controller/Simulation Models/Models/mech_elec/Outports/u/u_VSP1	Targets/Controller/Simulation Models/Models/u2pwm/Inports/u/u_VSP1
+Targets/Controller/Simulation Models/Models/mech_elec/Outports/u/alpha_VSP2	Targets/Controller/Simulation Models/Models/u2pwm/Inports/u/alpha_VSP2
+Targets/Controller/Simulation Models/Models/mech_elec/Outports/u/u_VSP2	Targets/Controller/Simulation Models/Models/u2pwm/Inports/u/u_VSP2
+Targets/Controller/Simulation Models/Models/mech_elec/Outports/u/u_BT	Targets/Controller/Simulation Models/Models/u2pwm/Inports/u/u_BT
+Targets/Controller/Simulation Models/Models/mech_elec/Outports/u/omega_VSP1	Targets/Controller/Simulation Models/Models/u2pwm/Inports/u/omega_VSP1
+Targets/Controller/Simulation Models/Models/mech_elec/Outports/u/omega_VSP2	Targets/Controller/Simulation Models/Models/u2pwm/Inports/u/omega_VSP2
+Targets/Controller/Simulation Models/Models/ctrl_switch/Outports/u_d/alpha_VSP1,d	Targets/Controller/Simulation Models/Models/mech_elec/Inports/u_d/alpha_VSP1,d
+Targets/Controller/Simulation Models/Models/ctrl_switch/Outports/u_d/u_VSP1,d	Targets/Controller/Simulation Models/Models/mech_elec/Inports/u_d/u_VSP1,d
+Targets/Controller/Simulation Models/Models/ctrl_switch/Outports/u_d/alpha_VSP2,d	Targets/Controller/Simulation Models/Models/mech_elec/Inports/u_d/alpha_VSP2,d
+Targets/Controller/Simulation Models/Models/ctrl_switch/Outports/u_d/u_VSP2,d	Targets/Controller/Simulation Models/Models/mech_elec/Inports/u_d/u_VSP2,d
+Targets/Controller/Simulation Models/Models/ctrl_switch/Outports/u_d/u_BT,d	Targets/Controller/Simulation Models/Models/mech_elec/Inports/u_d/u_BT,d
+Targets/Controller/Simulation Models/Models/ctrl_switch/Outports/u_d/omega_VSP1,d	Targets/Controller/Simulation Models/Models/mech_elec/Inports/u_d/omega_VSP1,d
+Targets/Controller/Simulation Models/Models/ctrl_switch/Outports/u_d/omega_VSP2,d	Targets/Controller/Simulation Models/Models/mech_elec/Inports/u_d/omega_VSP2,d
+Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Outports/tau to CSE mocell (only use for HIL testing)/integrator reset model	Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Inports/integrator_reset
+Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Outports/tau to CSE mocell (only use for HIL testing)/psi_0 	Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Inports/eta_0/psi_0
+Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Outports/tau to CSE mocell (only use for HIL testing)/x_0	Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Inports/eta_0/x_0
+Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Outports/tau to CSE mocell (only use for HIL testing)/y_0	Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Inports/eta_0/y_0
+Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Outports/tau to CSE mocell (only use for HIL testing)/X_d	Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Inports/tau/X
+Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Outports/tau to CSE mocell (only use for HIL testing)/Y_d	Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Inports/tau/Y
+Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Outports/tau to CSE mocell (only use for HIL testing)/N_d	Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Inports/tau/N
+Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Outports/eta/y	Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Inports/y_in
+Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Outports/eta/psi	Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Inports/psi_in
+Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Outports/eta/x	Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Inports/x_in
+Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Outports/nu/r	Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Inports/r_in
+Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Outports/nu/u	Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Inports/u_in
+Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Outports/nu/v	Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Inports/v_in
+Targets/Controller/Custom Devices/WL_Joystick/L2_cont	Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Inports/joystick/L2_continuous
+Targets/Controller/Custom Devices/WL_Joystick/PosXRight	Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Inports/joystick/PosXRight
+Targets/Controller/Custom Devices/WL_Joystick/PosYRight	Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Inports/joystick/PosYRight
+Targets/Controller/Custom Devices/WL_Joystick/R2_cont	Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Inports/joystick/R2_continuous
+Targets/Controller/Custom Devices/WL_Joystick/PosXLeft	Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Inports/joystick/PosXLeft
+Targets/Controller/Custom Devices/WL_Joystick/PosYLeft	Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Inports/joystick/PosYLeft
+Targets/Controller/Custom Devices/WL_Joystick/L1	Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Inports/joystick/L1
+Targets/Controller/Custom Devices/WL_Joystick/R1	Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Inports/joystick/R1
+Targets/Controller/Custom Devices/WL_Joystick/ArrowDown	Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Inports/joystick/ArrowDown
+Targets/Controller/Custom Devices/WL_Joystick/ArrowUP	Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Inports/joystick/ArrowUp
+Targets/Controller/Custom Devices/WL_Joystick/ArrowLeft	Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Inports/joystick/ArrowLeft
+Targets/Controller/Custom Devices/WL_Joystick/ArrowRight	Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Inports/joystick/ArrowRight
