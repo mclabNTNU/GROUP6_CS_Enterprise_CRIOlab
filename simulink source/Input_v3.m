@@ -39,7 +39,7 @@ switch caseNumber
         mu=[0 0.1 1 10];
         mu=mu(1);
         LAW=1; %Task =1 give  gradient update law, =~1 give modified gradient update law
-        T_initialDP=20;%Input in seconds
+        T_initialDP=90;%Input in seconds
         disp('Running Case 1');
     case 2  % back and forth motion along straight line, with varying speed
         DesiredPath=0;
