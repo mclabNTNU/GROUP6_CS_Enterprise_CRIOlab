@@ -48,9 +48,10 @@ switch caseNumber
         Elipscenter_radi=[6 5;0 3 ];
         U_ref=0.25;%U_max/5
         mu=[0 0.1 1 10];
-        mu=mu(2);
+        %mu=mu(1);
+        mu=0.001;
         LAW=0; %Task =1 give  gradient update law, =~1 give modified gradient update law
-        T_initialDP=0;%Input in seconds
+        T_initialDP=40;%Input in seconds
         disp('Running Case 2');
     case 3  %infinite ellipsoid motion
         DesiredPath=1; %ellipsoidal path
@@ -60,9 +61,10 @@ switch caseNumber
         Elipscenter_radi=[6 5;0 3 ];
         U_ref=0.1;%U_max/5
         mu=[0 0.1 1 10];
-        mu=mu(2);
+        %mu=mu(2);
+        mu=0.001;
         LAW=0; %Task =1 give  gradient update law, =~1 give modified gradient update law
-        T_initialDP=0;%Input in seconds
+        T_initialDP=60;%Input in seconds
         disp('Running Case 3');
 end
 %end

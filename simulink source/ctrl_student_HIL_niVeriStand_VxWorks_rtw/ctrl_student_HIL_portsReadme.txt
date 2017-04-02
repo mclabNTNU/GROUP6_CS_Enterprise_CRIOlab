@@ -45,12 +45,14 @@
 <outport> id = "-1" name = "joystick/tau_y" width = "1" datatype = "0"</outport>
 <outport> id = "-1" name = "Tau_pre" width = "3" datatype = "19"</outport>
 <outport> id = "-1" name = "Tau_post" width = "3" datatype = "17"</outport>
+<outport> id = "-1" name = "P_d" width = "2" datatype = "20"</outport>
+<outport> id = "-1" name = "S_out" width = "1" datatype = "0"</outport>
 <outport> id = "-1" name = "tau to CSE mocell (only use for HIL testing)/X_d" width = "1" datatype = "17"</outport>
 <outport> id = "-1" name = "tau to CSE mocell (only use for HIL testing)/N_d" width = "1" datatype = "17"</outport>
 <outport> id = "-1" name = "tau to CSE mocell (only use for HIL testing)/Y_d" width = "1" datatype = "17"</outport>
-<outport> id = "-1" name = "tau to CSE mocell (only use for HIL testing)/psi_0 " width = "1" datatype = "0"</outport>
-<outport> id = "-1" name = "tau to CSE mocell (only use for HIL testing)/x_0" width = "1" datatype = "0"</outport>
-<outport> id = "-1" name = "tau to CSE mocell (only use for HIL testing)/y_0" width = "1" datatype = "0"</outport>
+<outport> id = "-1" name = "tau to CSE mocell (only use for HIL testing)/psi_0 " width = "1" datatype = "17"</outport>
+<outport> id = "-1" name = "tau to CSE mocell (only use for HIL testing)/x_0" width = "1" datatype = "17"</outport>
+<outport> id = "-1" name = "tau to CSE mocell (only use for HIL testing)/y_0" width = "1" datatype = "17"</outport>
 <outport> id = "-1" name = "tau to CSE mocell (only use for HIL testing)/integrator reset model" width = "1" datatype = "0"</outport>
 <outport> id = "-1" name = "ThrustAllocationAndSaturation/u_BT" width = "1" datatype = "0"</outport>
 <outport> id = "-1" name = "ThrustAllocationAndSaturation/u_VSP1" width = "1" datatype = "0"</outport>
