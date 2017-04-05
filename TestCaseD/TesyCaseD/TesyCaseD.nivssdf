@@ -3,20 +3,20 @@
 	<MD5Checksum />
 	<Version Major="2013" Minor="0" Fix="0" Build="1" />
 	<Content>Definition</Content>
-	<Root Name="CaseD" TypeGUID="03D3BA22-1485-13A6-56BD17DA950CCD00">
+	<Root Name="TesyCaseD" TypeGUID="03D3BA22-1485-13A6-56BD17DA950CCD00">
 		<Description />
 		<Properties>
 			<Property Name="Name">
-				<String>CaseD</String>
+				<String>TesyCaseD</String>
 			</Property>
 			<Property Name="Version">
-				<String>1.0.0.36</String>
+				<String>1.0.0.4</String>
 			</Property>
 			<Property Name="Creator">
 				<String />
 			</Property>
 			<Property Name="Creation Date">
-				<Double>3573889798.474678</Double>
+				<Double>3574244731.6809907</Double>
 			</Property>
 		</Properties>
 		<Errors />
@@ -399,6 +399,375 @@
 						<Description />
 						<Properties />
 						<Errors />
+						<Section Name="CSE1_HIL_tau" TypeGUID="03D3B9C4-1485-13A6-561FC9BB21813875">
+							<Description />
+							<Properties>
+								<Property Name="Base Rate">
+									<Double>10000</Double>
+								</Property>
+								<Property Name="DLL Size">
+									<I32>144487</I32>
+								</Property>
+								<Property Name="DLL Timestamp">
+									<Double>3573878527.9440742</Double>
+								</Property>
+								<Property Name="Decimation">
+									<I32>1</I32>
+								</Property>
+								<Property Name="Import Definition ID">
+									<I32>0</I32>
+								</Property>
+								<Property Name="ID">
+									<I32>0</I32>
+								</Property>
+								<Property Name="Model Timestamp">
+									<Double>0</Double>
+								</Property>
+								<Property Name="Processor">
+									<I32>-2</I32>
+								</Property>
+								<Property Name="Show Unnamed Signals">
+									<Boolean>false</Boolean>
+								</Property>
+								<Property Name="User Rate">
+									<Double>10000</Double>
+								</Property>
+								<Property Name="visible">
+									<U32>0</U32>
+								</Property>
+								<Property Name="blocks only">
+									<Boolean>false</Boolean>
+								</Property>
+								<Property Name="Segment Vectors">
+									<Boolean>true</Boolean>
+								</Property>
+								<Property Name="MD5">
+									<String>b4123afa8ec9adb8e1faa0af35b6475e</String>
+								</Property>
+								<Property Name="NIVeriStandServer Port">
+									<U32>6012</U32>
+								</Property>
+								<Property Name="DLL Path">
+									<DependentFile Type="Absolute" Path="C:\Users\MCLab\Documents\GitHub\GROUP6_CS_Enterprise_CRIOlab\simulink source\CSEI_tau_niVeriStand_VxWorks_rtw\CSE1_HIL_tau.out">
+										<Version />
+										<ForceDownload>false</ForceDownload>
+										<RTDestination>c:\ni-rt\system\CSE1_HIL_tau.out</RTDestination>
+										<SupportedTarget>VxWorks</SupportedTarget>
+										<MD5>b4123afa8ec9adb8e1faa0af35b6475e</MD5>
+									</DependentFile>
+								</Property>
+								<Property Name="GlobalParameterScopes">
+									<I32>0</I32>
+								</Property>
+								<Property Name="Group">
+									<I32>0</I32>
+								</Property>
+							</Properties>
+							<Errors />
+							<Section Name="Execution" TypeGUID="03D3BA9F-1485-13A6-56E3D5196780015F">
+								<Description />
+								<Properties />
+								<Errors />
+								<Channel Name="Model Command" TypeGUID="03D3BABE-1485-13A6-56C34B877844B2C1" RowDim="1" ColDim="1" Units="" BitFields="3">
+									<Description>0: Start
+1: Pause
+2: Reset
+3: Save
+4: Restore</Description>
+									<Properties />
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="Model Time" TypeGUID="03D3BAAE-1485-13A6-5606A77AB57A7FC9" RowDim="1" ColDim="1" Units="sec" BitFields="1">
+									<Description />
+									<Properties />
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="Model Status" TypeGUID="03D3BB6A-1485-13A6-5643A7AFDA3A2658" RowDim="1" ColDim="1" Units="" BitFields="1">
+									<Description>0: Running
+1: Paused
+2: Resetting
+3: Idle
+4: Stopped
+5: Restoring
+6: Saving</Description>
+									<Properties />
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="Time Step Duration" TypeGUID="8e7cc8ad-0a9f-4b63-b5f0-59c025358253" RowDim="1" ColDim="1" Units="usec" BitFields="1">
+									<Description>The duration in microseconds of the last model time step.</Description>
+									<Properties />
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+							</Section>
+							<Section Name="Inports" TypeGUID="03D3B9E3-1485-13A6-56035B19B2245EB3">
+								<Description />
+								<Properties />
+								<Errors />
+								<Section Name="eta_0" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+									<Description />
+									<Properties />
+									<Errors />
+									<Channel Name="psi_0" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>eta_0/psi_0</String>
+											</Property>
+											<Property Name="Index">
+												<I32>1</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Outports/tau to CSE mocell (only use for HIL testing)/psi_0 " />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="x_0" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>eta_0/x_0</String>
+											</Property>
+											<Property Name="Index">
+												<I32>2</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Outports/tau to CSE mocell (only use for HIL testing)/x_0" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="y_0" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>eta_0/y_0</String>
+											</Property>
+											<Property Name="Index">
+												<I32>3</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Outports/tau to CSE mocell (only use for HIL testing)/y_0" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+								</Section>
+								<Section Name="tau" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+									<Description />
+									<Properties />
+									<Errors />
+									<Channel Name="X" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>tau/X</String>
+											</Property>
+											<Property Name="Index">
+												<I32>4</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Outports/tau to CSE mocell (only use for HIL testing)/X_d" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="Y" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>tau/Y</String>
+											</Property>
+											<Property Name="Index">
+												<I32>5</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Outports/tau to CSE mocell (only use for HIL testing)/Y_d" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="N" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>tau/N</String>
+											</Property>
+											<Property Name="Index">
+												<I32>6</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Outports/tau to CSE mocell (only use for HIL testing)/N_d" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+								</Section>
+								<Channel Name="integrator_reset" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>integrator_reset</String>
+										</Property>
+										<Property Name="Index">
+											<I32>0</I32>
+										</Property>
+										<Property Name="DataSource">
+											<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Outports/tau to CSE mocell (only use for HIL testing)/integrator reset model" />
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+							</Section>
+							<Section Name="Outports" TypeGUID="03D3B9F3-1485-13A6-5698C14838D6AA3C">
+								<Description />
+								<Properties />
+								<Errors />
+								<Section Name="eta" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+									<Description />
+									<Properties />
+									<Errors />
+									<Channel Name="x" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>eta/x</String>
+											</Property>
+											<Property Name="Index">
+												<I32>7</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="y" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>eta/y</String>
+											</Property>
+											<Property Name="Index">
+												<I32>8</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="psi" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>eta/psi</String>
+											</Property>
+											<Property Name="Index">
+												<I32>9</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+								</Section>
+								<Section Name="nu" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+									<Description />
+									<Properties />
+									<Errors />
+									<Channel Name="u" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>nu/u</String>
+											</Property>
+											<Property Name="Index">
+												<I32>10</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="v" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>nu/v</String>
+											</Property>
+											<Property Name="Index">
+												<I32>11</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="r" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>nu/r</String>
+											</Property>
+											<Property Name="Index">
+												<I32>12</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+								</Section>
+							</Section>
+							<Section Name="Parameters" TypeGUID="03D3BB0C-1485-13A6-56E10CEFF755E7D3">
+								<Description />
+								<Properties />
+								<Errors />
+							</Section>
+							<Section Name="Signals" TypeGUID="03D3BA31-1485-13A6-567CA69E9D2E71D5">
+								<Description />
+								<Properties />
+								<Errors />
+							</Section>
+						</Section>
 						<Section Name="ctrl_DP_basic" TypeGUID="03D3B9C4-1485-13A6-561FC9BB21813875">
 							<Description />
 							<Properties>
@@ -448,7 +817,7 @@
 									<U32>6012</U32>
 								</Property>
 								<Property Name="DLL Path">
-									<DependentFile Type="Relative" Path="simulink source\ctrl_DP_basic_niVeriStand_VxWorks_rtw\ctrl_DP_basic.out">
+									<DependentFile Type="Absolute" Path="C:\Users\MCLab\Documents\GitHub\GROUP6_CS_Enterprise_CRIOlab\simulink source\ctrl_DP_basic_niVeriStand_VxWorks_rtw\ctrl_DP_basic.out">
 										<Version />
 										<ForceDownload>false</ForceDownload>
 										<RTDestination>c:\ni-rt\system\ctrl_DP_basic.out</RTDestination>
@@ -1480,7 +1849,7 @@
 									<U32>6012</U32>
 								</Property>
 								<Property Name="DLL Path">
-									<DependentFile Type="Relative" Path="simulink source\ctrl_sixaxis2force_niVeriStand_VxWorks_rtw\ctrl_sixaxis2force.out">
+									<DependentFile Type="Absolute" Path="C:\Users\MCLab\Documents\GitHub\GROUP6_CS_Enterprise_CRIOlab\simulink source\ctrl_sixaxis2force_niVeriStand_VxWorks_rtw\ctrl_sixaxis2force.out">
 										<Version />
 										<ForceDownload>false</ForceDownload>
 										<RTDestination>c:\ni-rt\system\ctrl_sixaxis2force.out</RTDestination>
@@ -1741,375 +2110,6 @@
 								<Errors />
 							</Section>
 						</Section>
-						<Section Name="CSE1_HIL_tau" TypeGUID="03D3B9C4-1485-13A6-561FC9BB21813875">
-							<Description />
-							<Properties>
-								<Property Name="Base Rate">
-									<Double>10000</Double>
-								</Property>
-								<Property Name="DLL Size">
-									<I32>144487</I32>
-								</Property>
-								<Property Name="DLL Timestamp">
-									<Double>3573878527.9440742</Double>
-								</Property>
-								<Property Name="Decimation">
-									<I32>1</I32>
-								</Property>
-								<Property Name="Import Definition ID">
-									<I32>0</I32>
-								</Property>
-								<Property Name="ID">
-									<I32>0</I32>
-								</Property>
-								<Property Name="Model Timestamp">
-									<Double>0</Double>
-								</Property>
-								<Property Name="Processor">
-									<I32>-2</I32>
-								</Property>
-								<Property Name="Show Unnamed Signals">
-									<Boolean>false</Boolean>
-								</Property>
-								<Property Name="User Rate">
-									<Double>10000</Double>
-								</Property>
-								<Property Name="visible">
-									<U32>0</U32>
-								</Property>
-								<Property Name="blocks only">
-									<Boolean>false</Boolean>
-								</Property>
-								<Property Name="Segment Vectors">
-									<Boolean>true</Boolean>
-								</Property>
-								<Property Name="MD5">
-									<String>b4123afa8ec9adb8e1faa0af35b6475e</String>
-								</Property>
-								<Property Name="NIVeriStandServer Port">
-									<U32>6012</U32>
-								</Property>
-								<Property Name="DLL Path">
-									<DependentFile Type="Relative" Path="simulink source\CSEI_tau_niVeriStand_VxWorks_rtw\CSE1_HIL_tau.out">
-										<Version />
-										<ForceDownload>false</ForceDownload>
-										<RTDestination>c:\ni-rt\system\CSE1_HIL_tau.out</RTDestination>
-										<SupportedTarget>VxWorks</SupportedTarget>
-										<MD5>b4123afa8ec9adb8e1faa0af35b6475e</MD5>
-									</DependentFile>
-								</Property>
-								<Property Name="GlobalParameterScopes">
-									<I32>0</I32>
-								</Property>
-								<Property Name="Group">
-									<I32>0</I32>
-								</Property>
-							</Properties>
-							<Errors />
-							<Section Name="Execution" TypeGUID="03D3BA9F-1485-13A6-56E3D5196780015F">
-								<Description />
-								<Properties />
-								<Errors />
-								<Channel Name="Model Command" TypeGUID="03D3BABE-1485-13A6-56C34B877844B2C1" RowDim="1" ColDim="1" Units="" BitFields="3">
-									<Description>0: Start
-1: Pause
-2: Reset
-3: Save
-4: Restore</Description>
-									<Properties />
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="Model Time" TypeGUID="03D3BAAE-1485-13A6-5606A77AB57A7FC9" RowDim="1" ColDim="1" Units="sec" BitFields="1">
-									<Description />
-									<Properties />
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="Model Status" TypeGUID="03D3BB6A-1485-13A6-5643A7AFDA3A2658" RowDim="1" ColDim="1" Units="" BitFields="1">
-									<Description>0: Running
-1: Paused
-2: Resetting
-3: Idle
-4: Stopped
-5: Restoring
-6: Saving</Description>
-									<Properties />
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="Time Step Duration" TypeGUID="8e7cc8ad-0a9f-4b63-b5f0-59c025358253" RowDim="1" ColDim="1" Units="usec" BitFields="1">
-									<Description>The duration in microseconds of the last model time step.</Description>
-									<Properties />
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-							</Section>
-							<Section Name="Inports" TypeGUID="03D3B9E3-1485-13A6-56035B19B2245EB3">
-								<Description />
-								<Properties />
-								<Errors />
-								<Section Name="eta_0" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
-									<Description />
-									<Properties />
-									<Errors />
-									<Channel Name="psi_0" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>eta_0/psi_0</String>
-											</Property>
-											<Property Name="Index">
-												<I32>1</I32>
-											</Property>
-											<Property Name="DataSource">
-												<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Outports/tau to CSE mocell (only use for HIL testing)/psi_0 " />
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="x_0" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>eta_0/x_0</String>
-											</Property>
-											<Property Name="Index">
-												<I32>2</I32>
-											</Property>
-											<Property Name="DataSource">
-												<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Outports/tau to CSE mocell (only use for HIL testing)/x_0" />
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="y_0" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>eta_0/y_0</String>
-											</Property>
-											<Property Name="Index">
-												<I32>3</I32>
-											</Property>
-											<Property Name="DataSource">
-												<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Outports/tau to CSE mocell (only use for HIL testing)/y_0" />
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-								</Section>
-								<Section Name="tau" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
-									<Description />
-									<Properties />
-									<Errors />
-									<Channel Name="X" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>tau/X</String>
-											</Property>
-											<Property Name="Index">
-												<I32>4</I32>
-											</Property>
-											<Property Name="DataSource">
-												<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Outports/tau to CSE mocell (only use for HIL testing)/X_d" />
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="Y" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>tau/Y</String>
-											</Property>
-											<Property Name="Index">
-												<I32>5</I32>
-											</Property>
-											<Property Name="DataSource">
-												<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Outports/tau to CSE mocell (only use for HIL testing)/Y_d" />
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="N" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>tau/N</String>
-											</Property>
-											<Property Name="Index">
-												<I32>6</I32>
-											</Property>
-											<Property Name="DataSource">
-												<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Outports/tau to CSE mocell (only use for HIL testing)/N_d" />
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-								</Section>
-								<Channel Name="integrator_reset" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>integrator_reset</String>
-										</Property>
-										<Property Name="Index">
-											<I32>0</I32>
-										</Property>
-										<Property Name="DataSource">
-											<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/ctrl_student_HIL/Outports/tau to CSE mocell (only use for HIL testing)/integrator reset model" />
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-							</Section>
-							<Section Name="Outports" TypeGUID="03D3B9F3-1485-13A6-5698C14838D6AA3C">
-								<Description />
-								<Properties />
-								<Errors />
-								<Section Name="eta" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
-									<Description />
-									<Properties />
-									<Errors />
-									<Channel Name="x" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>eta/x</String>
-											</Property>
-											<Property Name="Index">
-												<I32>7</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="y" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>eta/y</String>
-											</Property>
-											<Property Name="Index">
-												<I32>8</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="psi" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>eta/psi</String>
-											</Property>
-											<Property Name="Index">
-												<I32>9</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-								</Section>
-								<Section Name="nu" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
-									<Description />
-									<Properties />
-									<Errors />
-									<Channel Name="u" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>nu/u</String>
-											</Property>
-											<Property Name="Index">
-												<I32>10</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="v" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>nu/v</String>
-											</Property>
-											<Property Name="Index">
-												<I32>11</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="r" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>nu/r</String>
-											</Property>
-											<Property Name="Index">
-												<I32>12</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-								</Section>
-							</Section>
-							<Section Name="Parameters" TypeGUID="03D3BB0C-1485-13A6-56E10CEFF755E7D3">
-								<Description />
-								<Properties />
-								<Errors />
-							</Section>
-							<Section Name="Signals" TypeGUID="03D3BA31-1485-13A6-567CA69E9D2E71D5">
-								<Description />
-								<Properties />
-								<Errors />
-							</Section>
-						</Section>
 						<Section Name="ctrl_sixaxis2thruster" TypeGUID="03D3B9C4-1485-13A6-561FC9BB21813875">
 							<Description />
 							<Properties>
@@ -2159,7 +2159,7 @@
 									<U32>6012</U32>
 								</Property>
 								<Property Name="DLL Path">
-									<DependentFile Type="Relative" Path="simulink source\ctrl_sixaxis2thruster_niVeriStand_VxWorks_rtw\ctrl_sixaxis2thruster.out">
+									<DependentFile Type="Absolute" Path="C:\Users\MCLab\Documents\GitHub\GROUP6_CS_Enterprise_CRIOlab\simulink source\ctrl_sixaxis2thruster_niVeriStand_VxWorks_rtw\ctrl_sixaxis2thruster.out">
 										<Version />
 										<ForceDownload>false</ForceDownload>
 										<RTDestination>c:\ni-rt\system\ctrl_sixaxis2thruster.out</RTDestination>
@@ -2510,6 +2510,1238 @@
 								<Errors />
 							</Section>
 						</Section>
+						<Section Name="ctrl_student_HIL" TypeGUID="03D3B9C4-1485-13A6-561FC9BB21813875">
+							<Description />
+							<Properties>
+								<Property Name="Base Rate">
+									<Double>10000</Double>
+								</Property>
+								<Property Name="DLL Size">
+									<I32>256711</I32>
+								</Property>
+								<Property Name="DLL Timestamp">
+									<Double>3574245666.3256068</Double>
+								</Property>
+								<Property Name="Decimation">
+									<I32>1</I32>
+								</Property>
+								<Property Name="Import Definition ID">
+									<I32>0</I32>
+								</Property>
+								<Property Name="ID">
+									<I32>0</I32>
+								</Property>
+								<Property Name="Model Timestamp">
+									<Double>0</Double>
+								</Property>
+								<Property Name="Processor">
+									<I32>-2</I32>
+								</Property>
+								<Property Name="Show Unnamed Signals">
+									<Boolean>false</Boolean>
+								</Property>
+								<Property Name="User Rate">
+									<Double>10000</Double>
+								</Property>
+								<Property Name="visible">
+									<U32>0</U32>
+								</Property>
+								<Property Name="blocks only">
+									<Boolean>false</Boolean>
+								</Property>
+								<Property Name="Segment Vectors">
+									<Boolean>true</Boolean>
+								</Property>
+								<Property Name="MD5">
+									<String>ac4fa7c7ed11f49f2cb0c6120acaae04</String>
+								</Property>
+								<Property Name="NIVeriStandServer Port">
+									<U32>6012</U32>
+								</Property>
+								<Property Name="DLL Path">
+									<DependentFile Type="Absolute" Path="C:\Users\MCLab\Documents\GitHub\GROUP6_CS_Enterprise_CRIOlab\simulink source\ctrl_student_HIL_niVeriStand_VxWorks_rtw\ctrl_student_HIL.out">
+										<Version />
+										<ForceDownload>false</ForceDownload>
+										<RTDestination>c:\ni-rt\system\ctrl_student_HIL.out</RTDestination>
+										<SupportedTarget>VxWorks</SupportedTarget>
+										<MD5>e9c512e77eea33ca9eba28ccf1a76908</MD5>
+									</DependentFile>
+								</Property>
+								<Property Name="GlobalParameterScopes">
+									<I32>0</I32>
+								</Property>
+								<Property Name="Group">
+									<I32>0</I32>
+								</Property>
+							</Properties>
+							<Errors />
+							<Section Name="Execution" TypeGUID="03D3BA9F-1485-13A6-56E3D5196780015F">
+								<Description />
+								<Properties />
+								<Errors />
+								<Channel Name="Model Command" TypeGUID="03D3BABE-1485-13A6-56C34B877844B2C1" RowDim="1" ColDim="1" Units="" BitFields="3">
+									<Description>0: Start
+1: Pause
+2: Reset
+3: Save
+4: Restore</Description>
+									<Properties />
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="Model Time" TypeGUID="03D3BAAE-1485-13A6-5606A77AB57A7FC9" RowDim="1" ColDim="1" Units="sec" BitFields="1">
+									<Description />
+									<Properties />
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="Model Status" TypeGUID="03D3BB6A-1485-13A6-5643A7AFDA3A2658" RowDim="1" ColDim="1" Units="" BitFields="1">
+									<Description>0: Running
+1: Paused
+2: Resetting
+3: Idle
+4: Stopped
+5: Restoring
+6: Saving</Description>
+									<Properties />
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="Time Step Duration" TypeGUID="8e7cc8ad-0a9f-4b63-b5f0-59c025358253" RowDim="1" ColDim="1" Units="usec" BitFields="1">
+									<Description>The duration in microseconds of the last model time step.</Description>
+									<Properties />
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+							</Section>
+							<Section Name="Inports" TypeGUID="03D3B9E3-1485-13A6-56035B19B2245EB3">
+								<Description />
+								<Properties />
+								<Errors />
+								<Section Name="joystick" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+									<Description />
+									<Properties />
+									<Errors />
+									<Channel Name="L2_continuous" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/L2_continuous</String>
+											</Property>
+											<Property Name="Index">
+												<I32>10</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/L2_cont" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="Select" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/Select</String>
+											</Property>
+											<Property Name="Index">
+												<I32>23</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="PosXRight" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/PosXRight</String>
+											</Property>
+											<Property Name="Index">
+												<I32>12</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/PosXRight" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="PosYRight" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/PosYRight</String>
+											</Property>
+											<Property Name="Index">
+												<I32>13</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/PosYRight" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="R2_continuous" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/R2_continuous</String>
+											</Property>
+											<Property Name="Index">
+												<I32>14</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/R2_cont" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="PosXLeft" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/PosXLeft</String>
+											</Property>
+											<Property Name="Index">
+												<I32>15</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/PosXLeft" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="PosYLeft" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/PosYLeft</String>
+											</Property>
+											<Property Name="Index">
+												<I32>16</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/PosYLeft" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="L1" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/L1</String>
+											</Property>
+											<Property Name="Index">
+												<I32>17</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/L1" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="R1" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/R1</String>
+											</Property>
+											<Property Name="Index">
+												<I32>18</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/R1" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="ArrowDown" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/ArrowDown</String>
+											</Property>
+											<Property Name="Index">
+												<I32>19</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/ArrowDown" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="ArrowUp" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/ArrowUp</String>
+											</Property>
+											<Property Name="Index">
+												<I32>20</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/ArrowUP" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="ArrowLeft" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/ArrowLeft</String>
+											</Property>
+											<Property Name="Index">
+												<I32>21</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/ArrowLeft" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="ArrowRight" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/ArrowRight</String>
+											</Property>
+											<Property Name="Index">
+												<I32>22</I32>
+											</Property>
+											<Property Name="DataSource">
+												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/ArrowRight" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="CurrentMode" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/CurrentMode</String>
+											</Property>
+											<Property Name="Index">
+												<I32>11</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+								</Section>
+								<Section Name="ThrustAllocationAndSaturation" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+									<Description />
+									<Properties />
+									<Errors />
+									<Channel Name="TurnOffomega1" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>ThrustAllocationAndSaturation/TurnOffomega1</String>
+											</Property>
+											<Property Name="Index">
+												<I32>29</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="TurnOffomega2" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>ThrustAllocationAndSaturation/TurnOffomega2</String>
+											</Property>
+											<Property Name="Index">
+												<I32>30</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+								</Section>
+								<Channel Name="reset" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>reset</String>
+										</Property>
+										<Property Name="Index">
+											<I32>0</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="y_in" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>y_in</String>
+										</Property>
+										<Property Name="Index">
+											<I32>3</I32>
+										</Property>
+										<Property Name="DataSource">
+											<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Outports/eta/y" />
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="psi_in" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>psi_in</String>
+										</Property>
+										<Property Name="Index">
+											<I32>5</I32>
+										</Property>
+										<Property Name="DataSource">
+											<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Outports/eta/psi" />
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="u_in" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>u_in</String>
+										</Property>
+										<Property Name="Index">
+											<I32>8</I32>
+										</Property>
+										<Property Name="DataSource">
+											<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Outports/nu/u" />
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="x_in" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>x_in</String>
+										</Property>
+										<Property Name="Index">
+											<I32>4</I32>
+										</Property>
+										<Property Name="DataSource">
+											<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Outports/eta/x" />
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="NoisePowPos" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>NoisePowPos</String>
+										</Property>
+										<Property Name="Index">
+											<I32>1</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="NoisePowHead" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>NoisePowHead</String>
+										</Property>
+										<Property Name="Index">
+											<I32>2</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="NoiseEnable" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>NoiseEnable</String>
+										</Property>
+										<Property Name="Index">
+											<I32>6</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="Dropout_signaINl" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>Dropout_signaINl</String>
+										</Property>
+										<Property Name="Index">
+											<I32>7</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="r_in" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>r_in</String>
+										</Property>
+										<Property Name="Index">
+											<I32>9</I32>
+										</Property>
+										<Property Name="DataSource">
+											<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Outports/nu/r" />
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="SZ_ResetKill" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>SZ_ResetKill</String>
+										</Property>
+										<Property Name="Index">
+											<I32>27</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="SZ_Owerwrite" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>SZ_Owerwrite</String>
+										</Property>
+										<Property Name="Index">
+											<I32>28</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="v_in" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>v_in</String>
+										</Property>
+										<Property Name="Index">
+											<I32>26</I32>
+										</Property>
+										<Property Name="DataSource">
+											<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Outports/nu/v" />
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="Psi_d" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>Psi_d</String>
+										</Property>
+										<Property Name="Index">
+											<I32>24</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="CaseSwitch" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>CaseSwitch</String>
+										</Property>
+										<Property Name="Index">
+											<I32>25</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+							</Section>
+							<Section Name="Outports" TypeGUID="03D3B9F3-1485-13A6-5698C14838D6AA3C">
+								<Description />
+								<Properties />
+								<Errors />
+								<Section Name="eta_hat" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+									<Description />
+									<Properties />
+									<Errors />
+								</Section>
+								<Section Name="eta_tilde" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+									<Description />
+									<Properties />
+									<Errors />
+								</Section>
+								<Section Name="eta_noise" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+									<Description />
+									<Properties />
+									<Errors />
+									<Channel Name="eta_noise(1,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>eta_noise</String>
+											</Property>
+											<Property Name="Index">
+												<I32>34</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="eta_noise(2,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>eta_noise</String>
+											</Property>
+											<Property Name="Index">
+												<I32>34</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="eta_noise(3,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>eta_noise</String>
+											</Property>
+											<Property Name="Index">
+												<I32>34</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+								</Section>
+								<Section Name="joystick" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+									<Description />
+									<Properties />
+									<Errors />
+									<Channel Name="tau_yaw" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/tau_yaw</String>
+											</Property>
+											<Property Name="Index">
+												<I32>36</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="tau_x" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/tau_x</String>
+											</Property>
+											<Property Name="Index">
+												<I32>37</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="tau_y" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/tau_y</String>
+											</Property>
+											<Property Name="Index">
+												<I32>38</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+								</Section>
+								<Section Name="Tau_pre" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+									<Description />
+									<Properties />
+									<Errors />
+									<Channel Name="Tau_pre(1,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>Tau_pre</String>
+											</Property>
+											<Property Name="Index">
+												<I32>39</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="Tau_pre(2,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>Tau_pre</String>
+											</Property>
+											<Property Name="Index">
+												<I32>39</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="Tau_pre(3,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>Tau_pre</String>
+											</Property>
+											<Property Name="Index">
+												<I32>39</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+								</Section>
+								<Section Name="Tau_post" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+									<Description />
+									<Properties />
+									<Errors />
+									<Channel Name="Tau_post(1,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>Tau_post</String>
+											</Property>
+											<Property Name="Index">
+												<I32>40</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="Tau_post(2,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>Tau_post</String>
+											</Property>
+											<Property Name="Index">
+												<I32>40</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="Tau_post(3,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>Tau_post</String>
+											</Property>
+											<Property Name="Index">
+												<I32>40</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+								</Section>
+								<Section Name="P_d" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+									<Description />
+									<Properties />
+									<Errors />
+								</Section>
+								<Section Name="tau to CSE mocell (only use for HIL testing)" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+									<Description />
+									<Properties />
+									<Errors />
+									<Channel Name="X_d" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>tau to CSE mocell (only use for HIL testing)/X_d</String>
+											</Property>
+											<Property Name="Index">
+												<I32>43</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="N_d" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>tau to CSE mocell (only use for HIL testing)/N_d</String>
+											</Property>
+											<Property Name="Index">
+												<I32>44</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="Y_d" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>tau to CSE mocell (only use for HIL testing)/Y_d</String>
+											</Property>
+											<Property Name="Index">
+												<I32>45</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="psi_0 " TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>tau to CSE mocell (only use for HIL testing)/psi_0 </String>
+											</Property>
+											<Property Name="Index">
+												<I32>46</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="x_0" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>tau to CSE mocell (only use for HIL testing)/x_0</String>
+											</Property>
+											<Property Name="Index">
+												<I32>47</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="y_0" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>tau to CSE mocell (only use for HIL testing)/y_0</String>
+											</Property>
+											<Property Name="Index">
+												<I32>48</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="integrator reset model" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>tau to CSE mocell (only use for HIL testing)/integrator reset model</String>
+											</Property>
+											<Property Name="Index">
+												<I32>49</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+								</Section>
+								<Section Name="ThrustAllocationAndSaturation" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+									<Description />
+									<Properties />
+									<Errors />
+									<Channel Name="u_BT" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>ThrustAllocationAndSaturation/u_BT</String>
+											</Property>
+											<Property Name="Index">
+												<I32>50</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="u_VSP1" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>ThrustAllocationAndSaturation/u_VSP1</String>
+											</Property>
+											<Property Name="Index">
+												<I32>51</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="u_VSP2" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>ThrustAllocationAndSaturation/u_VSP2</String>
+											</Property>
+											<Property Name="Index">
+												<I32>52</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="alpha_VSP1" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>ThrustAllocationAndSaturation/alpha_VSP1</String>
+											</Property>
+											<Property Name="Index">
+												<I32>53</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="alpha_VSP2" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>ThrustAllocationAndSaturation/alpha_VSP2</String>
+											</Property>
+											<Property Name="Index">
+												<I32>54</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="omega_VSP1" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>ThrustAllocationAndSaturation/omega_VSP1</String>
+											</Property>
+											<Property Name="Index">
+												<I32>55</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="omega_VSP2" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>ThrustAllocationAndSaturation/omega_VSP2</String>
+											</Property>
+											<Property Name="Index">
+												<I32>56</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="f_bt" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>ThrustAllocationAndSaturation/f_bt</String>
+											</Property>
+											<Property Name="Index">
+												<I32>57</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="f_vspx" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>ThrustAllocationAndSaturation/f_vspx</String>
+											</Property>
+											<Property Name="Index">
+												<I32>58</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name=" f_vspy" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>ThrustAllocationAndSaturation/ f_vspy</String>
+											</Property>
+											<Property Name="Index">
+												<I32>59</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+								</Section>
+								<Channel Name="u_real  " TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>u_real  </String>
+										</Property>
+										<Property Name="Index">
+											<I32>32</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="Dropout_signaOUT" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>Dropout_signaOUT</String>
+										</Property>
+										<Property Name="Index">
+											<I32>35</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="u_hat" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>u_hat</String>
+										</Property>
+										<Property Name="Index">
+											<I32>31</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="u_tilde" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>u_tilde</String>
+										</Property>
+										<Property Name="Index">
+											<I32>33</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="psi_tilde" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>psi_tilde</String>
+										</Property>
+										<Property Name="Index">
+											<I32>41</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="psi_hat" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>psi_hat</String>
+										</Property>
+										<Property Name="Index">
+											<I32>42</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+							</Section>
+							<Section Name="Parameters" TypeGUID="03D3BB0C-1485-13A6-56E10CEFF755E7D3">
+								<Description />
+								<Properties />
+								<Errors />
+							</Section>
+							<Section Name="Signals" TypeGUID="03D3BA31-1485-13A6-567CA69E9D2E71D5">
+								<Description />
+								<Properties />
+								<Errors />
+							</Section>
+						</Section>
 						<Section Name="ctrl_switch" TypeGUID="03D3B9C4-1485-13A6-561FC9BB21813875">
 							<Description />
 							<Properties>
@@ -2559,7 +3791,7 @@
 									<U32>6012</U32>
 								</Property>
 								<Property Name="DLL Path">
-									<DependentFile Type="Relative" Path="simulink source\ctrl_switch_niVeriStand_VxWorks_rtw\ctrl_switch.out">
+									<DependentFile Type="Absolute" Path="C:\Users\MCLab\Documents\GitHub\GROUP6_CS_Enterprise_CRIOlab\simulink source\ctrl_switch_niVeriStand_VxWorks_rtw\ctrl_switch.out">
 										<Version />
 										<ForceDownload>false</ForceDownload>
 										<RTDestination>c:\ni-rt\system\ctrl_switch.out</RTDestination>
@@ -3413,319 +4645,6 @@
 								<Errors />
 							</Section>
 						</Section>
-						<Section Name="QTM2SI" TypeGUID="03D3B9C4-1485-13A6-561FC9BB21813875">
-							<Description />
-							<Properties>
-								<Property Name="Base Rate">
-									<Double>10000</Double>
-								</Property>
-								<Property Name="DLL Size">
-									<I32>125060</I32>
-								</Property>
-								<Property Name="DLL Timestamp">
-									<Double>3573872290.5690346</Double>
-								</Property>
-								<Property Name="Decimation">
-									<I32>1</I32>
-								</Property>
-								<Property Name="Import Definition ID">
-									<I32>0</I32>
-								</Property>
-								<Property Name="ID">
-									<I32>0</I32>
-								</Property>
-								<Property Name="Model Timestamp">
-									<Double>0</Double>
-								</Property>
-								<Property Name="Processor">
-									<I32>-2</I32>
-								</Property>
-								<Property Name="Show Unnamed Signals">
-									<Boolean>false</Boolean>
-								</Property>
-								<Property Name="User Rate">
-									<Double>10000</Double>
-								</Property>
-								<Property Name="visible">
-									<U32>0</U32>
-								</Property>
-								<Property Name="blocks only">
-									<Boolean>false</Boolean>
-								</Property>
-								<Property Name="Segment Vectors">
-									<Boolean>true</Boolean>
-								</Property>
-								<Property Name="MD5">
-									<String>80f2155cba97c0dc03101591fc6b1cfc</String>
-								</Property>
-								<Property Name="NIVeriStandServer Port">
-									<U32>6012</U32>
-								</Property>
-								<Property Name="DLL Path">
-									<DependentFile Type="Relative" Path="simulink source\QTM2SI_niVeriStand_VxWorks_rtw\QTM2SI.out">
-										<Version />
-										<ForceDownload>false</ForceDownload>
-										<RTDestination>c:\ni-rt\system\QTM2SI.out</RTDestination>
-										<SupportedTarget>VxWorks</SupportedTarget>
-										<MD5>80f2155cba97c0dc03101591fc6b1cfc</MD5>
-									</DependentFile>
-								</Property>
-								<Property Name="GlobalParameterScopes">
-									<I32>0</I32>
-								</Property>
-								<Property Name="Group">
-									<I32>0</I32>
-								</Property>
-							</Properties>
-							<Errors />
-							<Section Name="Execution" TypeGUID="03D3BA9F-1485-13A6-56E3D5196780015F">
-								<Description />
-								<Properties />
-								<Errors />
-								<Channel Name="Model Command" TypeGUID="03D3BABE-1485-13A6-56C34B877844B2C1" RowDim="1" ColDim="1" Units="" BitFields="3">
-									<Description>0: Start
-1: Pause
-2: Reset
-3: Save
-4: Restore</Description>
-									<Properties />
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="Model Time" TypeGUID="03D3BAAE-1485-13A6-5606A77AB57A7FC9" RowDim="1" ColDim="1" Units="sec" BitFields="1">
-									<Description />
-									<Properties />
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="Model Status" TypeGUID="03D3BB6A-1485-13A6-5643A7AFDA3A2658" RowDim="1" ColDim="1" Units="" BitFields="1">
-									<Description>0: Running
-1: Paused
-2: Resetting
-3: Idle
-4: Stopped
-5: Restoring
-6: Saving</Description>
-									<Properties />
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="Time Step Duration" TypeGUID="8e7cc8ad-0a9f-4b63-b5f0-59c025358253" RowDim="1" ColDim="1" Units="usec" BitFields="1">
-									<Description>The duration in microseconds of the last model time step.</Description>
-									<Properties />
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-							</Section>
-							<Section Name="Inports" TypeGUID="03D3B9E3-1485-13A6-56035B19B2245EB3">
-								<Description />
-								<Properties />
-								<Errors />
-								<Channel Name="X" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>X</String>
-										</Property>
-										<Property Name="Index">
-											<I32>0</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="Y" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>Y</String>
-										</Property>
-										<Property Name="Index">
-											<I32>1</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="Pitch" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>Pitch</String>
-										</Property>
-										<Property Name="Index">
-											<I32>2</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="Z" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>Z</String>
-										</Property>
-										<Property Name="Index">
-											<I32>3</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="Roll" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>Roll</String>
-										</Property>
-										<Property Name="Index">
-											<I32>4</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="Yaw" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>Yaw</String>
-										</Property>
-										<Property Name="Index">
-											<I32>5</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-							</Section>
-							<Section Name="Outports" TypeGUID="03D3B9F3-1485-13A6-5698C14838D6AA3C">
-								<Description />
-								<Properties />
-								<Errors />
-								<Channel Name="x" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>x</String>
-										</Property>
-										<Property Name="Index">
-											<I32>6</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="y" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>y</String>
-										</Property>
-										<Property Name="Index">
-											<I32>7</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="z" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>z</String>
-										</Property>
-										<Property Name="Index">
-											<I32>8</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="phi" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>phi</String>
-										</Property>
-										<Property Name="Index">
-											<I32>9</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="theta" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>theta</String>
-										</Property>
-										<Property Name="Index">
-											<I32>10</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="psi" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>psi</String>
-										</Property>
-										<Property Name="Index">
-											<I32>11</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-							</Section>
-							<Section Name="Parameters" TypeGUID="03D3BB0C-1485-13A6-56E10CEFF755E7D3">
-								<Description />
-								<Properties />
-								<Errors />
-							</Section>
-							<Section Name="Signals" TypeGUID="03D3BA31-1485-13A6-567CA69E9D2E71D5">
-								<Description />
-								<Properties />
-								<Errors />
-							</Section>
-						</Section>
 						<Section Name="mech_elec" TypeGUID="03D3B9C4-1485-13A6-561FC9BB21813875">
 							<Description />
 							<Properties>
@@ -3775,7 +4694,7 @@
 									<U32>6012</U32>
 								</Property>
 								<Property Name="DLL Path">
-									<DependentFile Type="Relative" Path="simulink source\mech_elec_niVeriStand_VxWorks_rtw\mech_elec.out">
+									<DependentFile Type="Absolute" Path="C:\Users\MCLab\Documents\GitHub\GROUP6_CS_Enterprise_CRIOlab\simulink source\mech_elec_niVeriStand_VxWorks_rtw\mech_elec.out">
 										<Version />
 										<ForceDownload>false</ForceDownload>
 										<RTDestination>c:\ni-rt\system\mech_elec.out</RTDestination>
@@ -4115,6 +5034,319 @@
 								<Errors />
 							</Section>
 						</Section>
+						<Section Name="QTM2SI" TypeGUID="03D3B9C4-1485-13A6-561FC9BB21813875">
+							<Description />
+							<Properties>
+								<Property Name="Base Rate">
+									<Double>10000</Double>
+								</Property>
+								<Property Name="DLL Size">
+									<I32>125060</I32>
+								</Property>
+								<Property Name="DLL Timestamp">
+									<Double>3573872290.5690346</Double>
+								</Property>
+								<Property Name="Decimation">
+									<I32>1</I32>
+								</Property>
+								<Property Name="Import Definition ID">
+									<I32>0</I32>
+								</Property>
+								<Property Name="ID">
+									<I32>0</I32>
+								</Property>
+								<Property Name="Model Timestamp">
+									<Double>0</Double>
+								</Property>
+								<Property Name="Processor">
+									<I32>-2</I32>
+								</Property>
+								<Property Name="Show Unnamed Signals">
+									<Boolean>false</Boolean>
+								</Property>
+								<Property Name="User Rate">
+									<Double>10000</Double>
+								</Property>
+								<Property Name="visible">
+									<U32>0</U32>
+								</Property>
+								<Property Name="blocks only">
+									<Boolean>false</Boolean>
+								</Property>
+								<Property Name="Segment Vectors">
+									<Boolean>true</Boolean>
+								</Property>
+								<Property Name="MD5">
+									<String>80f2155cba97c0dc03101591fc6b1cfc</String>
+								</Property>
+								<Property Name="NIVeriStandServer Port">
+									<U32>6012</U32>
+								</Property>
+								<Property Name="DLL Path">
+									<DependentFile Type="Absolute" Path="C:\Users\MCLab\Documents\GitHub\GROUP6_CS_Enterprise_CRIOlab\simulink source\QTM2SI_niVeriStand_VxWorks_rtw\QTM2SI.out">
+										<Version />
+										<ForceDownload>false</ForceDownload>
+										<RTDestination>c:\ni-rt\system\QTM2SI.out</RTDestination>
+										<SupportedTarget>VxWorks</SupportedTarget>
+										<MD5>80f2155cba97c0dc03101591fc6b1cfc</MD5>
+									</DependentFile>
+								</Property>
+								<Property Name="GlobalParameterScopes">
+									<I32>0</I32>
+								</Property>
+								<Property Name="Group">
+									<I32>0</I32>
+								</Property>
+							</Properties>
+							<Errors />
+							<Section Name="Execution" TypeGUID="03D3BA9F-1485-13A6-56E3D5196780015F">
+								<Description />
+								<Properties />
+								<Errors />
+								<Channel Name="Model Command" TypeGUID="03D3BABE-1485-13A6-56C34B877844B2C1" RowDim="1" ColDim="1" Units="" BitFields="3">
+									<Description>0: Start
+1: Pause
+2: Reset
+3: Save
+4: Restore</Description>
+									<Properties />
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="Model Time" TypeGUID="03D3BAAE-1485-13A6-5606A77AB57A7FC9" RowDim="1" ColDim="1" Units="sec" BitFields="1">
+									<Description />
+									<Properties />
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="Model Status" TypeGUID="03D3BB6A-1485-13A6-5643A7AFDA3A2658" RowDim="1" ColDim="1" Units="" BitFields="1">
+									<Description>0: Running
+1: Paused
+2: Resetting
+3: Idle
+4: Stopped
+5: Restoring
+6: Saving</Description>
+									<Properties />
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="Time Step Duration" TypeGUID="8e7cc8ad-0a9f-4b63-b5f0-59c025358253" RowDim="1" ColDim="1" Units="usec" BitFields="1">
+									<Description>The duration in microseconds of the last model time step.</Description>
+									<Properties />
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+							</Section>
+							<Section Name="Inports" TypeGUID="03D3B9E3-1485-13A6-56035B19B2245EB3">
+								<Description />
+								<Properties />
+								<Errors />
+								<Channel Name="X" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>X</String>
+										</Property>
+										<Property Name="Index">
+											<I32>0</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="Y" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>Y</String>
+										</Property>
+										<Property Name="Index">
+											<I32>1</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="Pitch" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>Pitch</String>
+										</Property>
+										<Property Name="Index">
+											<I32>2</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="Z" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>Z</String>
+										</Property>
+										<Property Name="Index">
+											<I32>3</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="Roll" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>Roll</String>
+										</Property>
+										<Property Name="Index">
+											<I32>4</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="Yaw" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>Yaw</String>
+										</Property>
+										<Property Name="Index">
+											<I32>5</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+							</Section>
+							<Section Name="Outports" TypeGUID="03D3B9F3-1485-13A6-5698C14838D6AA3C">
+								<Description />
+								<Properties />
+								<Errors />
+								<Channel Name="x" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>x</String>
+										</Property>
+										<Property Name="Index">
+											<I32>6</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="y" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>y</String>
+										</Property>
+										<Property Name="Index">
+											<I32>7</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="z" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>z</String>
+										</Property>
+										<Property Name="Index">
+											<I32>8</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="phi" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>phi</String>
+										</Property>
+										<Property Name="Index">
+											<I32>9</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="theta" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>theta</String>
+										</Property>
+										<Property Name="Index">
+											<I32>10</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="psi" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>psi</String>
+										</Property>
+										<Property Name="Index">
+											<I32>11</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+							</Section>
+							<Section Name="Parameters" TypeGUID="03D3BB0C-1485-13A6-56E10CEFF755E7D3">
+								<Description />
+								<Properties />
+								<Errors />
+							</Section>
+							<Section Name="Signals" TypeGUID="03D3BA31-1485-13A6-567CA69E9D2E71D5">
+								<Description />
+								<Properties />
+								<Errors />
+							</Section>
+						</Section>
 						<Section Name="u2pwm" TypeGUID="03D3B9C4-1485-13A6-561FC9BB21813875">
 							<Description />
 							<Properties>
@@ -4164,7 +5396,7 @@
 									<U32>6012</U32>
 								</Property>
 								<Property Name="DLL Path">
-									<DependentFile Type="Relative" Path="simulink source\u2pwm_niVeriStand_VxWorks_rtw\u2pwm.out">
+									<DependentFile Type="Absolute" Path="C:\Users\MCLab\Documents\GitHub\GROUP6_CS_Enterprise_CRIOlab\simulink source\u2pwm_niVeriStand_VxWorks_rtw\u2pwm.out">
 										<Version />
 										<ForceDownload>false</ForceDownload>
 										<RTDestination>c:\ni-rt\system\u2pwm.out</RTDestination>
@@ -4599,1370 +5831,6 @@
 										</DefaultValue>
 									</Channel>
 								</Section>
-							</Section>
-							<Section Name="Parameters" TypeGUID="03D3BB0C-1485-13A6-56E10CEFF755E7D3">
-								<Description />
-								<Properties />
-								<Errors />
-							</Section>
-							<Section Name="Signals" TypeGUID="03D3BA31-1485-13A6-567CA69E9D2E71D5">
-								<Description />
-								<Properties />
-								<Errors />
-							</Section>
-						</Section>
-						<Section Name="ctrl_student_HIL" TypeGUID="03D3B9C4-1485-13A6-561FC9BB21813875">
-							<Description />
-							<Properties>
-								<Property Name="Base Rate">
-									<Double>10000</Double>
-								</Property>
-								<Property Name="DLL Size">
-									<I32>341573</I32>
-								</Property>
-								<Property Name="DLL Timestamp">
-									<Double>3574244576.4632416</Double>
-								</Property>
-								<Property Name="Decimation">
-									<I32>1</I32>
-								</Property>
-								<Property Name="Import Definition ID">
-									<I32>0</I32>
-								</Property>
-								<Property Name="ID">
-									<I32>0</I32>
-								</Property>
-								<Property Name="Model Timestamp">
-									<Double>0</Double>
-								</Property>
-								<Property Name="Processor">
-									<I32>-2</I32>
-								</Property>
-								<Property Name="Show Unnamed Signals">
-									<Boolean>false</Boolean>
-								</Property>
-								<Property Name="User Rate">
-									<Double>10000</Double>
-								</Property>
-								<Property Name="visible">
-									<U32>0</U32>
-								</Property>
-								<Property Name="blocks only">
-									<Boolean>false</Boolean>
-								</Property>
-								<Property Name="Segment Vectors">
-									<Boolean>true</Boolean>
-								</Property>
-								<Property Name="MD5">
-									<String>6c0fb2d5fbca1ad336fca49e9f3045a3</String>
-								</Property>
-								<Property Name="NIVeriStandServer Port">
-									<U32>6012</U32>
-								</Property>
-								<Property Name="DLL Path">
-									<DependentFile Type="Relative" Path="simulink source\ctrl_student_HIL_niVeriStand_VxWorks_rtw\ctrl_student_HIL.out">
-										<Version />
-										<ForceDownload>false</ForceDownload>
-										<RTDestination>c:\ni-rt\system\ctrl_student_HIL.out</RTDestination>
-										<SupportedTarget>VxWorks</SupportedTarget>
-										<MD5>ac4fa7c7ed11f49f2cb0c6120acaae04</MD5>
-									</DependentFile>
-								</Property>
-								<Property Name="GlobalParameterScopes">
-									<I32>0</I32>
-								</Property>
-							</Properties>
-							<Errors />
-							<Section Name="Execution" TypeGUID="03D3BA9F-1485-13A6-56E3D5196780015F">
-								<Description />
-								<Properties />
-								<Errors />
-								<Channel Name="Model Command" TypeGUID="03D3BABE-1485-13A6-56C34B877844B2C1" RowDim="1" ColDim="1" Units="" BitFields="3">
-									<Description>0: Start
-1: Pause
-2: Reset
-3: Save
-4: Restore</Description>
-									<Properties />
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="Model Time" TypeGUID="03D3BAAE-1485-13A6-5606A77AB57A7FC9" RowDim="1" ColDim="1" Units="sec" BitFields="1">
-									<Description />
-									<Properties />
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="Model Status" TypeGUID="03D3BB6A-1485-13A6-5643A7AFDA3A2658" RowDim="1" ColDim="1" Units="" BitFields="1">
-									<Description>0: Running
-1: Paused
-2: Resetting
-3: Idle
-4: Stopped
-5: Restoring
-6: Saving</Description>
-									<Properties />
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="Time Step Duration" TypeGUID="8e7cc8ad-0a9f-4b63-b5f0-59c025358253" RowDim="1" ColDim="1" Units="usec" BitFields="1">
-									<Description>The duration in microseconds of the last model time step.</Description>
-									<Properties />
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-							</Section>
-							<Section Name="Inports" TypeGUID="03D3B9E3-1485-13A6-56035B19B2245EB3">
-								<Description />
-								<Properties />
-								<Errors />
-								<Section Name="joystick" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
-									<Description />
-									<Properties />
-									<Errors />
-									<Channel Name="Select" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/Select</String>
-											</Property>
-											<Property Name="Index">
-												<I32>13</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="PosXRight" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/PosXRight</String>
-											</Property>
-											<Property Name="Index">
-												<I32>14</I32>
-											</Property>
-											<Property Name="DataSource">
-												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/PosXRight" />
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="PosYRight" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/PosYRight</String>
-											</Property>
-											<Property Name="Index">
-												<I32>15</I32>
-											</Property>
-											<Property Name="DataSource">
-												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/PosYRight" />
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="R2_continuous" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/R2_continuous</String>
-											</Property>
-											<Property Name="Index">
-												<I32>16</I32>
-											</Property>
-											<Property Name="DataSource">
-												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/R2_cont" />
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="PosXLeft" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/PosXLeft</String>
-											</Property>
-											<Property Name="Index">
-												<I32>17</I32>
-											</Property>
-											<Property Name="DataSource">
-												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/PosXLeft" />
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="PosYLeft" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/PosYLeft</String>
-											</Property>
-											<Property Name="Index">
-												<I32>18</I32>
-											</Property>
-											<Property Name="DataSource">
-												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/PosYLeft" />
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="L1" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/L1</String>
-											</Property>
-											<Property Name="Index">
-												<I32>19</I32>
-											</Property>
-											<Property Name="DataSource">
-												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/L1" />
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="R1" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/R1</String>
-											</Property>
-											<Property Name="Index">
-												<I32>20</I32>
-											</Property>
-											<Property Name="DataSource">
-												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/R1" />
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="ArrowDown" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/ArrowDown</String>
-											</Property>
-											<Property Name="Index">
-												<I32>21</I32>
-											</Property>
-											<Property Name="DataSource">
-												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/ArrowDown" />
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="ArrowUp" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/ArrowUp</String>
-											</Property>
-											<Property Name="Index">
-												<I32>22</I32>
-											</Property>
-											<Property Name="DataSource">
-												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/ArrowUP" />
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="ArrowLeft" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/ArrowLeft</String>
-											</Property>
-											<Property Name="Index">
-												<I32>23</I32>
-											</Property>
-											<Property Name="DataSource">
-												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/ArrowLeft" />
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="ArrowRight" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/ArrowRight</String>
-											</Property>
-											<Property Name="Index">
-												<I32>24</I32>
-											</Property>
-											<Property Name="DataSource">
-												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/ArrowRight" />
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="L2_continuous" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/L2_continuous</String>
-											</Property>
-											<Property Name="Index">
-												<I32>12</I32>
-											</Property>
-											<Property Name="DataSource">
-												<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/L2_cont" />
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-								</Section>
-								<Section Name="ThrustAllocationAndSaturation" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
-									<Description />
-									<Properties />
-									<Errors />
-									<Channel Name="TurnOffomega1" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>ThrustAllocationAndSaturation/TurnOffomega1</String>
-											</Property>
-											<Property Name="Index">
-												<I32>33</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="TurnOffomega2" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>ThrustAllocationAndSaturation/TurnOffomega2</String>
-											</Property>
-											<Property Name="Index">
-												<I32>34</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-								</Section>
-								<Channel Name="reset" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>reset</String>
-										</Property>
-										<Property Name="Index">
-											<I32>0</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="y_in" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>y_in</String>
-										</Property>
-										<Property Name="Index">
-											<I32>1</I32>
-										</Property>
-										<Property Name="DataSource">
-											<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Outports/eta/y" />
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="psi_in" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>psi_in</String>
-										</Property>
-										<Property Name="Index">
-											<I32>2</I32>
-										</Property>
-										<Property Name="DataSource">
-											<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Outports/eta/psi" />
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="u_in" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>u_in</String>
-										</Property>
-										<Property Name="Index">
-											<I32>3</I32>
-										</Property>
-										<Property Name="DataSource">
-											<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Outports/nu/u" />
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="x_in" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>x_in</String>
-										</Property>
-										<Property Name="Index">
-											<I32>4</I32>
-										</Property>
-										<Property Name="DataSource">
-											<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Outports/eta/x" />
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="NoisePowPos" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>NoisePowPos</String>
-										</Property>
-										<Property Name="Index">
-											<I32>5</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="NoisePowHead" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>NoisePowHead</String>
-										</Property>
-										<Property Name="Index">
-											<I32>6</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="NoiseEnable" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>NoiseEnable</String>
-										</Property>
-										<Property Name="Index">
-											<I32>7</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="Dropout_signaINl" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>Dropout_signaINl</String>
-										</Property>
-										<Property Name="Index">
-											<I32>8</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="r_in" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>r_in</String>
-										</Property>
-										<Property Name="Index">
-											<I32>9</I32>
-										</Property>
-										<Property Name="DataSource">
-											<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Outports/nu/r" />
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="ControllerGainK2" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>ControllerGainK2</String>
-										</Property>
-										<Property Name="Index">
-											<I32>10</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="ControllerGainK1" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>ControllerGainK1</String>
-										</Property>
-										<Property Name="Index">
-											<I32>11</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="JoysticControllerSwitch" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>JoysticControllerSwitch</String>
-										</Property>
-										<Property Name="Index">
-											<I32>25</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="sf1" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>sf1</String>
-										</Property>
-										<Property Name="Index">
-											<I32>26</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="SZ_ResetKill" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>SZ_ResetKill</String>
-										</Property>
-										<Property Name="Index">
-											<I32>27</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="SZ_Owerwrite" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>SZ_Owerwrite</String>
-										</Property>
-										<Property Name="Index">
-											<I32>28</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="v_in" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>v_in</String>
-										</Property>
-										<Property Name="Index">
-											<I32>29</I32>
-										</Property>
-										<Property Name="DataSource">
-											<DataSourceNode Channel="Targets/Controller/Simulation Models/Models/CSE1_HIL_tau/Outports/nu/v" />
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="sf2" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>sf2</String>
-										</Property>
-										<Property Name="Index">
-											<I32>30</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="sf3" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>sf3</String>
-										</Property>
-										<Property Name="Index">
-											<I32>31</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="biasOffset" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>biasOffset</String>
-										</Property>
-										<Property Name="Index">
-											<I32>32</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-							</Section>
-							<Section Name="Outports" TypeGUID="03D3B9F3-1485-13A6-5698C14838D6AA3C">
-								<Description />
-								<Properties />
-								<Errors />
-								<Section Name="eta_hat" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
-									<Description />
-									<Properties />
-									<Errors />
-									<Channel Name="eta_hat(1,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>eta_hat</String>
-											</Property>
-											<Property Name="Index">
-												<I32>35</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="eta_hat(2,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>eta_hat</String>
-											</Property>
-											<Property Name="Index">
-												<I32>35</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="eta_hat(3,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>eta_hat</String>
-											</Property>
-											<Property Name="Index">
-												<I32>35</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-								</Section>
-								<Section Name="eta_tilde" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
-									<Description />
-									<Properties />
-									<Errors />
-									<Channel Name="eta_tilde(1,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>eta_tilde</String>
-											</Property>
-											<Property Name="Index">
-												<I32>37</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="eta_tilde(2,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>eta_tilde</String>
-											</Property>
-											<Property Name="Index">
-												<I32>37</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="eta_tilde(3,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>eta_tilde</String>
-											</Property>
-											<Property Name="Index">
-												<I32>37</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-								</Section>
-								<Section Name="eta_noise" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
-									<Description />
-									<Properties />
-									<Errors />
-									<Channel Name="eta_noise(1,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>eta_noise</String>
-											</Property>
-											<Property Name="Index">
-												<I32>38</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="eta_noise(2,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>eta_noise</String>
-											</Property>
-											<Property Name="Index">
-												<I32>38</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="eta_noise(3,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>eta_noise</String>
-											</Property>
-											<Property Name="Index">
-												<I32>38</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-								</Section>
-								<Section Name="joystick" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
-									<Description />
-									<Properties />
-									<Errors />
-									<Channel Name="Current Mode " TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/Current Mode </String>
-											</Property>
-											<Property Name="Index">
-												<I32>40</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="tau_yaw" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/tau_yaw</String>
-											</Property>
-											<Property Name="Index">
-												<I32>41</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="tau_x" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/tau_x</String>
-											</Property>
-											<Property Name="Index">
-												<I32>42</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="tau_y" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>joystick/tau_y</String>
-											</Property>
-											<Property Name="Index">
-												<I32>43</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-								</Section>
-								<Section Name="Tau_pre" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
-									<Description />
-									<Properties />
-									<Errors />
-									<Channel Name="Tau_pre(1,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>Tau_pre</String>
-											</Property>
-											<Property Name="Index">
-												<I32>44</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="Tau_pre(2,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>Tau_pre</String>
-											</Property>
-											<Property Name="Index">
-												<I32>44</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="Tau_pre(3,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>Tau_pre</String>
-											</Property>
-											<Property Name="Index">
-												<I32>44</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-								</Section>
-								<Section Name="Tau_post" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
-									<Description />
-									<Properties />
-									<Errors />
-									<Channel Name="Tau_post(1,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>Tau_post</String>
-											</Property>
-											<Property Name="Index">
-												<I32>45</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="Tau_post(2,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>Tau_post</String>
-											</Property>
-											<Property Name="Index">
-												<I32>45</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="Tau_post(3,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>Tau_post</String>
-											</Property>
-											<Property Name="Index">
-												<I32>45</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-								</Section>
-								<Section Name="tau to CSE mocell (only use for HIL testing)" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
-									<Description />
-									<Properties />
-									<Errors />
-									<Channel Name="X_d" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>tau to CSE mocell (only use for HIL testing)/X_d</String>
-											</Property>
-											<Property Name="Index">
-												<I32>47</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="N_d" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>tau to CSE mocell (only use for HIL testing)/N_d</String>
-											</Property>
-											<Property Name="Index">
-												<I32>48</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="Y_d" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>tau to CSE mocell (only use for HIL testing)/Y_d</String>
-											</Property>
-											<Property Name="Index">
-												<I32>49</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="psi_0 " TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>tau to CSE mocell (only use for HIL testing)/psi_0 </String>
-											</Property>
-											<Property Name="Index">
-												<I32>50</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="x_0" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>tau to CSE mocell (only use for HIL testing)/x_0</String>
-											</Property>
-											<Property Name="Index">
-												<I32>51</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="y_0" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>tau to CSE mocell (only use for HIL testing)/y_0</String>
-											</Property>
-											<Property Name="Index">
-												<I32>52</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="integrator reset model" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>tau to CSE mocell (only use for HIL testing)/integrator reset model</String>
-											</Property>
-											<Property Name="Index">
-												<I32>53</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-								</Section>
-								<Section Name="ThrustAllocationAndSaturation" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
-									<Description />
-									<Properties />
-									<Errors />
-									<Channel Name="u_BT" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>ThrustAllocationAndSaturation/u_BT</String>
-											</Property>
-											<Property Name="Index">
-												<I32>54</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="u_VSP1" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>ThrustAllocationAndSaturation/u_VSP1</String>
-											</Property>
-											<Property Name="Index">
-												<I32>55</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="u_VSP2" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>ThrustAllocationAndSaturation/u_VSP2</String>
-											</Property>
-											<Property Name="Index">
-												<I32>56</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="alpha_VSP1" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>ThrustAllocationAndSaturation/alpha_VSP1</String>
-											</Property>
-											<Property Name="Index">
-												<I32>57</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="alpha_VSP2" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>ThrustAllocationAndSaturation/alpha_VSP2</String>
-											</Property>
-											<Property Name="Index">
-												<I32>58</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="omega_VSP1" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>ThrustAllocationAndSaturation/omega_VSP1</String>
-											</Property>
-											<Property Name="Index">
-												<I32>59</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="omega_VSP2" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>ThrustAllocationAndSaturation/omega_VSP2</String>
-											</Property>
-											<Property Name="Index">
-												<I32>60</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="f_bt" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>ThrustAllocationAndSaturation/f_bt</String>
-											</Property>
-											<Property Name="Index">
-												<I32>61</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="f_vspx" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>ThrustAllocationAndSaturation/f_vspx</String>
-											</Property>
-											<Property Name="Index">
-												<I32>62</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name=" f_vspy" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>ThrustAllocationAndSaturation/ f_vspy</String>
-											</Property>
-											<Property Name="Index">
-												<I32>63</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-								</Section>
-								<Section Name="P_d" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
-									<Description />
-									<Properties />
-									<Errors />
-									<Channel Name="P_d(1,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>P_d</String>
-											</Property>
-											<Property Name="Index">
-												<I32>46</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-									<Channel Name="P_d(2,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-										<Description />
-										<Properties>
-											<Property Name="Model Path">
-												<String>P_d</String>
-											</Property>
-											<Property Name="Index">
-												<I32>46</I32>
-											</Property>
-										</Properties>
-										<Errors />
-										<DefaultValue>
-											<Elem>0</Elem>
-										</DefaultValue>
-									</Channel>
-								</Section>
-								<Channel Name="u_real  " TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>u_real  </String>
-										</Property>
-										<Property Name="Index">
-											<I32>36</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
-								<Channel Name="Dropout_signaOUT" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>Dropout_signaOUT</String>
-										</Property>
-										<Property Name="Index">
-											<I32>39</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
 							</Section>
 							<Section Name="Parameters" TypeGUID="03D3BB0C-1485-13A6-56E10CEFF755E7D3">
 								<Description />

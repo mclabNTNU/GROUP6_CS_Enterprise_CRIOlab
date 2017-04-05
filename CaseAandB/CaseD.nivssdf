@@ -10,7 +10,7 @@
 				<String>CaseD</String>
 			</Property>
 			<Property Name="Version">
-				<String>1.0.0.28</String>
+				<String>1.0.0.29</String>
 			</Property>
 			<Property Name="Creator">
 				<String />
@@ -4618,10 +4618,10 @@
 									<Double>10000</Double>
 								</Property>
 								<Property Name="DLL Size">
-									<I32>256995</I32>
+									<I32>256711</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3573979296.6754608</Double>
+									<Double>3574245666.3256068</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -4665,7 +4665,7 @@
 										<ForceDownload>false</ForceDownload>
 										<RTDestination>c:\ni-rt\system\ctrl_student_HIL.out</RTDestination>
 										<SupportedTarget>VxWorks</SupportedTarget>
-										<MD5>983f09d75561e3fef443a40d9671eaaf</MD5>
+										<MD5>e9c512e77eea33ca9eba28ccf1a76908</MD5>
 									</DependentFile>
 								</Property>
 								<Property Name="GlobalParameterScopes">
