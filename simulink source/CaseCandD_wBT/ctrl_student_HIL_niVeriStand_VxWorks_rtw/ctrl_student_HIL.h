@@ -7,9 +7,9 @@
  *
  * Code generation for model "ctrl_student_HIL".
  *
- * Model version              : 1.286
+ * Model version              : 1.282
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Sun Apr 02 15:12:52 2017
+ * C source code generated on : Wed Apr 05 14:47:02 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -1003,7 +1003,6 @@ typedef struct {
   real_T Tau_post_DWORK1[3];           /* '<Root>/Tau_post' */
   real_T P_d_DWORK1[2];                /* '<Root>/P_d' */
   real_T v_in_DWORK1;                  /* '<Root>/v_in' */
-  real_T S_out_DWORK1;                 /* '<Root>/S_out' */
   real_T sf2_DWORK1;                   /* '<Root>/sf2' */
   real_T sf3_DWORK1;                   /* '<Root>/sf3' */
   real_T biasOffset_DWORK1;            /* '<Root>/biasOffset' */
@@ -1175,7 +1174,6 @@ typedef struct {
   uint8_T Tau_post_DWORK2[17];         /* '<Root>/Tau_post' */
   uint8_T P_d_DWORK2[17];              /* '<Root>/P_d' */
   uint8_T v_in_DWORK2[17];             /* '<Root>/v_in' */
-  uint8_T S_out_DWORK2[17];            /* '<Root>/S_out' */
   uint8_T sf2_DWORK2[17];              /* '<Root>/sf2' */
   uint8_T sf3_DWORK2[17];              /* '<Root>/sf3' */
   uint8_T biasOffset_DWORK2[17];       /* '<Root>/biasOffset' */
@@ -2285,24 +2283,6 @@ struct P_ctrl_student_HIL_T_ {
                                         */
   real_T v_in_P6;                      /* Expression: btype
                                         * Referenced by: '<Root>/v_in'
-                                        */
-  real_T S_out_P1;                     /* Expression: width
-                                        * Referenced by: '<Root>/S_out'
-                                        */
-  real_T S_out_P2;                     /* Expression: dtype
-                                        * Referenced by: '<Root>/S_out'
-                                        */
-  real_T S_out_P3;                     /* Expression: portnum
-                                        * Referenced by: '<Root>/S_out'
-                                        */
-  real_T S_out_P4;                     /* Expression: stime
-                                        * Referenced by: '<Root>/S_out'
-                                        */
-  real_T S_out_P5;                     /* Expression: stype
-                                        * Referenced by: '<Root>/S_out'
-                                        */
-  real_T S_out_P6;                     /* Expression: btype
-                                        * Referenced by: '<Root>/S_out'
                                         */
   real_T sf2_P1;                       /* Expression: width
                                         * Referenced by: '<Root>/sf2'

@@ -7,9 +7,9 @@
  *
  * Code generation for model "ctrl_student_HIL".
  *
- * Model version              : 1.291
+ * Model version              : 1.286
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Sun Apr 02 15:42:11 2017
+ * C source code generated on : Wed Apr 05 15:27:27 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -899,7 +899,7 @@ typedef struct {
   real_T IC_i[3];                      /* '<S54>/IC' */
   real_T TurnOffomega1;                /* '<S9>/TurnOffomega1' */
   real_T TurnOffomega2;                /* '<S9>/TurnOffomega2' */
-  real_T Switch_b;                     /* '<S9>/Switch' */
+  real_T Switch_m;                     /* '<S9>/Switch' */
   real_T Switch1;                      /* '<S9>/Switch1' */
   real_T kill_signal;                  /* '<S12>/MATLAB Function' */
   real_T nu_dot[3];                    /* '<S11>/kinetics' */
@@ -1003,7 +1003,6 @@ typedef struct {
   real_T Tau_post_DWORK1[3];           /* '<Root>/Tau_post' */
   real_T P_d_DWORK1[2];                /* '<Root>/P_d' */
   real_T v_in_DWORK1;                  /* '<Root>/v_in' */
-  real_T S_out_DWORK1;                 /* '<Root>/S_out' */
   real_T sf2_DWORK1;                   /* '<Root>/sf2' */
   real_T sf3_DWORK1;                   /* '<Root>/sf3' */
   real_T biasOffset_DWORK1;            /* '<Root>/biasOffset' */
@@ -1175,7 +1174,6 @@ typedef struct {
   uint8_T Tau_post_DWORK2[17];         /* '<Root>/Tau_post' */
   uint8_T P_d_DWORK2[17];              /* '<Root>/P_d' */
   uint8_T v_in_DWORK2[17];             /* '<Root>/v_in' */
-  uint8_T S_out_DWORK2[17];            /* '<Root>/S_out' */
   uint8_T sf2_DWORK2[17];              /* '<Root>/sf2' */
   uint8_T sf3_DWORK2[17];              /* '<Root>/sf3' */
   uint8_T biasOffset_DWORK2[17];       /* '<Root>/biasOffset' */
@@ -1331,7 +1329,7 @@ struct P_ctrl_student_HIL_T_ {
                                         *   '<S36>/mu '
                                         *   '<S43>/mu '
                                         */
-  real_T pd[8];                        /* Variable: pd
+  real_T pd[4];                        /* Variable: pd
                                         * Referenced by: '<S42>/Desired Position'
                                         */
   real_T Ramp_X0;                      /* Mask Parameter: Ramp_X0
@@ -1858,7 +1856,7 @@ struct P_ctrl_student_HIL_T_ {
   real_T PosXRight_P6;                 /* Expression: btype
                                         * Referenced by: '<S10>/PosXRight'
                                         */
-  real_T Max_Global_Forces_Value[4];   /* Expression:  [2*1.165 4*(1.165*0.8) 4*(1.165*0.8)*0.4575 2.629*0.3875]
+  real_T Max_Global_Forces_Value[4];   /* Expression:  [2*1.165 4*(1.165*0.8) 4*(1.165*0.8)*0.4575 2.629]
                                         * Referenced by: '<S10>/Max_Global_Forces'
                                         */
   real_T DeadZone_Start;               /* Expression: -0.05
@@ -2284,24 +2282,6 @@ struct P_ctrl_student_HIL_T_ {
   real_T v_in_P6;                      /* Expression: btype
                                         * Referenced by: '<Root>/v_in'
                                         */
-  real_T S_out_P1;                     /* Expression: width
-                                        * Referenced by: '<Root>/S_out'
-                                        */
-  real_T S_out_P2;                     /* Expression: dtype
-                                        * Referenced by: '<Root>/S_out'
-                                        */
-  real_T S_out_P3;                     /* Expression: portnum
-                                        * Referenced by: '<Root>/S_out'
-                                        */
-  real_T S_out_P4;                     /* Expression: stime
-                                        * Referenced by: '<Root>/S_out'
-                                        */
-  real_T S_out_P5;                     /* Expression: stype
-                                        * Referenced by: '<Root>/S_out'
-                                        */
-  real_T S_out_P6;                     /* Expression: btype
-                                        * Referenced by: '<Root>/S_out'
-                                        */
   real_T sf2_P1;                       /* Expression: width
                                         * Referenced by: '<Root>/sf2'
                                         */
@@ -2623,7 +2603,7 @@ struct P_ctrl_student_HIL_T_ {
   real_T alpha_VSP2_P6;                /* Expression: btype
                                         * Referenced by: '<S9>/alpha_VSP2'
                                         */
-  real_T Constant_Value_ks;            /* Expression: 0
+  real_T Constant_Value_f;             /* Expression: 0
                                         * Referenced by: '<S9>/Constant'
                                         */
   real_T Step_Y0;                      /* Expression: 0
@@ -2635,7 +2615,7 @@ struct P_ctrl_student_HIL_T_ {
   real_T Saturation_LowerSat;          /* Expression: 0
                                         * Referenced by: '<S9>/Saturation'
                                         */
-  real_T Switch_Threshold_j;           /* Expression: 0
+  real_T Switch_Threshold_b;           /* Expression: 0
                                         * Referenced by: '<S9>/Switch'
                                         */
   real_T omega_VSP1_P1;                /* Expression: width
@@ -2656,10 +2636,10 @@ struct P_ctrl_student_HIL_T_ {
   real_T omega_VSP1_P6;                /* Expression: btype
                                         * Referenced by: '<S9>/omega_VSP1'
                                         */
-  real_T Constant1_Value_o;            /* Expression: 0
+  real_T Constant1_Value_g;            /* Expression: 0
                                         * Referenced by: '<S9>/Constant1'
                                         */
-  real_T Switch1_Threshold_o;          /* Expression: 0
+  real_T Switch1_Threshold_a;          /* Expression: 0
                                         * Referenced by: '<S9>/Switch1'
                                         */
   real_T omega_VSP2_P1;                /* Expression: width

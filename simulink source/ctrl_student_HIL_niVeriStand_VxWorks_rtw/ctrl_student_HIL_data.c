@@ -15,9 +15,9 @@
  *
  * Code generation for model "ctrl_student_HIL".
  *
- * Model version              : 1.291
+ * Model version              : 1.286
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Sun Apr 02 15:42:11 2017
+ * C source code generated on : Wed Apr 05 15:27:27 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -55,15 +55,15 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
    * Referenced by: '<S2>/Constant2'
    */
   { 200.0, 0.0, 0.0, 0.0, 50.0, 0.0, 0.0, 0.0, 3.0 },
-  0.0,                                 /* Variable: LAW
+  1.0,                                 /* Variable: LAW
                                         * Referenced by:
                                         *   '<S36>/TASK'
                                         *   '<S43>/TASK'
                                         */
-  4000.0,                              /* Variable: T_initialDP
+  9000.0,                              /* Variable: T_initialDP
                                         * Referenced by: '<S45>/Constant1'
                                         */
-  0.25,                                /* Variable: U_ref
+  0.16,                                /* Variable: U_ref
                                         * Referenced by:
                                         *   '<S34>/Constant'
                                         *   '<S45>/Constant'
@@ -74,7 +74,7 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
    *   '<Root>/Constant2'
    *   '<S13>/Constant1'
    */
-  { 6.0, 5.0, 0.0 },
+  { 2.0, 0.0, 0.0 },
 
   /*  Variable: l1
    * Referenced by: '<S7>/Constant1'
@@ -103,7 +103,7 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
   14.79,                               /* Variable: m
                                         * Referenced by: '<S27>/Constant'
                                         */
-  0.001,                               /* Variable: mu
+  0.0,                                 /* Variable: mu
                                         * Referenced by:
                                         *   '<S36>/mu '
                                         *   '<S43>/mu '
@@ -112,7 +112,7 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
   /*  Variable: pd
    * Referenced by: '<S42>/Desired Position'
    */
-  { 2.0, 0.0, 10.0, 4.0, 2.0, 0.0, 10.0, 4.0 },
+  { 2.0, 0.0, 10.0, 4.0 },
   0.0,                                 /* Mask Parameter: Ramp_X0
                                         * Referenced by: '<S72>/Constant1'
                                         */
@@ -646,10 +646,10 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
                                         * Referenced by: '<S10>/PosXRight'
                                         */
 
-  /*  Expression:  [2*1.165 4*(1.165*0.8) 4*(1.165*0.8)*0.4575 2.629*0.3875]
+  /*  Expression:  [2*1.165 4*(1.165*0.8) 4*(1.165*0.8)*0.4575 2.629]
    * Referenced by: '<S10>/Max_Global_Forces'
    */
-  { 2.33, 3.728, 1.7055600000000002, 1.0187375 },
+  { 2.33, 3.728, 1.7055600000000002, 2.629 },
   -0.05,                               /* Expression: -0.05
                                         * Referenced by: '<S10>/Dead Zone'
                                         */
@@ -1074,24 +1074,6 @@ P_ctrl_student_HIL_T ctrl_student_HIL_P = {
                                         */
   1.0,                                 /* Expression: btype
                                         * Referenced by: '<Root>/v_in'
-                                        */
-  -1.0,                                /* Expression: width
-                                        * Referenced by: '<Root>/S_out'
-                                        */
-  1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<Root>/S_out'
-                                        */
-  9.0,                                 /* Expression: portnum
-                                        * Referenced by: '<Root>/S_out'
-                                        */
-  -1.0,                                /* Expression: stime
-                                        * Referenced by: '<Root>/S_out'
-                                        */
-  1.0,                                 /* Expression: stype
-                                        * Referenced by: '<Root>/S_out'
-                                        */
-  0.0,                                 /* Expression: btype
-                                        * Referenced by: '<Root>/S_out'
                                         */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/sf2'
@@ -1585,7 +1567,7 @@ NI_ParamSizeWidth P_ctrl_student_HIL_T_sizes[] DataSection(
 
   { sizeof(real_T), 1, 0 },
 
-  { sizeof(real_T), 8, 0 },
+  { sizeof(real_T), 4, 0 },
 
   { sizeof(real_T), 1, 0 },
 
@@ -2182,18 +2164,6 @@ NI_ParamSizeWidth P_ctrl_student_HIL_T_sizes[] DataSection(
   { sizeof(real_T), 1, 0 },
 
   { sizeof(real_T), 2, 0 },
-
-  { sizeof(real_T), 1, 0 },
-
-  { sizeof(real_T), 1, 0 },
-
-  { sizeof(real_T), 1, 0 },
-
-  { sizeof(real_T), 1, 0 },
-
-  { sizeof(real_T), 1, 0 },
-
-  { sizeof(real_T), 1, 0 },
 
   { sizeof(real_T), 1, 0 },
 

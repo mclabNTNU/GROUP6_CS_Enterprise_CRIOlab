@@ -1,0 +1,38 @@
+%implements s40_b0_0mi5e_ForcingFunction "C"
+
+%function ForcingFunction(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+XDot_ctrl_student_HIL_T *_rtXdot;
+%closefile localVarDecl
+%assign tlcForcingFunctionFcnOfS38B1 = OpaqueTLCBlockFcn("ForcingFunction", 38, 1, 2, 9)
+%assign tlcForcingFunctionFcnOfS38B28 = OpaqueTLCBlockFcn("ForcingFunction", 38, 28, 2, 9)
+%assign tlcForcingFunctionFcnOfS38B35 = OpaqueTLCBlockFcn("ForcingFunction", 38, 35, 2, 9)
+%assign tlcForcingFunctionFcnOfS38B86 = OpaqueTLCBlockFcn("ForcingFunction", 38, 86, 2, 9)
+%assign tlcForcingFunctionFcnOfS38B172 = OpaqueTLCBlockFcn("ForcingFunction", 38, 172, 2, 9)
+_rtXdot = %<(SLibCG_SE(SLibGetContStatesDerivativeStructPtr()))>;
+%<tlcForcingFunctionFcnOfS38B1>\
+%<tlcForcingFunctionFcnOfS38B28>\
+%<tlcForcingFunctionFcnOfS38B35>\
+/* ForcingFunction for Integrator: '<S55>/nuHat' */
+_rtXdot->nuHat_CSTATE[0] = ctrl_student_HIL_B.IC_p[0];
+_rtXdot->nuHat_CSTATE[1] = ctrl_student_HIL_B.IC_p[1];
+_rtXdot->nuHat_CSTATE[2] = ctrl_student_HIL_B.IC_p[2];
+%<tlcForcingFunctionFcnOfS38B86>\
+/* ForcingFunction for Integrator: '<S53>/bHat' */
+_rtXdot->bHat_CSTATE[0] = ctrl_student_HIL_B.bHatDot[0];
+_rtXdot->bHat_CSTATE[1] = ctrl_student_HIL_B.bHatDot[1];
+_rtXdot->bHat_CSTATE[2] = ctrl_student_HIL_B.bHatDot[2];
+%<tlcForcingFunctionFcnOfS38B172>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ForcingFunction(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(2, 9, fcnProtoType)>
+%<LibSetSystemField(system, "CachedForcingFunctionLocalVars", localVarDecl)>
+%endfunction

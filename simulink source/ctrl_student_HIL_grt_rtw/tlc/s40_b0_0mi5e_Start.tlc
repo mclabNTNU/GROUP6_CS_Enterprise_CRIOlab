@@ -1,0 +1,80 @@
+%implements s40_b0_0mi5e_Start "C"
+
+%function Start(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcStartFcnOfS38B121 = OpaqueTLCBlockFcn("Start", 38, 121, 2, 4)
+%assign tlcStartFcnOfS38B122 = OpaqueTLCBlockFcn("Start", 38, 122, 2, 4)
+%assign tlcStartFcnOfS38B123 = OpaqueTLCBlockFcn("Start", 38, 123, 2, 4)
+%assign tlcStartFcnOfS38B124 = OpaqueTLCBlockFcn("Start", 38, 124, 2, 4)
+%assign tlcStartFcnOfS38B125 = OpaqueTLCBlockFcn("Start", 38, 125, 2, 4)
+%assign tlcStartFcnOfS38B126 = OpaqueTLCBlockFcn("Start", 38, 126, 2, 4)
+%assign tlcStartFcnOfS38B127 = OpaqueTLCBlockFcn("Start", 38, 127, 2, 4)
+%assign tlcStartFcnOfS38B128 = OpaqueTLCBlockFcn("Start", 38, 128, 2, 4)
+%assign tlcStartFcnOfS38B129 = OpaqueTLCBlockFcn("Start", 38, 129, 2, 4)
+%assign tlcStartFcnOfS38B130 = OpaqueTLCBlockFcn("Start", 38, 130, 2, 4)
+%assign tlcStartFcnOfS38B131 = OpaqueTLCBlockFcn("Start", 38, 131, 2, 4)
+%assign tlcStartFcnOfS38B132 = OpaqueTLCBlockFcn("Start", 38, 132, 2, 4)
+%assign tlcStartFcnOfS38B133 = OpaqueTLCBlockFcn("Start", 38, 133, 2, 4)
+%assign tlcStartFcnOfS38B134 = OpaqueTLCBlockFcn("Start", 38, 134, 2, 4)
+%assign tlcStartFcnOfS38B135 = OpaqueTLCBlockFcn("Start", 38, 135, 2, 4)
+%assign tlcStartFcnOfS38B136 = OpaqueTLCBlockFcn("Start", 38, 136, 2, 4)
+%assign tlcStartFcnOfS38B137 = OpaqueTLCBlockFcn("Start", 38, 137, 2, 4)
+%assign tlcStartFcnOfS38B138 = OpaqueTLCBlockFcn("Start", 38, 138, 2, 4)
+%assign tlcStartFcnOfS38B139 = OpaqueTLCBlockFcn("Start", 38, 139, 2, 4)
+%assign tlcStartFcnOfS38B140 = OpaqueTLCBlockFcn("Start", 38, 140, 2, 4)
+%assign tlcStartFcnOfS38B142 = OpaqueTLCBlockFcn("Start", 38, 142, 2, 4)
+%assign tlcStartFcnOfS38B143 = OpaqueTLCBlockFcn("Start", 38, 143, 2, 4)
+%assign tlcStartFcnOfS38B144 = OpaqueTLCBlockFcn("Start", 38, 144, 2, 4)
+%assign tlcStartFcnOfS38B145 = OpaqueTLCBlockFcn("Start", 38, 145, 2, 4)
+/* Start for InitialCondition: '<S33>/IC' */
+ctrl_student_HIL_B.IC = ctrl_student_HIL_P.IC_Value;
+ctrl_student_HIL_DW.IC_FirstOutputTime = %<LibGetMathConstant(LibRealNonFinite("-inf"), FcnGetDataTypeIdFromName("double"))>;
+/* Start for InitialCondition: '<S34>/IC' */
+ctrl_student_HIL_B.IC_g = ctrl_student_HIL_P.IC_Value_g;
+ctrl_student_HIL_DW.IC_FirstOutputTime_n = %<LibGetMathConstant(LibRealNonFinite("-inf"), FcnGetDataTypeIdFromName("double"))>;
+/* Start for Constant: '<Root>/Constant2' */
+ctrl_student_HIL_B.Constant2[0] = ctrl_student_HIL_P.eta_dot_ini[0];
+ctrl_student_HIL_B.Constant2[1] = ctrl_student_HIL_P.eta_dot_ini[1];
+ctrl_student_HIL_B.Constant2[2] = ctrl_student_HIL_P.eta_dot_ini[2];
+%<tlcStartFcnOfS38B121>\
+%<tlcStartFcnOfS38B122>\
+%<tlcStartFcnOfS38B123>\
+%<tlcStartFcnOfS38B124>\
+%<tlcStartFcnOfS38B125>\
+%<tlcStartFcnOfS38B126>\
+%<tlcStartFcnOfS38B127>\
+%<tlcStartFcnOfS38B128>\
+%<tlcStartFcnOfS38B129>\
+%<tlcStartFcnOfS38B130>\
+%<tlcStartFcnOfS38B131>\
+%<tlcStartFcnOfS38B132>\
+%<tlcStartFcnOfS38B133>\
+%<tlcStartFcnOfS38B134>\
+%<tlcStartFcnOfS38B135>\
+%<tlcStartFcnOfS38B136>\
+%<tlcStartFcnOfS38B137>\
+%<tlcStartFcnOfS38B138>\
+%<tlcStartFcnOfS38B139>\
+%<tlcStartFcnOfS38B140>\
+%<tlcStartFcnOfS38B142>\
+%<tlcStartFcnOfS38B143>\
+%<tlcStartFcnOfS38B144>\
+%<tlcStartFcnOfS38B145>\
+/* Start for InitialCondition: '<S53>/IC1' */
+ctrl_student_HIL_B.IC1[0] = ctrl_student_HIL_P.IC1_Value[0];
+ctrl_student_HIL_B.IC1[1] = ctrl_student_HIL_P.IC1_Value[1];
+ctrl_student_HIL_B.IC1[2] = ctrl_student_HIL_P.IC1_Value[2];
+ctrl_student_HIL_DW.IC1_FirstOutputTime = %<LibGetMathConstant(LibRealNonFinite("-inf"), FcnGetDataTypeIdFromName("double"))>;
+/* Start for InitialCondition: '<S55>/IC' */
+ctrl_student_HIL_DW.IC_FirstOutputTime_i = %<LibGetMathConstant(LibRealNonFinite("-inf"), FcnGetDataTypeIdFromName("double"))>;
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Start(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(2, 4, fcnProtoType)>
+%endfunction

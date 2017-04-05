@@ -1,0 +1,38 @@
+%implements s40_b0_0mi5e_Derivatives "C"
+
+%function Derivatives(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+XDot_ctrl_student_HIL_T *_rtXdot;
+%closefile localVarDecl
+%assign tlcDerivativesFcnOfS38B1 = OpaqueTLCBlockFcn("Derivatives", 38, 1, 2, 8)
+%assign tlcDerivativesFcnOfS38B28 = OpaqueTLCBlockFcn("Derivatives", 38, 28, 2, 8)
+%assign tlcDerivativesFcnOfS38B35 = OpaqueTLCBlockFcn("Derivatives", 38, 35, 2, 8)
+%assign tlcDerivativesFcnOfS38B86 = OpaqueTLCBlockFcn("Derivatives", 38, 86, 2, 8)
+%assign tlcDerivativesFcnOfS38B172 = OpaqueTLCBlockFcn("Derivatives", 38, 172, 2, 8)
+_rtXdot = %<(SLibCG_SE(SLibGetContStatesDerivativeStructPtr()))>;
+%<tlcDerivativesFcnOfS38B1>\
+%<tlcDerivativesFcnOfS38B28>\
+%<tlcDerivativesFcnOfS38B35>\
+/* Derivatives for Integrator: '<S55>/nuHat' */
+_rtXdot->nuHat_CSTATE[0] = ctrl_student_HIL_B.IC_p[0];
+_rtXdot->nuHat_CSTATE[1] = ctrl_student_HIL_B.IC_p[1];
+_rtXdot->nuHat_CSTATE[2] = ctrl_student_HIL_B.IC_p[2];
+%<tlcDerivativesFcnOfS38B86>\
+/* Derivatives for Integrator: '<S53>/bHat' */
+_rtXdot->bHat_CSTATE[0] = ctrl_student_HIL_B.bHatDot[0];
+_rtXdot->bHat_CSTATE[1] = ctrl_student_HIL_B.bHatDot[1];
+_rtXdot->bHat_CSTATE[2] = ctrl_student_HIL_B.bHatDot[2];
+%<tlcDerivativesFcnOfS38B172>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Derivatives(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(2, 8, fcnProtoType)>
+%<LibSetSystemField(system, "CachedDerivativeLocalVars", localVarDecl)>
+%endfunction

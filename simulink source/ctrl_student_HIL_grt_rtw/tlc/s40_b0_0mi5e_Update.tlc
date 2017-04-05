@@ -1,0 +1,66 @@
+%implements s40_b0_0mi5e_Update "C"
+
+%function Update(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcUpdateFcnOfS38B1 = OpaqueTLCBlockFcn("Update", 38, 1, 2, 7)
+%assign tlcUpdateFcnOfS38B28 = OpaqueTLCBlockFcn("Update", 38, 28, 2, 7)
+%assign tlcUpdateFcnOfS38B35 = OpaqueTLCBlockFcn("Update", 38, 35, 2, 7)
+%assign tlcUpdateFcnOfS38B86 = OpaqueTLCBlockFcn("Update", 38, 86, 2, 7)
+%assign tlcUpdateFcnOfS38B172 = OpaqueTLCBlockFcn("Update", 38, 172, 2, 7)
+%<tlcUpdateFcnOfS38B1>\
+if (%<(SLibCGIRIsSampleHit(1, 38))>) {
+    /* Update for Memory: '<S63>/counter' */
+    ctrl_student_HIL_DW.counter_PreviousInput = ctrl_student_HIL_B.count;
+    /* Update for RandomNumber: '<S69>/White Noise' */
+    ctrl_student_HIL_DW.NextOutput = %<(SLibCGCallSubFcn("rt_nrand_Upu32_Yd_f_pw_snf", ["&ctrl_student_HIL_DW.RandSeed"], 2, 7, 0))> * ctrl_student_HIL_P.WhiteNoise_StdDev + ctrl_student_HIL_P.WhiteNoise_Mean;
+    /* Update for RandomNumber: '<S70>/White Noise' */
+    ctrl_student_HIL_DW.NextOutput_o = %<(SLibCGCallSubFcn("rt_nrand_Upu32_Yd_f_pw_snf", ["&ctrl_student_HIL_DW.RandSeed_i"], 2, 7, 1))> * ctrl_student_HIL_P.WhiteNoise_StdDev_l + ctrl_student_HIL_P.WhiteNoise_Mean_d;
+    /* Update for RandomNumber: '<S68>/White Noise' */
+    ctrl_student_HIL_DW.NextOutput_p = %<(SLibCGCallSubFcn("rt_nrand_Upu32_Yd_f_pw_snf", ["&ctrl_student_HIL_DW.RandSeed_d"], 2, 7, 2))> * ctrl_student_HIL_P.WhiteNoise_StdDev_j + ctrl_student_HIL_P.WhiteNoise_Mean_i;
+    /* Update for Memory: '<S64>/Hold' */
+    ctrl_student_HIL_DW.Hold_PreviousInput[0] = ctrl_student_HIL_B.output[0];
+    ctrl_student_HIL_DW.Hold_PreviousInput[1] = ctrl_student_HIL_B.output[1];
+    ctrl_student_HIL_DW.Hold_PreviousInput[2] = ctrl_student_HIL_B.output[2];
+    /* Update for Memory: '<S5>/Memory2' */
+    ctrl_student_HIL_DW.Memory2_PreviousInput = ctrl_student_HIL_B.X_out;
+    /* Update for Memory: '<S5>/Memory1' */
+    ctrl_student_HIL_DW.Memory1_PreviousInput = ctrl_student_HIL_B.Y_out;
+    /* Update for Memory: '<S5>/Memory' */
+    ctrl_student_HIL_DW.Memory_PreviousInput = ctrl_student_HIL_B.Yaw_out;
+    /* Update for Memory: '<S33>/Memory' */
+    ctrl_student_HIL_DW.Memory_PreviousInput_n = ctrl_student_HIL_B.Switch_h;
+}
+%<tlcUpdateFcnOfS38B28>\
+if (%<(SLibCGIRIsSampleHit(1, 38))>) {
+    /* Update for Memory: '<S34>/Memory' */
+    ctrl_student_HIL_DW.Memory_PreviousInput_p = ctrl_student_HIL_B.SwitchSignal;
+}
+%<tlcUpdateFcnOfS38B35>\
+if (%<(SLibCGIRIsSampleHit(1, 38))>) {
+    /* Update for Memory: '<S46>/Memory2' */
+    ctrl_student_HIL_DW.Memory2_PreviousInput_a = ctrl_student_HIL_B.N;
+    /* Update for Memory: '<S46>/Memory1' */
+    ctrl_student_HIL_DW.Memory1_PreviousInput_h[0] = ctrl_student_HIL_B.init_time[0];
+    ctrl_student_HIL_DW.Memory1_PreviousInput_h[1] = ctrl_student_HIL_B.init_time[1];
+    /* Update for Memory: '<S11>/Memory1' */
+    ctrl_student_HIL_DW.Memory1_PreviousInput_b = ctrl_student_HIL_B.current_mode;
+}
+%<tlcUpdateFcnOfS38B86>\
+if (%<(SLibCGIRIsSampleHit(1, 38))>) {
+    /* Update for Memory: '<S13>/Memory' */
+    ctrl_student_HIL_DW.Memory_PreviousInput_e = ctrl_student_HIL_B.kill_signal;
+    /* Update for Memory: '<S46>/Memory' */
+    ctrl_student_HIL_DW.Memory_PreviousInput_h = ctrl_student_HIL_B.N_out;
+}
+%<tlcUpdateFcnOfS38B172>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Update(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(2, 7, fcnProtoType)>
+%endfunction

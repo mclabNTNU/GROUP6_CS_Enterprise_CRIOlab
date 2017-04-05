@@ -1,0 +1,20 @@
+%implements s40_b0_0mi5e_ModelPrevZCStateInit "C"
+
+%function ModelPrevZCStateInit(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+ctrl_student_HIL_PrevZCX.etaHat_Reset_ZCE = UNINITIALIZED_ZCSIG;
+ctrl_student_HIL_PrevZCX.Integrator_Reset_ZCE = UNINITIALIZED_ZCSIG;
+ctrl_student_HIL_PrevZCX.Integrator_Reset_ZCE_m = UNINITIALIZED_ZCSIG;
+ctrl_student_HIL_PrevZCX.Integrator1_Reset_ZCE = UNINITIALIZED_ZCSIG;
+ctrl_student_HIL_PrevZCX.Integrator_Reset_ZCE_c = UNINITIALIZED_ZCSIG;
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ModelPrevZCStateInit(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(2, 11, fcnProtoType)>
+%endfunction
