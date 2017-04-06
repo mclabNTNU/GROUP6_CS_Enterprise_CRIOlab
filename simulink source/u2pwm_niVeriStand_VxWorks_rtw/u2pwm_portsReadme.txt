@@ -1,4 +1,6 @@
 	<portlist>
+<inport> id="-1"  name = "BT_max_pwm" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "BT_min_pwm" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "manual/pwm_BT" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "manual/pwm_VSP1" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "manual/pwm_VSP2" width = "1" datatype = "0"</inport>
@@ -14,11 +16,11 @@
 <inport> id="-1"  name = "u/u_BT" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "u/omega_VSP1" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "u/omega_VSP2" width = "1" datatype = "0"</inport>
-<outport> id = "-1" name = "pwm/pwm_VSP1" width = "1" datatype = "17"</outport>
-<outport> id = "-1" name = "pwm/pwm_VSP2" width = "1" datatype = "17"</outport>
-<outport> id = "-1" name = "pwm/pwm_BT" width = "1" datatype = "17"</outport>
-<outport> id = "-1" name = "pwm/pwm_servo4" width = "1" datatype = "17"</outport>
-<outport> id = "-1" name = "pwm/pwm_servo3" width = "1" datatype = "17"</outport>
-<outport> id = "-1" name = "pwm/pwm_servo1" width = "1" datatype = "17"</outport>
-<outport> id = "-1" name = "pwm/pwm_servo2" width = "1" datatype = "17"</outport>
+<outport> id = "-1" name = "pwm/pwm_VSP1" width = "1" datatype = "18"</outport>
+<outport> id = "-1" name = "pwm/pwm_VSP2" width = "1" datatype = "18"</outport>
+<outport> id = "-1" name = "pwm/pwm_BT" width = "1" datatype = "18"</outport>
+<outport> id = "-1" name = "pwm/pwm_servo4" width = "1" datatype = "18"</outport>
+<outport> id = "-1" name = "pwm/pwm_servo3" width = "1" datatype = "18"</outport>
+<outport> id = "-1" name = "pwm/pwm_servo1" width = "1" datatype = "18"</outport>
+<outport> id = "-1" name = "pwm/pwm_servo2" width = "1" datatype = "18"</outport>
 </portlist>

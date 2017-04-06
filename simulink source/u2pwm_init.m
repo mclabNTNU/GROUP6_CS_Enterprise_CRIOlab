@@ -1,8 +1,8 @@
 % Bow thruster
-BT_min_pwm     = 3.03;
-BT_max_pwm     = 6.90;
-BT_u2pwm_gain  = (BT_max_pwm-BT_min_pwm)/2;
-BT_zero_pwm    = BT_min_pwm + BT_u2pwm_gain;
+%BT_min_pwm     = 3.03;
+%BT_max_pwm     = 6.90;
+%BT_u2pwm_gain  = (BT_max_pwm-BT_min_pwm)/2;
+%BT_zero_pwm    = BT_min_pwm + BT_u2pwm_gain;
 
 % Voith Schneider propellers
 VSP_min_pwm    = 3.12;

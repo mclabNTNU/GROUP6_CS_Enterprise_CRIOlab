@@ -1,11 +1,15 @@
 /*
  * u2pwm.h
  *
+ * Academic License - for use in teaching, academic research, and meeting
+ * course requirements at degree granting institutions only.  Not for
+ * government, commercial, or other organizational use.
+ *
  * Code generation for model "u2pwm".
  *
- * Model version              : 1.24
- * Simulink Coder version : 8.6 (R2014a) 27-Dec-2013
- * C source code generated on : Fri Dec 04 15:19:16 2015
+ * Model version              : 1.27
+ * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
+ * C source code generated on : Thu Apr 06 10:27:01 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -13,6 +17,7 @@
  * Code generation objectives: Unspecified
  * Validation result: Not run
  */
+
 #ifndef RTW_HEADER_u2pwm_h_
 #define RTW_HEADER_u2pwm_h_
 #include <math.h>
@@ -21,6 +26,7 @@
 #ifndef u2pwm_COMMON_INCLUDES_
 # define u2pwm_COMMON_INCLUDES_
 #include "rtwtypes.h"
+#include "zero_crossing_types.h"
 #include "simstruc.h"
 #include "fixedpoint.h"
 #include "rt_logging.h"
@@ -250,6 +256,14 @@
 # define rtmSetNumOutputPorts(rtm, val) ((rtm)->Sizes.numOports = (val))
 #endif
 
+#ifndef rtmGetNumPeriodicContStates
+# define rtmGetNumPeriodicContStates(rtm) ((rtm)->Sizes.numPeriodicContStates)
+#endif
+
+#ifndef rtmSetNumPeriodicContStates
+# define rtmSetNumPeriodicContStates(rtm, val) ((rtm)->Sizes.numPeriodicContStates = (val))
+#endif
+
 #ifndef rtmGetNumSFcnParams
 # define rtmGetNumSFcnParams(rtm)      ((rtm)->Sizes.numSFcnPrms)
 #endif
@@ -368,6 +382,22 @@
 
 #ifndef rtmSetPerTaskSampleHitsPtr
 # define rtmSetPerTaskSampleHitsPtr(rtm, val) ((rtm)->Timing.perTaskSampleHits = (val))
+#endif
+
+#ifndef rtmGetPeriodicContStateIndices
+# define rtmGetPeriodicContStateIndices(rtm) ((rtm)->ModelData.periodicContStateIndices)
+#endif
+
+#ifndef rtmSetPeriodicContStateIndices
+# define rtmSetPeriodicContStateIndices(rtm, val) ((rtm)->ModelData.periodicContStateIndices = (val))
+#endif
+
+#ifndef rtmGetPeriodicContStateRanges
+# define rtmGetPeriodicContStateRanges(rtm) ((rtm)->ModelData.periodicContStateRanges)
+#endif
+
+#ifndef rtmSetPeriodicContStateRanges
+# define rtmSetPeriodicContStateRanges(rtm, val) ((rtm)->ModelData.periodicContStateRanges = (val))
 #endif
 
 #ifndef rtmGetPrevZCSigState
@@ -773,6 +803,8 @@
 
 /* Block signals (auto storage) */
 typedef struct {
+  real_T BT_max_pwm;                   /* '<Root>/BT_max_pwm' */
+  real_T BT_min_pwm;                   /* '<Root>/BT_min_pwm' */
   real_T pwm_BT;                       /* '<S1>/pwm_BT' */
   real_T pwm_VSP1;                     /* '<S1>/pwm_VSP1' */
   real_T pwm_VSP2;                     /* '<S1>/pwm_VSP2' */
@@ -793,6 +825,8 @@ typedef struct {
 
 /* Block states (auto storage) for system '<Root>' */
 typedef struct {
+  real_T BT_max_pwm_DWORK1;            /* '<Root>/BT_max_pwm' */
+  real_T BT_min_pwm_DWORK1;            /* '<Root>/BT_min_pwm' */
   real_T pwm_BT_DWORK1;                /* '<S1>/pwm_BT' */
   real_T pwm_VSP1_DWORK1;              /* '<S1>/pwm_VSP1' */
   real_T pwm_VSP2_DWORK1;              /* '<S1>/pwm_VSP2' */
@@ -816,6 +850,8 @@ typedef struct {
   real_T pwm_servo1_DWORK1_f;          /* '<S2>/pwm_servo1' */
   real_T pwm_servo2_DWORK1_h;          /* '<S2>/pwm_servo2' */
   int32_T NIVeriStandSignalProbe_DWORK2;/* '<Root>/NIVeriStandSignalProbe' */
+  uint8_T BT_max_pwm_DWORK2[6];        /* '<Root>/BT_max_pwm' */
+  uint8_T BT_min_pwm_DWORK2[6];        /* '<Root>/BT_min_pwm' */
   uint8_T pwm_BT_DWORK2[6];            /* '<S1>/pwm_BT' */
   uint8_T pwm_VSP1_DWORK2[6];          /* '<S1>/pwm_VSP1' */
   uint8_T pwm_VSP2_DWORK2[6];          /* '<S1>/pwm_VSP2' */
@@ -852,12 +888,6 @@ typedef struct {
 
 /* Parameters (auto storage) */
 struct P_u2pwm_T_ {
-  real_T BT_u2pwm_gain;                /* Variable: BT_u2pwm_gain
-                                        * Referenced by: '<Root>/VPS_Speed_Gain1'
-                                        */
-  real_T BT_zero_pwm;                  /* Variable: BT_zero_pwm
-                                        * Referenced by: '<Root>/VPS_Power_Offset1'
-                                        */
   real_T VSP_u2pwm_gain;               /* Variable: VSP_u2pwm_gain
                                         * Referenced by:
                                         *   '<Root>/VPS_Speed_Gain'
@@ -871,6 +901,9 @@ struct P_u2pwm_T_ {
                                         */
   real_T Saturation_LowerSat;          /* Expression: -1
                                         * Referenced by: '<Root>/Saturation'
+                                        */
+  real_T Gain5_Gain;                   /* Expression: 0.5
+                                        * Referenced by: '<Root>/Gain5'
                                         */
   real_T Saturation1_UpperSat;         /* Expression: 1
                                         * Referenced by: '<Root>/Saturation1'
@@ -952,6 +985,42 @@ struct P_u2pwm_T_ {
                                         */
   real_T DLookupTable3_bp02Data[5];    /* Expression: [-1,-0.7071067811865476,0,0.7071067811865476,1]
                                         * Referenced by: '<Root>/2-D Lookup Table3'
+                                        */
+  real_T BT_max_pwm_P1;                /* Expression: width
+                                        * Referenced by: '<Root>/BT_max_pwm'
+                                        */
+  real_T BT_max_pwm_P2;                /* Expression: dtype
+                                        * Referenced by: '<Root>/BT_max_pwm'
+                                        */
+  real_T BT_max_pwm_P3;                /* Expression: portnum
+                                        * Referenced by: '<Root>/BT_max_pwm'
+                                        */
+  real_T BT_max_pwm_P4;                /* Expression: stime
+                                        * Referenced by: '<Root>/BT_max_pwm'
+                                        */
+  real_T BT_max_pwm_P5;                /* Expression: stype
+                                        * Referenced by: '<Root>/BT_max_pwm'
+                                        */
+  real_T BT_max_pwm_P6;                /* Expression: btype
+                                        * Referenced by: '<Root>/BT_max_pwm'
+                                        */
+  real_T BT_min_pwm_P1;                /* Expression: width
+                                        * Referenced by: '<Root>/BT_min_pwm'
+                                        */
+  real_T BT_min_pwm_P2;                /* Expression: dtype
+                                        * Referenced by: '<Root>/BT_min_pwm'
+                                        */
+  real_T BT_min_pwm_P3;                /* Expression: portnum
+                                        * Referenced by: '<Root>/BT_min_pwm'
+                                        */
+  real_T BT_min_pwm_P4;                /* Expression: stime
+                                        * Referenced by: '<Root>/BT_min_pwm'
+                                        */
+  real_T BT_min_pwm_P5;                /* Expression: stype
+                                        * Referenced by: '<Root>/BT_min_pwm'
+                                        */
+  real_T BT_min_pwm_P6;                /* Expression: btype
+                                        * Referenced by: '<Root>/BT_min_pwm'
                                         */
   real_T pwm_BT_P1;                    /* Expression: width
                                         * Referenced by: '<S1>/pwm_BT'
@@ -1390,6 +1459,8 @@ struct tag_RTM_u2pwm_T {
     void *defaultParam;
     ZCSigState *prevZCSigState;
     real_T *contStates;
+    int_T *periodicContStateIndices;
+    real_T *periodicContStateRanges;
     real_T *derivs;
     void *zcSignalValues;
     void *inputs;
@@ -1411,6 +1482,7 @@ struct tag_RTM_u2pwm_T {
     uint32_T checksums[4];
     uint32_T options;
     int_T numContStates;
+    int_T numPeriodicContStates;
     int_T numU;
     int_T numY;
     int_T numSampTimes;
@@ -1477,6 +1549,18 @@ extern B_u2pwm_T u2pwm_B;
 
 /* Block states (auto storage) */
 extern DW_u2pwm_T u2pwm_DW;
+
+/*====================*
+ * External functions *
+ *====================*/
+extern u2pwm_rtModel *u2pwm(void);
+extern void MdlInitializeSizes(void);
+extern void MdlInitializeSampleTimes(void);
+extern void MdlInitialize(void);
+extern void MdlStart(void);
+extern void MdlOutputs(int_T tid);
+extern void MdlUpdate(int_T tid);
+extern void MdlTerminate(void);
 
 /* Real-time Model object */
 extern RT_MODEL_u2pwm_T *const u2pwm_M;

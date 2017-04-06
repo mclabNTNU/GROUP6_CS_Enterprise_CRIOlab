@@ -1,11 +1,15 @@
 /*
  *  rtmodel.h:
  *
+ * Academic License - for use in teaching, academic research, and meeting
+ * course requirements at degree granting institutions only.  Not for
+ * government, commercial, or other organizational use.
+ *
  * Code generation for model "u2pwm".
  *
- * Model version              : 1.24
- * Simulink Coder version : 8.6 (R2014a) 27-Dec-2013
- * C source code generated on : Fri Dec 04 15:19:16 2015
+ * Model version              : 1.27
+ * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
+ * C source code generated on : Thu Apr 06 10:27:01 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -13,6 +17,7 @@
  * Code generation objectives: Unspecified
  * Validation result: Not run
  */
+
 #ifndef RTW_HEADER_rtmodel_h_
 #define RTW_HEADER_rtmodel_h_
 

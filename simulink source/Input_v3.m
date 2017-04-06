@@ -32,8 +32,8 @@ l3=[1 0 0;0 1 0;0 0 0.05];
 switch caseNumber
     case 1  % DP mode
         DesiredPath=0;
-        eta_dot_ini = [2;0;0];
-        pd=[2 10;0 4];
+        eta_dot_ini = [1.6;-1.75;0];
+        pd=[1.6 0.6;-1.75 5.6];
         Elipscenter_radi=[6 5;0 3 ];
         U_ref=0.16 ;%DP speed
         mu=[0 0.1 1 10];

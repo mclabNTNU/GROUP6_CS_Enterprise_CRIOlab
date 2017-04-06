@@ -9,11 +9,15 @@
 /*
  * u2pwm_data.c
  *
+ * Academic License - for use in teaching, academic research, and meeting
+ * course requirements at degree granting institutions only.  Not for
+ * government, commercial, or other organizational use.
+ *
  * Code generation for model "u2pwm".
  *
- * Model version              : 1.24
- * Simulink Coder version : 8.6 (R2014a) 27-Dec-2013
- * C source code generated on : Fri Dec 04 15:19:16 2015
+ * Model version              : 1.27
+ * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
+ * C source code generated on : Thu Apr 06 10:27:01 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -26,12 +30,6 @@
 
 /* Block parameters (auto storage) */
 P_u2pwm_T u2pwm_P = {
-  1.9350000000000003,                  /* Variable: BT_u2pwm_gain
-                                        * Referenced by: '<Root>/VPS_Speed_Gain1'
-                                        */
-  4.965,                               /* Variable: BT_zero_pwm
-                                        * Referenced by: '<Root>/VPS_Power_Offset1'
-                                        */
   1.8900000000000001,                  /* Variable: VSP_u2pwm_gain
                                         * Referenced by:
                                         *   '<Root>/VPS_Speed_Gain'
@@ -45,6 +43,9 @@ P_u2pwm_T u2pwm_P = {
                                         */
   -1.0,                                /* Expression: -1
                                         * Referenced by: '<Root>/Saturation'
+                                        */
+  0.5,                                 /* Expression: 0.5
+                                        * Referenced by: '<Root>/Gain5'
                                         */
   1.0,                                 /* Expression: 1
                                         * Referenced by: '<Root>/Saturation1'
@@ -170,6 +171,42 @@ P_u2pwm_T u2pwm_P = {
    * Referenced by: '<Root>/2-D Lookup Table3'
    */
   { -1.0, -0.70710678118654757, 0.0, 0.70710678118654757, 1.0 },
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<Root>/BT_max_pwm'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<Root>/BT_max_pwm'
+                                        */
+  5.0,                                 /* Expression: portnum
+                                        * Referenced by: '<Root>/BT_max_pwm'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<Root>/BT_max_pwm'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<Root>/BT_max_pwm'
+                                        */
+  1.0,                                 /* Expression: btype
+                                        * Referenced by: '<Root>/BT_max_pwm'
+                                        */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<Root>/BT_min_pwm'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<Root>/BT_min_pwm'
+                                        */
+  6.0,                                 /* Expression: portnum
+                                        * Referenced by: '<Root>/BT_min_pwm'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<Root>/BT_min_pwm'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<Root>/BT_min_pwm'
+                                        */
+  1.0,                                 /* Expression: btype
+                                        * Referenced by: '<Root>/BT_min_pwm'
+                                        */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<S1>/pwm_BT'
                                         */
@@ -302,7 +339,7 @@ P_u2pwm_T u2pwm_P = {
   1.0,                                 /* Expression: dtype
                                         * Referenced by: '<Root>/manual override'
                                         */
-  3.0,                                 /* Expression: portnum
+  8.0,                                 /* Expression: portnum
                                         * Referenced by: '<Root>/manual override'
                                         */
   -1.0,                                /* Expression: stime
@@ -630,8 +667,6 @@ NI_ParamSizeWidth P_u2pwm_T_sizes[] DataSection(".NIVS.defaultparamsizes") = {
 
   { sizeof(real_T), 1, 0 },
 
-  { sizeof(real_T), 1, 0 },
-
   { sizeof(real_T), 25, 0 },
 
   { sizeof(real_T), 5, 0 },
@@ -667,6 +702,30 @@ NI_ParamSizeWidth P_u2pwm_T_sizes[] DataSection(".NIVS.defaultparamsizes") = {
   { sizeof(real_T), 5, 0 },
 
   { sizeof(real_T), 5, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
 
   { sizeof(real_T), 1, 0 },
 

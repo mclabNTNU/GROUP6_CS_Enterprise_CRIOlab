@@ -1,11 +1,15 @@
 /*
  * u2pwm.c
  *
+ * Academic License - for use in teaching, academic research, and meeting
+ * course requirements at degree granting institutions only.  Not for
+ * government, commercial, or other organizational use.
+ *
  * Code generation for model "u2pwm".
  *
- * Model version              : 1.24
- * Simulink Coder version : 8.6 (R2014a) 27-Dec-2013
- * C source code generated on : Fri Dec 04 15:19:16 2015
+ * Model version              : 1.27
+ * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
+ * C source code generated on : Thu Apr 06 10:27:01 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -13,6 +17,7 @@
  * Code generation objectives: Unspecified
  * Validation result: Not run
  */
+
 #include "u2pwm.h"
 #include "u2pwm_private.h"
 
@@ -128,19 +133,17 @@ real_T look2_binlxpw(real_T u0, real_T u1, const real_T bp0[], const real_T bp1[
 static void u2pwm_output(void)
 {
   real_T rtb_Gain2;
+  real_T rtb_Product1;
+  real_T rtb_BT_zero_pwm;
   real_T rtb_Product11;
-  real_T rtb_Saturation3;
   real_T rtb_DLookupTable;
   real_T rtb_DLookupTable1;
   real_T rtb_DLookupTable2;
 
   /* Switch: '<Root>/Switch' incorporates:
    *  Constant: '<Root>/VPS_Power_Offset'
-   *  Constant: '<Root>/VPS_Power_Offset1'
    *  Gain: '<Root>/VPS_Speed_Gain'
-   *  Gain: '<Root>/VPS_Speed_Gain1'
    *  Gain: '<Root>/VPS_Speed_Gain2'
-   *  Saturate: '<Root>/Saturation'
    *  Saturate: '<Root>/Saturation1'
    *  Saturate: '<Root>/Saturation2'
    *  Sum: '<Root>/Sum'
@@ -156,6 +159,28 @@ static void u2pwm_output(void)
     u2pwm_B.Switch[5] = u2pwm_B.pwm_servo3;
     u2pwm_B.Switch[6] = u2pwm_B.pwm_servo4;
   } else {
+    /* Gain: '<Root>/Gain5' incorporates:
+     *  Sum: '<Root>/Sum5'
+     */
+    rtb_Gain2 = (u2pwm_B.BT_max_pwm - u2pwm_B.BT_min_pwm) * u2pwm_P.Gain5_Gain;
+
+    /* Saturate: '<Root>/Saturation' */
+    if (u2pwm_B.u_BT > u2pwm_P.Saturation_UpperSat) {
+      rtb_Product11 = u2pwm_P.Saturation_UpperSat;
+    } else if (u2pwm_B.u_BT < u2pwm_P.Saturation_LowerSat) {
+      rtb_Product11 = u2pwm_P.Saturation_LowerSat;
+    } else {
+      rtb_Product11 = u2pwm_B.u_BT;
+    }
+
+    /* Product: '<Root>/Product1' incorporates:
+     *  Saturate: '<Root>/Saturation'
+     */
+    rtb_Product1 = rtb_Gain2 * rtb_Product11;
+
+    /* Sum: '<Root>/Sum6' */
+    rtb_BT_zero_pwm = rtb_Gain2 + u2pwm_B.BT_min_pwm;
+
     /* Sum: '<Root>/Sum3' incorporates:
      *  Constant: '<Root>/Constant'
      */
@@ -163,17 +188,17 @@ static void u2pwm_output(void)
 
     /* Saturate: '<Root>/Saturation4' */
     if (u2pwm_B.u_VSP1 > u2pwm_P.Saturation4_UpperSat) {
-      rtb_Saturation3 = u2pwm_P.Saturation4_UpperSat;
+      rtb_Product11 = u2pwm_P.Saturation4_UpperSat;
     } else if (u2pwm_B.u_VSP1 < u2pwm_P.Saturation4_LowerSat) {
-      rtb_Saturation3 = u2pwm_P.Saturation4_LowerSat;
+      rtb_Product11 = u2pwm_P.Saturation4_LowerSat;
     } else {
-      rtb_Saturation3 = u2pwm_B.u_VSP1;
+      rtb_Product11 = u2pwm_B.u_VSP1;
     }
 
     /* Gain: '<Root>/Gain4' incorporates:
      *  Saturate: '<Root>/Saturation4'
      */
-    rtb_Product11 = u2pwm_P.Gain4_Gain * rtb_Saturation3;
+    rtb_Product11 *= u2pwm_P.Gain4_Gain;
 
     /* Lookup_n-D: '<Root>/2-D Lookup Table' incorporates:
      *  Gain: '<Root>/Gain'
@@ -206,11 +231,11 @@ static void u2pwm_output(void)
 
     /* Saturate: '<Root>/Saturation3' */
     if (u2pwm_B.u_VSP2 > u2pwm_P.Saturation3_UpperSat) {
-      rtb_Saturation3 = u2pwm_P.Saturation3_UpperSat;
+      rtb_Product11 = u2pwm_P.Saturation3_UpperSat;
     } else if (u2pwm_B.u_VSP2 < u2pwm_P.Saturation3_LowerSat) {
-      rtb_Saturation3 = u2pwm_P.Saturation3_LowerSat;
+      rtb_Product11 = u2pwm_P.Saturation3_LowerSat;
     } else {
-      rtb_Saturation3 = u2pwm_B.u_VSP2;
+      rtb_Product11 = u2pwm_B.u_VSP2;
     }
 
     /* End of Saturate: '<Root>/Saturation3' */
@@ -222,54 +247,36 @@ static void u2pwm_output(void)
      *  Trigonometry: '<Root>/Trigonometric Function6'
      *  Trigonometry: '<Root>/Trigonometric Function7'
      */
-    rtb_DLookupTable2 = look2_binlxpw(rtb_Saturation3 * cos(rtb_Gain2) *
-      u2pwm_P.Gain2_Gain, rtb_Saturation3 * sin(rtb_Gain2),
+    rtb_DLookupTable2 = look2_binlxpw(rtb_Product11 * cos(rtb_Gain2) *
+      u2pwm_P.Gain2_Gain, rtb_Product11 * sin(rtb_Gain2),
       u2pwm_P.DLookupTable2_bp01Data, u2pwm_P.DLookupTable2_bp02Data,
       u2pwm_P.DLookupTable2_tableData, u2pwm_P.DLookupTable2_maxIndex, 5U);
 
-    /* Product: '<Root>/Product11' incorporates:
+    /* Lookup_n-D: '<Root>/2-D Lookup Table3' incorporates:
+     *  Gain: '<Root>/Gain3'
+     *  Product: '<Root>/Product10'
+     *  Product: '<Root>/Product11'
+     *  Trigonometry: '<Root>/Trigonometric Function10'
      *  Trigonometry: '<Root>/Trigonometric Function11'
      */
-    rtb_Product11 = rtb_Saturation3 * sin(rtb_Gain2);
-
-    /* Gain: '<Root>/Gain3' incorporates:
-     *  Product: '<Root>/Product10'
-     *  Trigonometry: '<Root>/Trigonometric Function10'
-     */
-    rtb_Gain2 = rtb_Saturation3 * cos(rtb_Gain2) * u2pwm_P.Gain3_Gain;
-
-    /* Lookup_n-D: '<Root>/2-D Lookup Table3' */
-    rtb_Gain2 = look2_binlxpw(rtb_Gain2, rtb_Product11,
+    rtb_Gain2 = look2_binlxpw(rtb_Product11 * cos(rtb_Gain2) *
+      u2pwm_P.Gain3_Gain, rtb_Product11 * sin(rtb_Gain2),
       u2pwm_P.DLookupTable3_bp01Data, u2pwm_P.DLookupTable3_bp02Data,
       u2pwm_P.DLookupTable3_tableData, u2pwm_P.DLookupTable3_maxIndex, 5U);
-
-    /* Saturate: '<Root>/Saturation' */
-    if (u2pwm_B.u_BT > u2pwm_P.Saturation_UpperSat) {
-      rtb_Saturation3 = u2pwm_P.Saturation_UpperSat;
-    } else if (u2pwm_B.u_BT < u2pwm_P.Saturation_LowerSat) {
-      rtb_Saturation3 = u2pwm_P.Saturation_LowerSat;
-    } else {
-      rtb_Saturation3 = u2pwm_B.u_BT;
-    }
-
-    u2pwm_B.Switch[0] = u2pwm_P.BT_u2pwm_gain * rtb_Saturation3 +
-      u2pwm_P.BT_zero_pwm;
+    u2pwm_B.Switch[0] = rtb_BT_zero_pwm + rtb_Product1;
 
     /* Saturate: '<Root>/Saturation1' incorporates:
-     *  Constant: '<Root>/VPS_Power_Offset1'
-     *  Gain: '<Root>/VPS_Speed_Gain1'
-     *  Saturate: '<Root>/Saturation'
      *  Sum: '<Root>/Sum2'
      */
     if (u2pwm_B.omega_VSP1 > u2pwm_P.Saturation1_UpperSat) {
-      rtb_Saturation3 = u2pwm_P.Saturation1_UpperSat;
+      rtb_Product11 = u2pwm_P.Saturation1_UpperSat;
     } else if (u2pwm_B.omega_VSP1 < u2pwm_P.Saturation1_LowerSat) {
-      rtb_Saturation3 = u2pwm_P.Saturation1_LowerSat;
+      rtb_Product11 = u2pwm_P.Saturation1_LowerSat;
     } else {
-      rtb_Saturation3 = u2pwm_B.omega_VSP1;
+      rtb_Product11 = u2pwm_B.omega_VSP1;
     }
 
-    u2pwm_B.Switch[1] = u2pwm_P.VSP_u2pwm_gain * rtb_Saturation3 +
+    u2pwm_B.Switch[1] = u2pwm_P.VSP_u2pwm_gain * rtb_Product11 +
       u2pwm_P.VSP_zero_pwm;
 
     /* Saturate: '<Root>/Saturation2' incorporates:
@@ -279,14 +286,14 @@ static void u2pwm_output(void)
      *  Sum: '<Root>/Sum1'
      */
     if (u2pwm_B.omega_VSP2 > u2pwm_P.Saturation2_UpperSat) {
-      rtb_Saturation3 = u2pwm_P.Saturation2_UpperSat;
+      rtb_Product11 = u2pwm_P.Saturation2_UpperSat;
     } else if (u2pwm_B.omega_VSP2 < u2pwm_P.Saturation2_LowerSat) {
-      rtb_Saturation3 = u2pwm_P.Saturation2_LowerSat;
+      rtb_Product11 = u2pwm_P.Saturation2_LowerSat;
     } else {
-      rtb_Saturation3 = u2pwm_B.omega_VSP2;
+      rtb_Product11 = u2pwm_B.omega_VSP2;
     }
 
-    u2pwm_B.Switch[2] = u2pwm_P.VSP_u2pwm_gain * rtb_Saturation3 +
+    u2pwm_B.Switch[2] = u2pwm_P.VSP_u2pwm_gain * rtb_Product11 +
       u2pwm_P.VSP_zero_pwm;
     u2pwm_B.Switch[3] = rtb_DLookupTable;
     u2pwm_B.Switch[4] = rtb_DLookupTable1;
@@ -318,12 +325,12 @@ static void u2pwm_update(void)
 }
 
 /* Model initialize function */
-void u2pwm_initialize(void)
+static void u2pwm_initialize(void)
 {
 }
 
 /* Model terminate function */
-void u2pwm_terminate(void)
+static void u2pwm_terminate(void)
 {
   /* (no terminate code required) */
 }
@@ -449,9 +456,9 @@ RT_MODEL_u2pwm_T *u2pwm(void)
   u2pwm_M->Sizes.numU = (0);           /* Number of model inputs */
   u2pwm_M->Sizes.sysDirFeedThru = (0); /* The model is not direct feedthrough */
   u2pwm_M->Sizes.numSampTimes = (1);   /* Number of sample times */
-  u2pwm_M->Sizes.numBlocks = (67);     /* Number of blocks */
-  u2pwm_M->Sizes.numBlockIO = (16);    /* Number of block outputs */
-  u2pwm_M->Sizes.numBlockPrms = (302); /* Sum of parameter "widths" */
+  u2pwm_M->Sizes.numBlocks = (71);     /* Number of blocks */
+  u2pwm_M->Sizes.numBlockIO = (18);    /* Number of block outputs */
+  u2pwm_M->Sizes.numBlockPrms = (313); /* Sum of parameter "widths" */
   return u2pwm_M;
 }
 
@@ -519,10 +526,10 @@ double NIRT_GetValueByDataType(void* ptr,int subindex, int type, int Complex)
     return NIRT_GetValueByDataType(ptr,subindex,6,Complex);
 
    case 17:
-    return NIRT_GetValueByDataType(ptr,subindex,0,Complex);
+    return NIRT_GetValueByDataType(ptr,subindex,3,Complex);
 
    case 18:
-    return NIRT_GetValueByDataType(ptr,subindex,3,Complex);
+    return NIRT_GetValueByDataType(ptr,subindex,0,Complex);
 
    case 19:
     return NIRT_GetValueByDataType(ptr,subindex,3,Complex);
@@ -534,15 +541,15 @@ double NIRT_GetValueByDataType(void* ptr,int subindex, int type, int Complex)
     return NIRT_GetValueByDataType(ptr,subindex,0,Complex);
 
    case 22:
-    return NIRT_GetValueByDataType(ptr,subindex,7,Complex);
+    return NIRT_GetValueByDataType(ptr,subindex,0,Complex);
 
    case 23:
     return NIRT_GetValueByDataType(ptr,subindex,0,Complex);
 
-   case 27:
-    return NIRT_GetValueByDataType(ptr,subindex,0,Complex);
+   case 24:
+    return NIRT_GetValueByDataType(ptr,subindex,7,Complex);
 
-   case 28:
+   case 25:
     return NIRT_GetValueByDataType(ptr,subindex,0,Complex);
 
    case 29:
@@ -603,7 +610,7 @@ long NIRT_SetValueByDataType(void* ptr,int subindex, double value, int type, int
     return NIRT_SetValueByDataType(ptr,subindex,value,6,Complex);
 
    case 13:
-    //Type is array. Call SetValueByDataType on its contained type
+    //Type is matrix. Call SetValueByDataType on its contained type
     return NIRT_SetValueByDataType(ptr,subindex,value,7,Complex);
 
    case 15:
@@ -616,11 +623,11 @@ long NIRT_SetValueByDataType(void* ptr,int subindex, double value, int type, int
 
    case 17:
     //Type is matrix. Call SetValueByDataType on its contained type
-    return NIRT_SetValueByDataType(ptr,subindex,value,0,Complex);
+    return NIRT_SetValueByDataType(ptr,subindex,value,3,Complex);
 
    case 18:
     //Type is matrix. Call SetValueByDataType on its contained type
-    return NIRT_SetValueByDataType(ptr,subindex,value,3,Complex);
+    return NIRT_SetValueByDataType(ptr,subindex,value,0,Complex);
 
    case 19:
     //Type is matrix. Call SetValueByDataType on its contained type
@@ -636,17 +643,17 @@ long NIRT_SetValueByDataType(void* ptr,int subindex, double value, int type, int
 
    case 22:
     //Type is matrix. Call SetValueByDataType on its contained type
-    return NIRT_SetValueByDataType(ptr,subindex,value,7,Complex);
+    return NIRT_SetValueByDataType(ptr,subindex,value,0,Complex);
 
    case 23:
     //Type is matrix. Call SetValueByDataType on its contained type
     return NIRT_SetValueByDataType(ptr,subindex,value,0,Complex);
 
-   case 27:
+   case 24:
     //Type is matrix. Call SetValueByDataType on its contained type
-    return NIRT_SetValueByDataType(ptr,subindex,value,0,Complex);
+    return NIRT_SetValueByDataType(ptr,subindex,value,7,Complex);
 
-   case 28:
+   case 25:
     //Type is matrix. Call SetValueByDataType on its contained type
     return NIRT_SetValueByDataType(ptr,subindex,value,0,Complex);
 
@@ -668,6 +675,20 @@ extern _SITexportglobals SITexportglobals;
 void SetExternalInputs(double* data, int* TaskSampleHit)
 {
   int index = 0, count = 0;
+
+  // BT_max_pwm
+  if (TaskSampleHit[0]) {
+    NIRT_SetValueByDataType(&u2pwm_B.BT_max_pwm, 0, data[index++], 0, 0);
+  } else {
+    index += 1;
+  }
+
+  // BT_min_pwm
+  if (TaskSampleHit[0]) {
+    NIRT_SetValueByDataType(&u2pwm_B.BT_min_pwm, 0, data[index++], 0, 0);
+  } else {
+    index += 1;
+  }
 
   // manual/pwm_BT
   if (TaskSampleHit[0]) {
@@ -777,7 +798,7 @@ void SetExternalInputs(double* data, int* TaskSampleHit)
 
 long NumInputPorts(void)
 {
-  return 15;
+  return 17;
 }
 
 double ni_extout[7];
@@ -787,49 +808,49 @@ void SetExternalOutputs(double* data, int* TaskSampleHit)
 
   // pwm/pwm_VSP1: Virtual Signal # 0
   if (TaskSampleHit[0]) {              // sample and hold
-    ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,1,17,0);
+    ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,1,18,0);
   } else {
     index += 1;
   }
 
   // pwm/pwm_VSP2: Virtual Signal # 0
   if (TaskSampleHit[0]) {              // sample and hold
-    ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,2,17,0);
+    ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,2,18,0);
   } else {
     index += 1;
   }
 
   // pwm/pwm_BT: Virtual Signal # 0
   if (TaskSampleHit[0]) {              // sample and hold
-    ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,0,17,0);
+    ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,0,18,0);
   } else {
     index += 1;
   }
 
   // pwm/pwm_servo4: Virtual Signal # 0
   if (TaskSampleHit[0]) {              // sample and hold
-    ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,6,17,0);
+    ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,6,18,0);
   } else {
     index += 1;
   }
 
   // pwm/pwm_servo3: Virtual Signal # 0
   if (TaskSampleHit[0]) {              // sample and hold
-    ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,5,17,0);
+    ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,5,18,0);
   } else {
     index += 1;
   }
 
   // pwm/pwm_servo1: Virtual Signal # 0
   if (TaskSampleHit[0]) {              // sample and hold
-    ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,3,17,0);
+    ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,3,18,0);
   } else {
     index += 1;
   }
 
   // pwm/pwm_servo2: Virtual Signal # 0
   if (TaskSampleHit[0]) {              // sample and hold
-    ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,4,17,0);
+    ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,4,18,0);
   } else {
     index += 1;
   }
@@ -848,142 +869,138 @@ int NI_InitExternalOutputs()
   int index = 0, count = 0;
 
   // pwm/pwm_VSP1: Virtual Signal # 0
-  ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,1,17,0);
+  ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,1,18,0);
 
   // pwm/pwm_VSP2: Virtual Signal # 0
-  ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,2,17,0);
+  ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,2,18,0);
 
   // pwm/pwm_BT: Virtual Signal # 0
-  ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,0,17,0);
+  ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,0,18,0);
 
   // pwm/pwm_servo4: Virtual Signal # 0
-  ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,6,17,0);
+  ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,6,18,0);
 
   // pwm/pwm_servo3: Virtual Signal # 0
-  ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,5,17,0);
+  ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,5,18,0);
 
   // pwm/pwm_servo1: Virtual Signal # 0
-  ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,3,17,0);
+  ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,3,18,0);
 
   // pwm/pwm_servo2: Virtual Signal # 0
-  ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,4,17,0);
+  ni_extout[index++] = NIRT_GetValueByDataType(&u2pwm_B.Switch,4,18,0);
   return NI_OK;
 }
 
 // by default, all elements (inclulding	scalars) have 2 dimensions [1,1]
 static NI_Parameter NI_ParamList[] DataSection(".NIVS.paramlist") =
 {
-  { 0, "u2pwm/VPS_Speed_Gain1/Gain", offsetof(P_u2pwm_T, BT_u2pwm_gain), 27, 1,
+  { 0, "u2pwm/VPS_Speed_Gain/Gain", offsetof(P_u2pwm_T, VSP_u2pwm_gain), 29, 1,
     2, 0, 0 },
 
-  { 1, "u2pwm/VPS_Power_Offset1/Value", offsetof(P_u2pwm_T, BT_zero_pwm), 27, 1,
+  { 1, "u2pwm/VPS_Speed_Gain2/Gain", offsetof(P_u2pwm_T, VSP_u2pwm_gain), 29, 1,
     2, 2, 0 },
 
-  { 2, "u2pwm/VPS_Speed_Gain/Gain", offsetof(P_u2pwm_T, VSP_u2pwm_gain), 27, 1,
+  { 2, "u2pwm/VPS_Power_Offset/Value", offsetof(P_u2pwm_T, VSP_zero_pwm), 29, 1,
     2, 4, 0 },
 
-  { 3, "u2pwm/VPS_Speed_Gain2/Gain", offsetof(P_u2pwm_T, VSP_u2pwm_gain), 27, 1,
-    2, 6, 0 },
+  { 3, "u2pwm/Saturation/UpperLimit", offsetof(P_u2pwm_T, Saturation_UpperSat),
+    29, 1, 2, 6, 0 },
 
-  { 4, "u2pwm/VPS_Power_Offset/Value", offsetof(P_u2pwm_T, VSP_zero_pwm), 27, 1,
-    2, 8, 0 },
+  { 4, "u2pwm/Saturation/LowerLimit", offsetof(P_u2pwm_T, Saturation_LowerSat),
+    29, 1, 2, 8, 0 },
 
-  { 5, "u2pwm/Saturation/UpperLimit", offsetof(P_u2pwm_T, Saturation_UpperSat),
-    27, 1, 2, 10, 0 },
+  { 5, "u2pwm/Gain5/Gain", offsetof(P_u2pwm_T, Gain5_Gain), 29, 1, 2, 10, 0 },
 
-  { 6, "u2pwm/Saturation/LowerLimit", offsetof(P_u2pwm_T, Saturation_LowerSat),
-    27, 1, 2, 12, 0 },
+  { 6, "u2pwm/Saturation1/UpperLimit", offsetof(P_u2pwm_T, Saturation1_UpperSat),
+    29, 1, 2, 12, 0 },
 
-  { 7, "u2pwm/Saturation1/UpperLimit", offsetof(P_u2pwm_T, Saturation1_UpperSat),
-    27, 1, 2, 14, 0 },
+  { 7, "u2pwm/Saturation1/LowerLimit", offsetof(P_u2pwm_T, Saturation1_LowerSat),
+    29, 1, 2, 14, 0 },
 
-  { 8, "u2pwm/Saturation1/LowerLimit", offsetof(P_u2pwm_T, Saturation1_LowerSat),
-    27, 1, 2, 16, 0 },
+  { 8, "u2pwm/Saturation2/UpperLimit", offsetof(P_u2pwm_T, Saturation2_UpperSat),
+    29, 1, 2, 16, 0 },
 
-  { 9, "u2pwm/Saturation2/UpperLimit", offsetof(P_u2pwm_T, Saturation2_UpperSat),
-    27, 1, 2, 18, 0 },
+  { 9, "u2pwm/Saturation2/LowerLimit", offsetof(P_u2pwm_T, Saturation2_LowerSat),
+    29, 1, 2, 18, 0 },
 
-  { 10, "u2pwm/Saturation2/LowerLimit", offsetof(P_u2pwm_T, Saturation2_LowerSat),
-    27, 1, 2, 20, 0 },
+  { 10, "u2pwm/Constant/Value", offsetof(P_u2pwm_T, Constant_Value), 29, 1, 2,
+    20, 0 },
 
-  { 11, "u2pwm/Constant/Value", offsetof(P_u2pwm_T, Constant_Value), 27, 1, 2,
-    22, 0 },
+  { 11, "u2pwm/Saturation4/UpperLimit", offsetof(P_u2pwm_T, Saturation4_UpperSat),
+    29, 1, 2, 22, 0 },
 
-  { 12, "u2pwm/Saturation4/UpperLimit", offsetof(P_u2pwm_T, Saturation4_UpperSat),
-    27, 1, 2, 24, 0 },
+  { 12, "u2pwm/Saturation4/LowerLimit", offsetof(P_u2pwm_T, Saturation4_LowerSat),
+    29, 1, 2, 24, 0 },
 
-  { 13, "u2pwm/Saturation4/LowerLimit", offsetof(P_u2pwm_T, Saturation4_LowerSat),
-    27, 1, 2, 26, 0 },
+  { 13, "u2pwm/Gain4/Gain", offsetof(P_u2pwm_T, Gain4_Gain), 29, 1, 2, 26, 0 },
 
-  { 14, "u2pwm/Gain4/Gain", offsetof(P_u2pwm_T, Gain4_Gain), 27, 1, 2, 28, 0 },
+  { 14, "u2pwm/Gain/Gain", offsetof(P_u2pwm_T, Gain_Gain), 29, 1, 2, 28, 0 },
 
-  { 15, "u2pwm/Gain/Gain", offsetof(P_u2pwm_T, Gain_Gain), 27, 1, 2, 30, 0 },
+  { 15, "u2pwm/2-D Lookup Table/Table", offsetof(P_u2pwm_T,
+    DLookupTable_tableData), 21, 25, 2, 30, 0 },
 
-  { 16, "u2pwm/2-D Lookup Table/Table", offsetof(P_u2pwm_T,
-    DLookupTable_tableData), 28, 25, 2, 32, 0 },
+  { 16, "u2pwm/2-D Lookup Table/BreakpointsForDimension1", offsetof(P_u2pwm_T,
+    DLookupTable_bp01Data), 23, 5, 2, 32, 0 },
 
-  { 17, "u2pwm/2-D Lookup Table/BreakpointsForDimension1", offsetof(P_u2pwm_T,
-    DLookupTable_bp01Data), 29, 5, 2, 34, 0 },
+  { 17, "u2pwm/2-D Lookup Table/BreakpointsForDimension2", offsetof(P_u2pwm_T,
+    DLookupTable_bp02Data), 23, 5, 2, 34, 0 },
 
-  { 18, "u2pwm/2-D Lookup Table/BreakpointsForDimension2", offsetof(P_u2pwm_T,
-    DLookupTable_bp02Data), 29, 5, 2, 36, 0 },
+  { 18, "u2pwm/Gain1/Gain", offsetof(P_u2pwm_T, Gain1_Gain), 29, 1, 2, 36, 0 },
 
-  { 19, "u2pwm/Gain1/Gain", offsetof(P_u2pwm_T, Gain1_Gain), 27, 1, 2, 38, 0 },
+  { 19, "u2pwm/2-D Lookup Table1/Table", offsetof(P_u2pwm_T,
+    DLookupTable1_tableData), 21, 25, 2, 38, 0 },
 
-  { 20, "u2pwm/2-D Lookup Table1/Table", offsetof(P_u2pwm_T,
-    DLookupTable1_tableData), 28, 25, 2, 40, 0 },
+  { 20, "u2pwm/2-D Lookup Table1/BreakpointsForDimension1", offsetof(P_u2pwm_T,
+    DLookupTable1_bp01Data), 23, 5, 2, 40, 0 },
 
-  { 21, "u2pwm/2-D Lookup Table1/BreakpointsForDimension1", offsetof(P_u2pwm_T,
-    DLookupTable1_bp01Data), 29, 5, 2, 42, 0 },
+  { 21, "u2pwm/2-D Lookup Table1/BreakpointsForDimension2", offsetof(P_u2pwm_T,
+    DLookupTable1_bp02Data), 23, 5, 2, 42, 0 },
 
-  { 22, "u2pwm/2-D Lookup Table1/BreakpointsForDimension2", offsetof(P_u2pwm_T,
-    DLookupTable1_bp02Data), 29, 5, 2, 44, 0 },
+  { 22, "u2pwm/Constant1/Value", offsetof(P_u2pwm_T, Constant1_Value), 29, 1, 2,
+    44, 0 },
 
-  { 23, "u2pwm/Constant1/Value", offsetof(P_u2pwm_T, Constant1_Value), 27, 1, 2,
-    46, 0 },
+  { 23, "u2pwm/Saturation3/UpperLimit", offsetof(P_u2pwm_T, Saturation3_UpperSat),
+    29, 1, 2, 46, 0 },
 
-  { 24, "u2pwm/Saturation3/UpperLimit", offsetof(P_u2pwm_T, Saturation3_UpperSat),
-    27, 1, 2, 48, 0 },
+  { 24, "u2pwm/Saturation3/LowerLimit", offsetof(P_u2pwm_T, Saturation3_LowerSat),
+    29, 1, 2, 48, 0 },
 
-  { 25, "u2pwm/Saturation3/LowerLimit", offsetof(P_u2pwm_T, Saturation3_LowerSat),
-    27, 1, 2, 50, 0 },
+  { 25, "u2pwm/Gain2/Gain", offsetof(P_u2pwm_T, Gain2_Gain), 29, 1, 2, 50, 0 },
 
-  { 26, "u2pwm/Gain2/Gain", offsetof(P_u2pwm_T, Gain2_Gain), 27, 1, 2, 52, 0 },
+  { 26, "u2pwm/2-D Lookup Table2/Table", offsetof(P_u2pwm_T,
+    DLookupTable2_tableData), 21, 25, 2, 52, 0 },
 
-  { 27, "u2pwm/2-D Lookup Table2/Table", offsetof(P_u2pwm_T,
-    DLookupTable2_tableData), 28, 25, 2, 54, 0 },
+  { 27, "u2pwm/2-D Lookup Table2/BreakpointsForDimension1", offsetof(P_u2pwm_T,
+    DLookupTable2_bp01Data), 23, 5, 2, 54, 0 },
 
-  { 28, "u2pwm/2-D Lookup Table2/BreakpointsForDimension1", offsetof(P_u2pwm_T,
-    DLookupTable2_bp01Data), 29, 5, 2, 56, 0 },
+  { 28, "u2pwm/2-D Lookup Table2/BreakpointsForDimension2", offsetof(P_u2pwm_T,
+    DLookupTable2_bp02Data), 23, 5, 2, 56, 0 },
 
-  { 29, "u2pwm/2-D Lookup Table2/BreakpointsForDimension2", offsetof(P_u2pwm_T,
-    DLookupTable2_bp02Data), 29, 5, 2, 58, 0 },
+  { 29, "u2pwm/Gain3/Gain", offsetof(P_u2pwm_T, Gain3_Gain), 29, 1, 2, 58, 0 },
 
-  { 30, "u2pwm/Gain3/Gain", offsetof(P_u2pwm_T, Gain3_Gain), 27, 1, 2, 60, 0 },
+  { 30, "u2pwm/2-D Lookup Table3/Table", offsetof(P_u2pwm_T,
+    DLookupTable3_tableData), 21, 25, 2, 60, 0 },
 
-  { 31, "u2pwm/2-D Lookup Table3/Table", offsetof(P_u2pwm_T,
-    DLookupTable3_tableData), 28, 25, 2, 62, 0 },
+  { 31, "u2pwm/2-D Lookup Table3/BreakpointsForDimension1", offsetof(P_u2pwm_T,
+    DLookupTable3_bp01Data), 23, 5, 2, 62, 0 },
 
-  { 32, "u2pwm/2-D Lookup Table3/BreakpointsForDimension1", offsetof(P_u2pwm_T,
-    DLookupTable3_bp01Data), 29, 5, 2, 64, 0 },
+  { 32, "u2pwm/2-D Lookup Table3/BreakpointsForDimension2", offsetof(P_u2pwm_T,
+    DLookupTable3_bp02Data), 23, 5, 2, 64, 0 },
 
-  { 33, "u2pwm/2-D Lookup Table3/BreakpointsForDimension2", offsetof(P_u2pwm_T,
-    DLookupTable3_bp02Data), 29, 5, 2, 66, 0 },
+  { 33, "u2pwm/2-D Lookup Table/maxIndex", offsetof(P_u2pwm_T,
+    DLookupTable_maxIndex), 24, 2, 2, 66, 0 },
 
-  { 34, "u2pwm/2-D Lookup Table/maxIndex", offsetof(P_u2pwm_T,
-    DLookupTable_maxIndex), 22, 2, 2, 68, 0 },
+  { 34, "u2pwm/2-D Lookup Table1/maxIndex", offsetof(P_u2pwm_T,
+    DLookupTable1_maxIndex), 24, 2, 2, 68, 0 },
 
-  { 35, "u2pwm/2-D Lookup Table1/maxIndex", offsetof(P_u2pwm_T,
-    DLookupTable1_maxIndex), 22, 2, 2, 70, 0 },
+  { 35, "u2pwm/2-D Lookup Table2/maxIndex", offsetof(P_u2pwm_T,
+    DLookupTable2_maxIndex), 24, 2, 2, 70, 0 },
 
-  { 36, "u2pwm/2-D Lookup Table2/maxIndex", offsetof(P_u2pwm_T,
-    DLookupTable2_maxIndex), 22, 2, 2, 72, 0 },
-
-  { 37, "u2pwm/2-D Lookup Table3/maxIndex", offsetof(P_u2pwm_T,
-    DLookupTable3_maxIndex), 22, 2, 2, 74, 0 },
+  { 36, "u2pwm/2-D Lookup Table3/maxIndex", offsetof(P_u2pwm_T,
+    DLookupTable3_maxIndex), 24, 2, 2, 72, 0 },
 };
 
-static int NI_ParamListSize DataSection(".NIVS.paramlistsize") = 38;
+static int NI_ParamListSize DataSection(".NIVS.paramlistsize") = 37;
 static int NI_ParamDimList[] DataSection(".NIVS.paramdimlist") =
 {
   1, 1,                                /* Parameter at index 0 */
@@ -1001,143 +1018,152 @@ static int NI_ParamDimList[] DataSection(".NIVS.paramdimlist") =
   1, 1,                                /* Parameter at index 12 */
   1, 1,                                /* Parameter at index 13 */
   1, 1,                                /* Parameter at index 14 */
-  1, 1,                                /* Parameter at index 15 */
-  5, 5,                                /* Parameter at index 16 */
+  5, 5,                                /* Parameter at index 15 */
+  1, 5,                                /* Parameter at index 16 */
   1, 5,                                /* Parameter at index 17 */
-  1, 5,                                /* Parameter at index 18 */
-  1, 1,                                /* Parameter at index 19 */
-  5, 5,                                /* Parameter at index 20 */
+  1, 1,                                /* Parameter at index 18 */
+  5, 5,                                /* Parameter at index 19 */
+  1, 5,                                /* Parameter at index 20 */
   1, 5,                                /* Parameter at index 21 */
-  1, 5,                                /* Parameter at index 22 */
+  1, 1,                                /* Parameter at index 22 */
   1, 1,                                /* Parameter at index 23 */
   1, 1,                                /* Parameter at index 24 */
   1, 1,                                /* Parameter at index 25 */
-  1, 1,                                /* Parameter at index 26 */
-  5, 5,                                /* Parameter at index 27 */
+  5, 5,                                /* Parameter at index 26 */
+  1, 5,                                /* Parameter at index 27 */
   1, 5,                                /* Parameter at index 28 */
-  1, 5,                                /* Parameter at index 29 */
-  1, 1,                                /* Parameter at index 30 */
-  5, 5,                                /* Parameter at index 31 */
+  1, 1,                                /* Parameter at index 29 */
+  5, 5,                                /* Parameter at index 30 */
+  1, 5,                                /* Parameter at index 31 */
   1, 5,                                /* Parameter at index 32 */
-  1, 5,                                /* Parameter at index 33 */
+  2, 1,                                /* Parameter at index 33 */
   2, 1,                                /* Parameter at index 34 */
   2, 1,                                /* Parameter at index 35 */
   2, 1,                                /* Parameter at index 36 */
-  2, 1,                                /* Parameter at index 37 */
 };
 
 static NI_Signal NI_SigList[] DataSection(".NIVS.siglist") =
 {
-  { 0, "u2pwm/manual/pwm_BT", 0, "", offsetof(B_u2pwm_T, pwm_BT)+0*sizeof(real_T),
-    BLOCKIO_SIG, 0, 1, 2, 0, 0 },
+  { 0, "u2pwm/BT_max_pwm", 0, "", offsetof(B_u2pwm_T, BT_max_pwm)+0*sizeof
+    (real_T), BLOCKIO_SIG, 0, 1, 2, 0, 0 },
 
-  { 1, "u2pwm/manual/pwm_VSP1", 0, "", offsetof(B_u2pwm_T, pwm_VSP1)+0*sizeof
+  { 1, "u2pwm/BT_min_pwm", 0, "", offsetof(B_u2pwm_T, BT_min_pwm)+0*sizeof
     (real_T), BLOCKIO_SIG, 0, 1, 2, 2, 0 },
 
-  { 2, "u2pwm/manual/pwm_VSP2", 0, "", offsetof(B_u2pwm_T, pwm_VSP2)+0*sizeof
-    (real_T), BLOCKIO_SIG, 0, 1, 2, 4, 0 },
+  { 2, "u2pwm/manual/pwm_BT", 0, "", offsetof(B_u2pwm_T, pwm_BT)+0*sizeof(real_T),
+    BLOCKIO_SIG, 0, 1, 2, 4, 0 },
 
-  { 3, "u2pwm/manual/pwm_servo1", 0, "", offsetof(B_u2pwm_T, pwm_servo1)+0*
-    sizeof(real_T), BLOCKIO_SIG, 0, 1, 2, 6, 0 },
+  { 3, "u2pwm/manual/pwm_VSP1", 0, "", offsetof(B_u2pwm_T, pwm_VSP1)+0*sizeof
+    (real_T), BLOCKIO_SIG, 0, 1, 2, 6, 0 },
 
-  { 4, "u2pwm/manual/pwm_servo2", 0, "", offsetof(B_u2pwm_T, pwm_servo2)+0*
-    sizeof(real_T), BLOCKIO_SIG, 0, 1, 2, 8, 0 },
+  { 4, "u2pwm/manual/pwm_VSP2", 0, "", offsetof(B_u2pwm_T, pwm_VSP2)+0*sizeof
+    (real_T), BLOCKIO_SIG, 0, 1, 2, 8, 0 },
 
-  { 5, "u2pwm/manual/pwm_servo3", 0, "", offsetof(B_u2pwm_T, pwm_servo3)+0*
+  { 5, "u2pwm/manual/pwm_servo1", 0, "", offsetof(B_u2pwm_T, pwm_servo1)+0*
     sizeof(real_T), BLOCKIO_SIG, 0, 1, 2, 10, 0 },
 
-  { 6, "u2pwm/manual/pwm_servo4", 0, "", offsetof(B_u2pwm_T, pwm_servo4)+0*
+  { 6, "u2pwm/manual/pwm_servo2", 0, "", offsetof(B_u2pwm_T, pwm_servo2)+0*
     sizeof(real_T), BLOCKIO_SIG, 0, 1, 2, 12, 0 },
 
-  { 7, "u2pwm/manual override", 0, "", offsetof(B_u2pwm_T, manualoverride)+0*
+  { 7, "u2pwm/manual/pwm_servo3", 0, "", offsetof(B_u2pwm_T, pwm_servo3)+0*
     sizeof(real_T), BLOCKIO_SIG, 0, 1, 2, 14, 0 },
 
-  { 8, "u2pwm/u/alpha_VSP1", 0, "", offsetof(B_u2pwm_T, alpha_VSP1)+0*sizeof
-    (real_T), BLOCKIO_SIG, 0, 1, 2, 16, 0 },
+  { 8, "u2pwm/manual/pwm_servo4", 0, "", offsetof(B_u2pwm_T, pwm_servo4)+0*
+    sizeof(real_T), BLOCKIO_SIG, 0, 1, 2, 16, 0 },
 
-  { 9, "u2pwm/u/u_VSP1", 0, "", offsetof(B_u2pwm_T, u_VSP1)+0*sizeof(real_T),
-    BLOCKIO_SIG, 0, 1, 2, 18, 0 },
+  { 9, "u2pwm/manual override", 0, "", offsetof(B_u2pwm_T, manualoverride)+0*
+    sizeof(real_T), BLOCKIO_SIG, 0, 1, 2, 18, 0 },
 
-  { 10, "u2pwm/u/alpha_VSP2", 0, "", offsetof(B_u2pwm_T, alpha_VSP2)+0*sizeof
+  { 10, "u2pwm/u/alpha_VSP1", 0, "", offsetof(B_u2pwm_T, alpha_VSP1)+0*sizeof
     (real_T), BLOCKIO_SIG, 0, 1, 2, 20, 0 },
 
-  { 11, "u2pwm/u/u_VSP2", 0, "", offsetof(B_u2pwm_T, u_VSP2)+0*sizeof(real_T),
+  { 11, "u2pwm/u/u_VSP1", 0, "", offsetof(B_u2pwm_T, u_VSP1)+0*sizeof(real_T),
     BLOCKIO_SIG, 0, 1, 2, 22, 0 },
 
-  { 12, "u2pwm/u/u_BT", 0, "", offsetof(B_u2pwm_T, u_BT)+0*sizeof(real_T),
-    BLOCKIO_SIG, 0, 1, 2, 24, 0 },
+  { 12, "u2pwm/u/alpha_VSP2", 0, "", offsetof(B_u2pwm_T, alpha_VSP2)+0*sizeof
+    (real_T), BLOCKIO_SIG, 0, 1, 2, 24, 0 },
 
-  { 13, "u2pwm/u/omega_VSP1", 0, "", offsetof(B_u2pwm_T, omega_VSP1)+0*sizeof
-    (real_T), BLOCKIO_SIG, 0, 1, 2, 26, 0 },
+  { 13, "u2pwm/u/u_VSP2", 0, "", offsetof(B_u2pwm_T, u_VSP2)+0*sizeof(real_T),
+    BLOCKIO_SIG, 0, 1, 2, 26, 0 },
 
-  { 14, "u2pwm/u/omega_VSP2", 0, "", offsetof(B_u2pwm_T, omega_VSP2)+0*sizeof
-    (real_T), BLOCKIO_SIG, 0, 1, 2, 28, 0 },
+  { 14, "u2pwm/u/u_BT", 0, "", offsetof(B_u2pwm_T, u_BT)+0*sizeof(real_T),
+    BLOCKIO_SIG, 0, 1, 2, 28, 0 },
 
-  { 15, "u2pwm/Switch", 0, "(1,1)", offsetof(B_u2pwm_T, Switch)+0*sizeof(real_T),
-    BLOCKIO_SIG, 17, 1, 2, 30, 0 },
+  { 15, "u2pwm/u/omega_VSP1", 0, "", offsetof(B_u2pwm_T, omega_VSP1)+0*sizeof
+    (real_T), BLOCKIO_SIG, 0, 1, 2, 30, 0 },
 
-  { 16, "u2pwm/Switch", 0, "(1,2)", offsetof(B_u2pwm_T, Switch)+1*sizeof(real_T),
-    BLOCKIO_SIG, 17, 1, 2, 32, 0 },
+  { 16, "u2pwm/u/omega_VSP2", 0, "", offsetof(B_u2pwm_T, omega_VSP2)+0*sizeof
+    (real_T), BLOCKIO_SIG, 0, 1, 2, 32, 0 },
 
-  { 17, "u2pwm/Switch", 0, "(1,3)", offsetof(B_u2pwm_T, Switch)+2*sizeof(real_T),
-    BLOCKIO_SIG, 17, 1, 2, 34, 0 },
+  { 17, "u2pwm/Switch", 0, "(1,1)", offsetof(B_u2pwm_T, Switch)+0*sizeof(real_T),
+    BLOCKIO_SIG, 18, 1, 2, 34, 0 },
 
-  { 18, "u2pwm/Switch", 0, "(1,4)", offsetof(B_u2pwm_T, Switch)+3*sizeof(real_T),
-    BLOCKIO_SIG, 17, 1, 2, 36, 0 },
+  { 18, "u2pwm/Switch", 0, "(1,2)", offsetof(B_u2pwm_T, Switch)+1*sizeof(real_T),
+    BLOCKIO_SIG, 18, 1, 2, 36, 0 },
 
-  { 19, "u2pwm/Switch", 0, "(1,5)", offsetof(B_u2pwm_T, Switch)+4*sizeof(real_T),
-    BLOCKIO_SIG, 17, 1, 2, 38, 0 },
+  { 19, "u2pwm/Switch", 0, "(1,3)", offsetof(B_u2pwm_T, Switch)+2*sizeof(real_T),
+    BLOCKIO_SIG, 18, 1, 2, 38, 0 },
 
-  { 20, "u2pwm/Switch", 0, "(1,6)", offsetof(B_u2pwm_T, Switch)+5*sizeof(real_T),
-    BLOCKIO_SIG, 17, 1, 2, 40, 0 },
+  { 20, "u2pwm/Switch", 0, "(1,4)", offsetof(B_u2pwm_T, Switch)+3*sizeof(real_T),
+    BLOCKIO_SIG, 18, 1, 2, 40, 0 },
 
-  { 21, "u2pwm/Switch", 0, "(1,7)", offsetof(B_u2pwm_T, Switch)+6*sizeof(real_T),
-    BLOCKIO_SIG, 17, 1, 2, 42, 0 },
+  { 21, "u2pwm/Switch", 0, "(1,5)", offsetof(B_u2pwm_T, Switch)+4*sizeof(real_T),
+    BLOCKIO_SIG, 18, 1, 2, 42, 0 },
+
+  { 22, "u2pwm/Switch", 0, "(1,6)", offsetof(B_u2pwm_T, Switch)+5*sizeof(real_T),
+    BLOCKIO_SIG, 18, 1, 2, 44, 0 },
+
+  { 23, "u2pwm/Switch", 0, "(1,7)", offsetof(B_u2pwm_T, Switch)+6*sizeof(real_T),
+    BLOCKIO_SIG, 18, 1, 2, 46, 0 },
 
   { -1, "", -1, "", 0, 0, 0 }
 };
 
-static int NI_SigListSize DataSection(".NIVS.siglistsize") = 22;
+static int NI_SigListSize DataSection(".NIVS.siglistsize") = 24;
 static int NI_VirtualBlockSources[1][1];
 static int NI_VirtualBlockOffsets[1][1];
 static int NI_VirtualBlockLengths[1][1];
 static int NI_SigDimList[] DataSection(".NIVS.sigdimlist") =
 {
   1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
 
-static long NI_ExtListSize DataSection(".NIVS.extlistsize") = 22;
+static long NI_ExtListSize DataSection(".NIVS.extlistsize") = 24;
 static NI_ExternalIO NI_ExtList[] DataSection(".NIVS.extlist") =
 {
-  { 0, "manual/pwm_BT", 0, EXT_IN, 1, 1, 1 },
+  { 0, "BT_max_pwm", 0, EXT_IN, 1, 1, 1 },
 
-  { 1, "manual/pwm_VSP1", 0, EXT_IN, 1, 1, 1 },
+  { 1, "BT_min_pwm", 0, EXT_IN, 1, 1, 1 },
 
-  { 2, "manual/pwm_VSP2", 0, EXT_IN, 1, 1, 1 },
+  { 2, "manual/pwm_BT", 0, EXT_IN, 1, 1, 1 },
 
-  { 3, "manual/pwm_servo1", 0, EXT_IN, 1, 1, 1 },
+  { 3, "manual/pwm_VSP1", 0, EXT_IN, 1, 1, 1 },
 
-  { 4, "manual/pwm_servo2", 0, EXT_IN, 1, 1, 1 },
+  { 4, "manual/pwm_VSP2", 0, EXT_IN, 1, 1, 1 },
 
-  { 5, "manual/pwm_servo3", 0, EXT_IN, 1, 1, 1 },
+  { 5, "manual/pwm_servo1", 0, EXT_IN, 1, 1, 1 },
 
-  { 6, "manual/pwm_servo4", 0, EXT_IN, 1, 1, 1 },
+  { 6, "manual/pwm_servo2", 0, EXT_IN, 1, 1, 1 },
 
-  { 7, "manual override", 0, EXT_IN, 1, 1, 1 },
+  { 7, "manual/pwm_servo3", 0, EXT_IN, 1, 1, 1 },
 
-  { 8, "u/alpha_VSP1", 0, EXT_IN, 1, 1, 1 },
+  { 8, "manual/pwm_servo4", 0, EXT_IN, 1, 1, 1 },
 
-  { 9, "u/u_VSP1", 0, EXT_IN, 1, 1, 1 },
+  { 9, "manual override", 0, EXT_IN, 1, 1, 1 },
 
-  { 10, "u/alpha_VSP2", 0, EXT_IN, 1, 1, 1 },
+  { 10, "u/alpha_VSP1", 0, EXT_IN, 1, 1, 1 },
 
-  { 11, "u/u_VSP2", 0, EXT_IN, 1, 1, 1 },
+  { 11, "u/u_VSP1", 0, EXT_IN, 1, 1, 1 },
 
-  { 12, "u/u_BT", 0, EXT_IN, 1, 1, 1 },
+  { 12, "u/alpha_VSP2", 0, EXT_IN, 1, 1, 1 },
 
-  { 13, "u/omega_VSP1", 0, EXT_IN, 1, 1, 1 },
+  { 13, "u/u_VSP2", 0, EXT_IN, 1, 1, 1 },
 
-  { 14, "u/omega_VSP2", 0, EXT_IN, 1, 1, 1 },
+  { 14, "u/u_BT", 0, EXT_IN, 1, 1, 1 },
+
+  { 15, "u/omega_VSP1", 0, EXT_IN, 1, 1, 1 },
+
+  { 16, "u/omega_VSP2", 0, EXT_IN, 1, 1, 1 },
 
   { 0, "pwm/pwm_VSP1", 0, EXT_OUT, 1, 1, 1 },
 
@@ -1169,8 +1195,8 @@ NI_Task NI_TaskList[] DataSection(".NIVS.tasklist") =
 int NI_NumTasks DataSection(".NIVS.numtasks") = 1;
 static char* NI_CompiledModelName DataSection(".NIVS.compiledmodelname") =
   "u2pwm";
-static char* NI_CompiledModelVersion = "1.24";
-static char* NI_CompiledModelDateTime = "Fri Dec 04 15:19:16 2015";
+static char* NI_CompiledModelVersion = "1.27";
+static char* NI_CompiledModelDateTime = "Thu Apr 06 10:27:01 2017";
 static char* NI_builder DataSection(".NIVS.builder") =
   "NI VeriStand 2014.0.0.82 (2014) RTW Build";
 static char* NI_BuilderVersion DataSection(".NIVS.builderversion") =
@@ -1728,7 +1754,7 @@ DLL_EXPORT long NIRT_GetSimState(long* numContStates, char* contStatesNames,
   if (numContStates && numDiscStates && numClockTicks) {
     if (*numContStates < 0 || *numDiscStates < 0 || *numClockTicks < 0) {
       *numContStates = 0;
-      *numDiscStates = 210;
+      *numDiscStates = 224;
       *numClockTicks = NUMST - TID01EQ;
       return NI_OK;
     }
@@ -1736,6 +1762,12 @@ DLL_EXPORT long NIRT_GetSimState(long* numContStates, char* contStatesNames,
 
   if (discStates && discStatesNames) {
     idx = 0;
+    discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.BT_max_pwm_DWORK1, 0, 0,
+      0);
+    strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.BT_max_pwm_DWORK1");
+    discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.BT_min_pwm_DWORK1, 0, 0,
+      0);
+    strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.BT_min_pwm_DWORK1");
     discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.pwm_BT_DWORK1, 0, 0, 0);
     strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.pwm_BT_DWORK1");
     discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.pwm_VSP1_DWORK1, 0, 0, 0);
@@ -1800,140 +1832,152 @@ DLL_EXPORT long NIRT_GetSimState(long* numContStates, char* contStatesNames,
     strcpy(discStatesNames + (idx++ * 100),
            "&u2pwm_DW.NIVeriStandSignalProbe_DWORK2");
     for (count = 0; count < 6; count++) {
+      discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.BT_max_pwm_DWORK2,
+        count, 17, 0);
+      strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.BT_max_pwm_DWORK2");
+    }
+
+    for (count = 0; count < 6; count++) {
+      discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.BT_min_pwm_DWORK2,
+        count, 17, 0);
+      strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.BT_min_pwm_DWORK2");
+    }
+
+    for (count = 0; count < 6; count++) {
       discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.pwm_BT_DWORK2, count,
-        18, 0);
+        17, 0);
       strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.pwm_BT_DWORK2");
     }
 
     for (count = 0; count < 6; count++) {
       discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.pwm_VSP1_DWORK2, count,
-        18, 0);
+        17, 0);
       strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.pwm_VSP1_DWORK2");
     }
 
     for (count = 0; count < 6; count++) {
       discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.pwm_VSP2_DWORK2, count,
-        18, 0);
+        17, 0);
       strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.pwm_VSP2_DWORK2");
     }
 
     for (count = 0; count < 6; count++) {
       discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.pwm_servo1_DWORK2,
-        count, 18, 0);
+        count, 17, 0);
       strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.pwm_servo1_DWORK2");
     }
 
     for (count = 0; count < 6; count++) {
       discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.pwm_servo2_DWORK2,
-        count, 18, 0);
+        count, 17, 0);
       strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.pwm_servo2_DWORK2");
     }
 
     for (count = 0; count < 6; count++) {
       discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.pwm_servo3_DWORK2,
-        count, 18, 0);
+        count, 17, 0);
       strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.pwm_servo3_DWORK2");
     }
 
     for (count = 0; count < 6; count++) {
       discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.pwm_servo4_DWORK2,
-        count, 18, 0);
+        count, 17, 0);
       strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.pwm_servo4_DWORK2");
     }
 
     for (count = 0; count < 6; count++) {
       discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.manualoverride_DWORK2,
-        count, 18, 0);
+        count, 17, 0);
       strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.manualoverride_DWORK2");
     }
 
     for (count = 0; count < 6; count++) {
       discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.alpha_VSP1_DWORK2,
-        count, 18, 0);
+        count, 17, 0);
       strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.alpha_VSP1_DWORK2");
     }
 
     for (count = 0; count < 6; count++) {
       discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.u_VSP1_DWORK2, count,
-        18, 0);
+        17, 0);
       strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.u_VSP1_DWORK2");
     }
 
     for (count = 0; count < 6; count++) {
       discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.alpha_VSP2_DWORK2,
-        count, 18, 0);
+        count, 17, 0);
       strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.alpha_VSP2_DWORK2");
     }
 
     for (count = 0; count < 6; count++) {
       discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.u_VSP2_DWORK2, count,
-        18, 0);
+        17, 0);
       strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.u_VSP2_DWORK2");
     }
 
     for (count = 0; count < 6; count++) {
-      discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.u_BT_DWORK2, count, 18,
+      discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.u_BT_DWORK2, count, 17,
         0);
       strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.u_BT_DWORK2");
     }
 
     for (count = 0; count < 6; count++) {
       discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.omega_VSP1_DWORK2,
-        count, 18, 0);
+        count, 17, 0);
       strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.omega_VSP1_DWORK2");
     }
 
     for (count = 0; count < 6; count++) {
       discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.omega_VSP2_DWORK2,
-        count, 18, 0);
+        count, 17, 0);
       strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.omega_VSP2_DWORK2");
     }
 
     for (count = 0; count < 6; count++) {
       discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.pwm_VSP1_DWORK2_k,
-        count, 18, 0);
+        count, 17, 0);
       strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.pwm_VSP1_DWORK2_k");
     }
 
     for (count = 0; count < 6; count++) {
       discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.pwm_VSP2_DWORK2_c,
-        count, 18, 0);
+        count, 17, 0);
       strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.pwm_VSP2_DWORK2_c");
     }
 
     for (count = 0; count < 6; count++) {
       discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.pwm_BT_DWORK2_n, count,
-        18, 0);
+        17, 0);
       strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.pwm_BT_DWORK2_n");
     }
 
     for (count = 0; count < 6; count++) {
       discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.pwm_servo4_DWORK2_c,
-        count, 18, 0);
+        count, 17, 0);
       strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.pwm_servo4_DWORK2_c");
     }
 
     for (count = 0; count < 6; count++) {
       discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.pwm_servo3_DWORK2_n,
-        count, 18, 0);
+        count, 17, 0);
       strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.pwm_servo3_DWORK2_n");
     }
 
     for (count = 0; count < 6; count++) {
       discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.pwm_servo1_DWORK2_h,
-        count, 18, 0);
+        count, 17, 0);
       strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.pwm_servo1_DWORK2_h");
     }
 
     for (count = 0; count < 6; count++) {
       discStates[idx] = NIRT_GetValueByDataType(&u2pwm_DW.pwm_servo2_DWORK2_e,
-        count, 18, 0);
+        count, 17, 0);
       strcpy(discStatesNames + (idx++ * 100), "&u2pwm_DW.pwm_servo2_DWORK2_e");
     }
 
     for (count = 0; count < 6; count++) {
       discStates[idx] = NIRT_GetValueByDataType
-        (&u2pwm_DW.NIVeriStandSignalProbe_DWORK1, count, 18, 0);
+        (&u2pwm_DW.NIVeriStandSignalProbe_DWORK1, count, 17, 0);
       strcpy(discStatesNames + (idx++ * 100),
              "&u2pwm_DW.NIVeriStandSignalProbe_DWORK1");
     }
@@ -1960,6 +2004,10 @@ DLL_EXPORT long NIRT_SetSimState(double* contStates, double* discStates, long
   long count, idx;
   if (discStates) {
     idx = 0;
+    NIRT_SetValueByDataType(&u2pwm_DW.BT_max_pwm_DWORK1, 0, discStates[idx++], 0,
+      0);
+    NIRT_SetValueByDataType(&u2pwm_DW.BT_min_pwm_DWORK1, 0, discStates[idx++], 0,
+      0);
     NIRT_SetValueByDataType(&u2pwm_DW.pwm_BT_DWORK1, 0, discStates[idx++], 0, 0);
     NIRT_SetValueByDataType(&u2pwm_DW.pwm_VSP1_DWORK1, 0, discStates[idx++], 0,
       0);
@@ -2003,118 +2051,128 @@ DLL_EXPORT long NIRT_SetSimState(double* contStates, double* discStates, long
     NIRT_SetValueByDataType(&u2pwm_DW.NIVeriStandSignalProbe_DWORK2, 0,
       discStates[idx++], 6, 0);
     for (count = 0; count < 6; count++) {
+      NIRT_SetValueByDataType(&u2pwm_DW.BT_max_pwm_DWORK2, count, discStates[idx
+        ++], 17, 0);
+    }
+
+    for (count = 0; count < 6; count++) {
+      NIRT_SetValueByDataType(&u2pwm_DW.BT_min_pwm_DWORK2, count, discStates[idx
+        ++], 17, 0);
+    }
+
+    for (count = 0; count < 6; count++) {
       NIRT_SetValueByDataType(&u2pwm_DW.pwm_BT_DWORK2, count, discStates[idx++],
-        18, 0);
+        17, 0);
     }
 
     for (count = 0; count < 6; count++) {
       NIRT_SetValueByDataType(&u2pwm_DW.pwm_VSP1_DWORK2, count, discStates[idx++],
-        18, 0);
+        17, 0);
     }
 
     for (count = 0; count < 6; count++) {
       NIRT_SetValueByDataType(&u2pwm_DW.pwm_VSP2_DWORK2, count, discStates[idx++],
-        18, 0);
+        17, 0);
     }
 
     for (count = 0; count < 6; count++) {
       NIRT_SetValueByDataType(&u2pwm_DW.pwm_servo1_DWORK2, count, discStates[idx
-        ++], 18, 0);
+        ++], 17, 0);
     }
 
     for (count = 0; count < 6; count++) {
       NIRT_SetValueByDataType(&u2pwm_DW.pwm_servo2_DWORK2, count, discStates[idx
-        ++], 18, 0);
+        ++], 17, 0);
     }
 
     for (count = 0; count < 6; count++) {
       NIRT_SetValueByDataType(&u2pwm_DW.pwm_servo3_DWORK2, count, discStates[idx
-        ++], 18, 0);
+        ++], 17, 0);
     }
 
     for (count = 0; count < 6; count++) {
       NIRT_SetValueByDataType(&u2pwm_DW.pwm_servo4_DWORK2, count, discStates[idx
-        ++], 18, 0);
+        ++], 17, 0);
     }
 
     for (count = 0; count < 6; count++) {
       NIRT_SetValueByDataType(&u2pwm_DW.manualoverride_DWORK2, count,
-        discStates[idx++], 18, 0);
+        discStates[idx++], 17, 0);
     }
 
     for (count = 0; count < 6; count++) {
       NIRT_SetValueByDataType(&u2pwm_DW.alpha_VSP1_DWORK2, count, discStates[idx
-        ++], 18, 0);
+        ++], 17, 0);
     }
 
     for (count = 0; count < 6; count++) {
       NIRT_SetValueByDataType(&u2pwm_DW.u_VSP1_DWORK2, count, discStates[idx++],
-        18, 0);
+        17, 0);
     }
 
     for (count = 0; count < 6; count++) {
       NIRT_SetValueByDataType(&u2pwm_DW.alpha_VSP2_DWORK2, count, discStates[idx
-        ++], 18, 0);
+        ++], 17, 0);
     }
 
     for (count = 0; count < 6; count++) {
       NIRT_SetValueByDataType(&u2pwm_DW.u_VSP2_DWORK2, count, discStates[idx++],
-        18, 0);
+        17, 0);
     }
 
     for (count = 0; count < 6; count++) {
       NIRT_SetValueByDataType(&u2pwm_DW.u_BT_DWORK2, count, discStates[idx++],
-        18, 0);
+        17, 0);
     }
 
     for (count = 0; count < 6; count++) {
       NIRT_SetValueByDataType(&u2pwm_DW.omega_VSP1_DWORK2, count, discStates[idx
-        ++], 18, 0);
+        ++], 17, 0);
     }
 
     for (count = 0; count < 6; count++) {
       NIRT_SetValueByDataType(&u2pwm_DW.omega_VSP2_DWORK2, count, discStates[idx
-        ++], 18, 0);
+        ++], 17, 0);
     }
 
     for (count = 0; count < 6; count++) {
       NIRT_SetValueByDataType(&u2pwm_DW.pwm_VSP1_DWORK2_k, count, discStates[idx
-        ++], 18, 0);
+        ++], 17, 0);
     }
 
     for (count = 0; count < 6; count++) {
       NIRT_SetValueByDataType(&u2pwm_DW.pwm_VSP2_DWORK2_c, count, discStates[idx
-        ++], 18, 0);
+        ++], 17, 0);
     }
 
     for (count = 0; count < 6; count++) {
       NIRT_SetValueByDataType(&u2pwm_DW.pwm_BT_DWORK2_n, count, discStates[idx++],
-        18, 0);
+        17, 0);
     }
 
     for (count = 0; count < 6; count++) {
       NIRT_SetValueByDataType(&u2pwm_DW.pwm_servo4_DWORK2_c, count,
-        discStates[idx++], 18, 0);
+        discStates[idx++], 17, 0);
     }
 
     for (count = 0; count < 6; count++) {
       NIRT_SetValueByDataType(&u2pwm_DW.pwm_servo3_DWORK2_n, count,
-        discStates[idx++], 18, 0);
+        discStates[idx++], 17, 0);
     }
 
     for (count = 0; count < 6; count++) {
       NIRT_SetValueByDataType(&u2pwm_DW.pwm_servo1_DWORK2_h, count,
-        discStates[idx++], 18, 0);
+        discStates[idx++], 17, 0);
     }
 
     for (count = 0; count < 6; count++) {
       NIRT_SetValueByDataType(&u2pwm_DW.pwm_servo2_DWORK2_e, count,
-        discStates[idx++], 18, 0);
+        discStates[idx++], 17, 0);
     }
 
     for (count = 0; count < 6; count++) {
       NIRT_SetValueByDataType(&u2pwm_DW.NIVeriStandSignalProbe_DWORK1, count,
-        discStates[idx++], 18, 0);
+        discStates[idx++], 17, 0);
     }
 
     for (count = 0; count < 49; count++) {
