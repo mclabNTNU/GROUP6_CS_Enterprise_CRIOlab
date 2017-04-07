@@ -10,7 +10,7 @@
 				<String>CSE1</String>
 			</Property>
 			<Property Name="Version">
-				<String>1.0.0.257</String>
+				<String>1.0.0.284</String>
 			</Property>
 			<Property Name="Creator">
 				<String />
@@ -5353,10 +5353,10 @@
 									<Double>10000</Double>
 								</Property>
 								<Property Name="DLL Size">
-									<I32>371235</I32>
+									<I32>390154</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3574333474.355722</Double>
+									<Double>3574419908.9773574</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -5400,7 +5400,7 @@
 										<ForceDownload>false</ForceDownload>
 										<RTDestination>c:\ni-rt\system\ctrl_student_HIL.out</RTDestination>
 										<SupportedTarget>VxWorks</SupportedTarget>
-										<MD5>f0242892ad3bfea31aa5d349841eae78</MD5>
+										<MD5>e1e67c2140aacfb976acc379e9ca8338</MD5>
 									</DependentFile>
 								</Property>
 								<Property Name="GlobalParameterScopes">
@@ -5694,6 +5694,21 @@
 												<String>joystick/Select</String>
 											</Property>
 											<Property Name="Index">
+												<I32>24</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="CurrentModeSelector" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>joystick/CurrentModeSelector</String>
+											</Property>
+											<Property Name="Index">
 												<I32>12</I32>
 											</Property>
 										</Properties>
@@ -5749,7 +5764,7 @@
 												<String>from model/y_in</String>
 											</Property>
 											<Property Name="Index">
-												<I32>33</I32>
+												<I32>36</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5764,7 +5779,7 @@
 												<String>from model/psi_in</String>
 											</Property>
 											<Property Name="Index">
-												<I32>34</I32>
+												<I32>37</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5779,7 +5794,7 @@
 												<String>from model/u_in</String>
 											</Property>
 											<Property Name="Index">
-												<I32>35</I32>
+												<I32>38</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5794,7 +5809,7 @@
 												<String>from model/x_in</String>
 											</Property>
 											<Property Name="Index">
-												<I32>36</I32>
+												<I32>39</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5809,7 +5824,7 @@
 												<String>from model/r_in</String>
 											</Property>
 											<Property Name="Index">
-												<I32>37</I32>
+												<I32>40</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5824,7 +5839,7 @@
 												<String>from model/v_in</String>
 											</Property>
 											<Property Name="Index">
-												<I32>38</I32>
+												<I32>41</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5844,7 +5859,7 @@
 												<String>ThrustAllocationAndSaturation/TurnOffomega1</String>
 											</Property>
 											<Property Name="Index">
-												<I32>31</I32>
+												<I32>34</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5859,7 +5874,7 @@
 												<String>ThrustAllocationAndSaturation/TurnOffomega2</String>
 											</Property>
 											<Property Name="Index">
-												<I32>32</I32>
+												<I32>35</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5879,7 +5894,7 @@
 												<String>from enterprise/X_ship</String>
 											</Property>
 											<Property Name="Index">
-												<I32>1</I32>
+												<I32>3</I32>
 											</Property>
 											<Property Name="DataSource">
 												<DataSourceNode Channel="Targets/Controller/Custom Devices/Oqus/X" />
@@ -5897,7 +5912,7 @@
 												<String>from enterprise/Y_ship</String>
 											</Property>
 											<Property Name="Index">
-												<I32>2</I32>
+												<I32>4</I32>
 											</Property>
 											<Property Name="DataSource">
 												<DataSourceNode Channel="Targets/Controller/Custom Devices/Oqus/Y" />
@@ -5915,7 +5930,7 @@
 												<String>from enterprise/PSI_ship</String>
 											</Property>
 											<Property Name="Index">
-												<I32>3</I32>
+												<I32>5</I32>
 											</Property>
 											<Property Name="DataSource">
 												<DataSourceNode Channel="Targets/Controller/Custom Devices/Oqus/Yaw" />
@@ -5933,10 +5948,45 @@
 												<String>from enterprise/res_ship</String>
 											</Property>
 											<Property Name="Index">
-												<I32>4</I32>
+												<I32>8</I32>
 											</Property>
 											<Property Name="DataSource">
 												<DataSourceNode Channel="Targets/Controller/Custom Devices/Oqus/Residual" />
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+								</Section>
+								<Section Name="tau to real ship (only use in MCLab)" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+									<Description />
+									<Properties />
+									<Errors />
+									<Channel Name="TurnOffomega1" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>tau to real ship (only use in MCLab)/TurnOffomega1</String>
+											</Property>
+											<Property Name="Index">
+												<I32>32</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="TurnOffomega2" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>tau to real ship (only use in MCLab)/TurnOffomega2</String>
+											</Property>
+											<Property Name="Index">
+												<I32>33</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -5967,7 +6017,7 @@
 											<String>NoisePowPos</String>
 										</Property>
 										<Property Name="Index">
-											<I32>6</I32>
+											<I32>1</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -5982,7 +6032,7 @@
 											<String>NoisePowHead</String>
 										</Property>
 										<Property Name="Index">
-											<I32>7</I32>
+											<I32>2</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -5997,7 +6047,7 @@
 											<String>NoiseEnable</String>
 										</Property>
 										<Property Name="Index">
-											<I32>8</I32>
+											<I32>6</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -6017,7 +6067,7 @@
 									</Properties>
 									<Errors />
 									<DefaultValue>
-										<Elem>0</Elem>
+										<Elem>1</Elem>
 									</DefaultValue>
 								</Channel>
 								<Channel Name="ControllerGainK1" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
@@ -6032,7 +6082,7 @@
 									</Properties>
 									<Errors />
 									<DefaultValue>
-										<Elem>0</Elem>
+										<Elem>10</Elem>
 									</DefaultValue>
 								</Channel>
 								<Channel Name="JoysticControllerSwitch" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
@@ -6042,7 +6092,7 @@
 											<String>JoysticControllerSwitch</String>
 										</Property>
 										<Property Name="Index">
-											<I32>24</I32>
+											<I32>25</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -6057,12 +6107,12 @@
 											<String>sf1</String>
 										</Property>
 										<Property Name="Index">
-											<I32>25</I32>
+											<I32>26</I32>
 										</Property>
 									</Properties>
 									<Errors />
 									<DefaultValue>
-										<Elem>0</Elem>
+										<Elem>3</Elem>
 									</DefaultValue>
 								</Channel>
 								<Channel Name="SZ_ResetKill" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
@@ -6072,7 +6122,7 @@
 											<String>SZ_ResetKill</String>
 										</Property>
 										<Property Name="Index">
-											<I32>26</I32>
+											<I32>30</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -6087,7 +6137,7 @@
 											<String>SZ_Owerwrite</String>
 										</Property>
 										<Property Name="Index">
-											<I32>27</I32>
+											<I32>31</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -6107,7 +6157,7 @@
 									</Properties>
 									<Errors />
 									<DefaultValue>
-										<Elem>0</Elem>
+										<Elem>2</Elem>
 									</DefaultValue>
 								</Channel>
 								<Channel Name="sf3" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
@@ -6122,7 +6172,7 @@
 									</Properties>
 									<Errors />
 									<DefaultValue>
-										<Elem>0</Elem>
+										<Elem>0.01</Elem>
 									</DefaultValue>
 								</Channel>
 								<Channel Name="biasOffset" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
@@ -6132,7 +6182,7 @@
 											<String>biasOffset</String>
 										</Property>
 										<Property Name="Index">
-											<I32>30</I32>
+											<I32>27</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -6147,7 +6197,7 @@
 											<String>dropOutTolerance</String>
 										</Property>
 										<Property Name="Index">
-											<I32>5</I32>
+											<I32>7</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -6176,7 +6226,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/N_d</String>
 											</Property>
 											<Property Name="Index">
-												<I32>52</I32>
+												<I32>60</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6191,7 +6241,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/X_d</String>
 											</Property>
 											<Property Name="Index">
-												<I32>51</I32>
+												<I32>59</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6206,7 +6256,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/Y_d</String>
 											</Property>
 											<Property Name="Index">
-												<I32>53</I32>
+												<I32>61</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6221,7 +6271,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/integrator reset model</String>
 											</Property>
 											<Property Name="Index">
-												<I32>57</I32>
+												<I32>65</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6236,7 +6286,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/psi_0 </String>
 											</Property>
 											<Property Name="Index">
-												<I32>54</I32>
+												<I32>62</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6251,7 +6301,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/x_0</String>
 											</Property>
 											<Property Name="Index">
-												<I32>55</I32>
+												<I32>63</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6266,7 +6316,7 @@
 												<String>tau to CSE mocell (only use for HIL testing)/y_0</String>
 											</Property>
 											<Property Name="Index">
-												<I32>56</I32>
+												<I32>64</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6324,7 +6374,7 @@
 														<String>tau to real ship (only use in MCLab)/To thruster of real ship/u/alpha_VSP1</String>
 													</Property>
 													<Property Name="Index">
-														<I32>71</I32>
+														<I32>67</I32>
 													</Property>
 												</Properties>
 												<Errors />
@@ -6339,7 +6389,7 @@
 														<String>tau to real ship (only use in MCLab)/To thruster of real ship/u/alpha_VSP2</String>
 													</Property>
 													<Property Name="Index">
-														<I32>72</I32>
+														<I32>68</I32>
 													</Property>
 												</Properties>
 												<Errors />
@@ -6354,7 +6404,7 @@
 														<String>tau to real ship (only use in MCLab)/To thruster of real ship/u/omega_VSP1</String>
 													</Property>
 													<Property Name="Index">
-														<I32>73</I32>
+														<I32>69</I32>
 													</Property>
 												</Properties>
 												<Errors />
@@ -6369,7 +6419,7 @@
 														<String>tau to real ship (only use in MCLab)/To thruster of real ship/u/omega_VSP2</String>
 													</Property>
 													<Property Name="Index">
-														<I32>74</I32>
+														<I32>70</I32>
 													</Property>
 												</Properties>
 												<Errors />
@@ -6384,7 +6434,7 @@
 														<String>tau to real ship (only use in MCLab)/To thruster of real ship/u/u_BT</String>
 													</Property>
 													<Property Name="Index">
-														<I32>75</I32>
+														<I32>71</I32>
 													</Property>
 												</Properties>
 												<Errors />
@@ -6399,7 +6449,7 @@
 														<String>tau to real ship (only use in MCLab)/To thruster of real ship/u/u_VSP1</String>
 													</Property>
 													<Property Name="Index">
-														<I32>76</I32>
+														<I32>72</I32>
 													</Property>
 												</Properties>
 												<Errors />
@@ -6414,7 +6464,7 @@
 														<String>tau to real ship (only use in MCLab)/To thruster of real ship/u/u_VSP2</String>
 													</Property>
 													<Property Name="Index">
-														<I32>77</I32>
+														<I32>73</I32>
 													</Property>
 												</Properties>
 												<Errors />
@@ -6430,7 +6480,7 @@
 													<String>tau to real ship (only use in MCLab)/To thruster of real ship/control input u exceeds bounds</String>
 												</Property>
 												<Property Name="Index">
-													<I32>70</I32>
+													<I32>66</I32>
 												</Property>
 											</Properties>
 											<Errors />
@@ -6451,7 +6501,7 @@
 												<String>eta_hat</String>
 											</Property>
 											<Property Name="Index">
-												<I32>39</I32>
+												<I32>42</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6466,7 +6516,7 @@
 												<String>eta_hat</String>
 											</Property>
 											<Property Name="Index">
-												<I32>39</I32>
+												<I32>42</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6481,7 +6531,7 @@
 												<String>eta_hat</String>
 											</Property>
 											<Property Name="Index">
-												<I32>39</I32>
+												<I32>42</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6501,7 +6551,7 @@
 												<String>from model/u_real  </String>
 											</Property>
 											<Property Name="Index">
-												<I32>69</I32>
+												<I32>85</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6521,7 +6571,7 @@
 												<String>eta_tilde</String>
 											</Property>
 											<Property Name="Index">
-												<I32>41</I32>
+												<I32>44</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6536,7 +6586,7 @@
 												<String>eta_tilde</String>
 											</Property>
 											<Property Name="Index">
-												<I32>41</I32>
+												<I32>44</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6551,7 +6601,7 @@
 												<String>eta_tilde</String>
 											</Property>
 											<Property Name="Index">
-												<I32>41</I32>
+												<I32>44</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6571,7 +6621,7 @@
 												<String>eta_noise</String>
 											</Property>
 											<Property Name="Index">
-												<I32>42</I32>
+												<I32>45</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6586,7 +6636,7 @@
 												<String>eta_noise</String>
 											</Property>
 											<Property Name="Index">
-												<I32>42</I32>
+												<I32>45</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6601,7 +6651,7 @@
 												<String>eta_noise</String>
 											</Property>
 											<Property Name="Index">
-												<I32>42</I32>
+												<I32>45</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6621,7 +6671,7 @@
 												<String>joystick/Current Mode </String>
 											</Property>
 											<Property Name="Index">
-												<I32>43</I32>
+												<I32>46</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6636,7 +6686,7 @@
 												<String>joystick/tau_yaw</String>
 											</Property>
 											<Property Name="Index">
-												<I32>44</I32>
+												<I32>47</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6651,7 +6701,7 @@
 												<String>joystick/tau_x</String>
 											</Property>
 											<Property Name="Index">
-												<I32>45</I32>
+												<I32>48</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6666,7 +6716,7 @@
 												<String>joystick/tau_y</String>
 											</Property>
 											<Property Name="Index">
-												<I32>46</I32>
+												<I32>49</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6686,7 +6736,7 @@
 												<String>Tau_pre</String>
 											</Property>
 											<Property Name="Index">
-												<I32>47</I32>
+												<I32>50</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6701,7 +6751,7 @@
 												<String>Tau_pre</String>
 											</Property>
 											<Property Name="Index">
-												<I32>47</I32>
+												<I32>50</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6716,7 +6766,7 @@
 												<String>Tau_pre</String>
 											</Property>
 											<Property Name="Index">
-												<I32>47</I32>
+												<I32>50</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6736,7 +6786,7 @@
 												<String>Tau_post</String>
 											</Property>
 											<Property Name="Index">
-												<I32>48</I32>
+												<I32>51</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6751,7 +6801,7 @@
 												<String>Tau_post</String>
 											</Property>
 											<Property Name="Index">
-												<I32>48</I32>
+												<I32>51</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6766,7 +6816,7 @@
 												<String>Tau_post</String>
 											</Property>
 											<Property Name="Index">
-												<I32>48</I32>
+												<I32>51</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6786,7 +6836,7 @@
 												<String>P_d</String>
 											</Property>
 											<Property Name="Index">
-												<I32>49</I32>
+												<I32>52</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6801,7 +6851,7 @@
 												<String>P_d</String>
 											</Property>
 											<Property Name="Index">
-												<I32>49</I32>
+												<I32>52</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6821,7 +6871,7 @@
 												<String>ThrustAllocationAndSaturation/u_BT</String>
 											</Property>
 											<Property Name="Index">
-												<I32>59</I32>
+												<I32>75</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6836,7 +6886,7 @@
 												<String>ThrustAllocationAndSaturation/u_VSP1</String>
 											</Property>
 											<Property Name="Index">
-												<I32>60</I32>
+												<I32>76</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6851,7 +6901,7 @@
 												<String>ThrustAllocationAndSaturation/u_VSP2</String>
 											</Property>
 											<Property Name="Index">
-												<I32>61</I32>
+												<I32>77</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6866,7 +6916,7 @@
 												<String>ThrustAllocationAndSaturation/alpha_VSP1</String>
 											</Property>
 											<Property Name="Index">
-												<I32>62</I32>
+												<I32>78</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6881,7 +6931,7 @@
 												<String>ThrustAllocationAndSaturation/alpha_VSP2</String>
 											</Property>
 											<Property Name="Index">
-												<I32>63</I32>
+												<I32>79</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6896,7 +6946,7 @@
 												<String>ThrustAllocationAndSaturation/omega_VSP1</String>
 											</Property>
 											<Property Name="Index">
-												<I32>64</I32>
+												<I32>80</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6911,7 +6961,7 @@
 												<String>ThrustAllocationAndSaturation/omega_VSP2</String>
 											</Property>
 											<Property Name="Index">
-												<I32>65</I32>
+												<I32>81</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6926,7 +6976,7 @@
 												<String>ThrustAllocationAndSaturation/f_bt</String>
 											</Property>
 											<Property Name="Index">
-												<I32>66</I32>
+												<I32>82</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6941,7 +6991,7 @@
 												<String>ThrustAllocationAndSaturation/f_vspx</String>
 											</Property>
 											<Property Name="Index">
-												<I32>67</I32>
+												<I32>83</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6956,7 +7006,7 @@
 												<String>ThrustAllocationAndSaturation/ f_vspy</String>
 											</Property>
 											<Property Name="Index">
-												<I32>68</I32>
+												<I32>84</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6976,7 +7026,7 @@
 												<String>Residual</String>
 											</Property>
 											<Property Name="Index">
-												<I32>40</I32>
+												<I32>43</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -6991,7 +7041,7 @@
 												<String>Residual</String>
 											</Property>
 											<Property Name="Index">
-												<I32>40</I32>
+												<I32>43</I32>
 											</Property>
 										</Properties>
 										<Errors />
@@ -7025,7 +7075,7 @@
 													<String>Position/eta_real</String>
 												</Property>
 												<Property Name="Index">
-													<I32>58</I32>
+													<I32>74</I32>
 												</Property>
 											</Properties>
 											<Errors />
@@ -7040,7 +7090,7 @@
 													<String>Position/eta_real</String>
 												</Property>
 												<Property Name="Index">
-													<I32>58</I32>
+													<I32>74</I32>
 												</Property>
 											</Properties>
 											<Errors />
@@ -7055,7 +7105,7 @@
 													<String>Position/eta_real</String>
 												</Property>
 												<Property Name="Index">
-													<I32>58</I32>
+													<I32>74</I32>
 												</Property>
 											</Properties>
 											<Errors />
@@ -7065,6 +7115,206 @@
 										</Channel>
 									</Section>
 								</Section>
+								<Section Name="Bias" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+									<Description />
+									<Properties />
+									<Errors />
+									<Channel Name="Bias(1,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>Bias</String>
+											</Property>
+											<Property Name="Index">
+												<I32>54</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="Bias(2,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>Bias</String>
+											</Property>
+											<Property Name="Index">
+												<I32>54</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="Bias(3,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>Bias</String>
+											</Property>
+											<Property Name="Index">
+												<I32>54</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+								</Section>
+								<Section Name="nu_hat " TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+									<Description />
+									<Properties />
+									<Errors />
+									<Channel Name="nu_hat (1,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>nu_hat </String>
+											</Property>
+											<Property Name="Index">
+												<I32>56</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="nu_hat (2,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>nu_hat </String>
+											</Property>
+											<Property Name="Index">
+												<I32>56</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="nu_hat (3,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>nu_hat </String>
+											</Property>
+											<Property Name="Index">
+												<I32>56</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+								</Section>
+								<Section Name="delay2" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+									<Description />
+									<Properties />
+									<Errors />
+									<Channel Name="delay2(1,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>delay2</String>
+											</Property>
+											<Property Name="Index">
+												<I32>57</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="delay2(2,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>delay2</String>
+											</Property>
+											<Property Name="Index">
+												<I32>57</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="delay2(3,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>delay2</String>
+											</Property>
+											<Property Name="Index">
+												<I32>57</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+								</Section>
+								<Section Name="delay1" TypeGUID="cbfdde93-6581-4b7c-83b8-e88484f25b2e">
+									<Description />
+									<Properties />
+									<Errors />
+									<Channel Name="delay1(1,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>delay1</String>
+											</Property>
+											<Property Name="Index">
+												<I32>58</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="delay1(2,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>delay1</String>
+											</Property>
+											<Property Name="Index">
+												<I32>58</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+									<Channel Name="delay1(3,1)" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+										<Description />
+										<Properties>
+											<Property Name="Model Path">
+												<String>delay1</String>
+											</Property>
+											<Property Name="Index">
+												<I32>58</I32>
+											</Property>
+										</Properties>
+										<Errors />
+										<DefaultValue>
+											<Elem>0</Elem>
+										</DefaultValue>
+									</Channel>
+								</Section>
 								<Channel Name="dropoutFlag" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
 									<Description />
 									<Properties>
@@ -7072,7 +7322,22 @@
 											<String>dropoutFlag</String>
 										</Property>
 										<Property Name="Index">
-											<I32>50</I32>
+											<I32>53</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="S" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>S</String>
+										</Property>
+										<Property Name="Index">
+											<I32>55</I32>
 										</Property>
 									</Properties>
 									<Errors />
